@@ -1,5 +1,7 @@
 import React from 'react';
-import { Container, HomeConatiner, LeftBox, LeftBoxDummy, MainBox, } from './homeStyle';
+import { Container, HomeConatiner,  LeftBoxDummy,  } from './homeStyle';
+import MainBox from './main/MainBox.jsx';
+import MenuBox from './menu/MenuBox.jsx';
 
 
 const Home = () => {
@@ -7,32 +9,13 @@ const Home = () => {
 		<HomeConatiner >
 
 			<Container >
-				<LeftBox>
-					<div>Menu</div>
-					<div>Menu</div>
-					<div>Menu</div>
-					<div>Menu</div>
-					<div>Menu</div>
-					<div>Menu</div>
-					<div>Menu</div>
-					<div>Menu</div>
-				</LeftBox>
-				<LeftBoxDummy />
 
+				<MenuBox/>
+				
+				<LeftBoxDummy /> {/* having no content inside it.. just Helping mainBox not to occupy whole area and overlap the Menu  */}
 
-				<MainBox>
-					<div>Blog</div>
-					<div>Blog</div>
-					<div>Blog</div>
-					<div>Blog</div>
-					<div>Blog</div>
-					<div>Blog</div>
-					<div>Blog</div>
-					<div>Blog</div>
-					<div>Blog</div>
-					<div>Blog</div>
-					<div>Blog</div>
-				</MainBox>
+				<MainBox/>
+
 			</Container>
 
 		</HomeConatiner>
