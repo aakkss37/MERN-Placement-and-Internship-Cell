@@ -3,11 +3,10 @@ import { styled, InputBase, Box, } from '@mui/material';
 
 
 export const SearchContainer = styled(Box)(({ theme }) => ({
-	borderRadius: '2px',
+	borderBottom: '1px solid white',
 	marginright: '10px',
 	marginleft: '10px',
 	width: '25%',
-	background: '#fff',
 	display: 'flex',
 	alignItems: 'center',
 	paddingTop: '2px',
@@ -28,5 +27,4 @@ export const SearchIconWrapper = styled(Box)`
   margin-left: auto;
   padding: 5px;
   display: flex;
-  color: green;
 `;

@@ -19,6 +19,8 @@ export const HeaderStyled = styled(AppBar)`
 	justify-content: center;
 	position: "static";
 	height: 55px;
+	background: rgb(202,219,194);
+	background: linear-gradient(90deg, rgba(202,219,194,1) 1%, rgba(54,125,67,1) 100%);
 `;
 
 export const ToolbarStyled = styled(Toolbar)(({theme})=>({
@@ -56,7 +58,6 @@ export const LogoutBox = styled('div')(({ theme }) => ({
 	display: 'flex',
     justifyContent: 'flex-start',
     alignItems: 'center',
-	color: '#367D43',
 	marginRight: '15px',
 	'& :hover': {
 		cursor: 'pointer',
