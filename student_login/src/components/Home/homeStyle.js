@@ -22,7 +22,7 @@ export const LeftBox = styled(Box)(({ theme }) => ({
 	alignSelf: 'flex-start',
 	padding: '5px',
 	[theme.breakpoints.down('md')]: {
-		
+		display: 'none',
 	}
 }));
 export const MainBox = styled(Box)(({ theme }) => ({
