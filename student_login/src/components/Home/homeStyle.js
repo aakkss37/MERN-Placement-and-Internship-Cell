@@ -16,21 +16,22 @@ export const Container = styled(Box)(({ theme }) => ({
 }));
 
 export const LeftBox = styled(Box)(({ theme }) => ({
-
+	flexGrow: 1,
+	margin: '5px',
+	border: '1px solid green',
+	alignSelf: 'flex-start',
+	padding: '5px',
 	[theme.breakpoints.down('md')]: {
 		
 	}
 }));
 export const MainBox = styled(Box)(({ theme }) => ({
-
+	flexGrow: 4,
+	margin: '5px',
+	border: '1px solid green',
 	[theme.breakpoints.down('md')]: {
 		
 	}
 }));
-export const RightBox = styled(Box)(({ theme }) => ({
 
-	[theme.breakpoints.down('md')]: {
-		
-	}
-}));
 
