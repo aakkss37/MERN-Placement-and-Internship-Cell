@@ -15,7 +15,7 @@ export const Container = styled(Box)(({ theme }) => ({
 	}
 }));
 
-export const LeftBox = styled(Box)(({ theme }) => ({
+export const LeftBoxDummy = styled(Box)(({ theme }) => ({
 	flexGrow: 1,
 	margin: '5px',
 	border: '1px solid green',
@@ -25,6 +25,19 @@ export const LeftBox = styled(Box)(({ theme }) => ({
 		display: 'none',
 	}
 }));
+
+export const LeftBox= styled(Box)(({ theme }) => ({
+	position: 'fixed',
+	top: 65,
+	width: '13%',
+	margin: '5px',
+	border: '1px solid green',
+	padding: '5px',
+	[theme.breakpoints.down('md')]: {
+		display: 'none',
+	}
+}));
+
 export const MainBox = styled(Box)(({ theme }) => ({
 	flexGrow: 4,
 	margin: '5px',
