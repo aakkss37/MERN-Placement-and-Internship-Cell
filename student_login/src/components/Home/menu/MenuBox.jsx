@@ -1,6 +1,6 @@
 import { Divider, } from '@mui/material'
 import React from 'react'
-import { CategoryHead, MenuBoxContainer, MenuCategory, MenuItem } from './menuBox.js'
+import { CategoryHead, MenuBoxContainer, MenuCategory, MenuItem } from './menuBoxStyle.js'
 
 const MenuBox = () => {
 	return (

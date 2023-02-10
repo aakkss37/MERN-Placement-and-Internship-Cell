@@ -1,5 +1,5 @@
 import React from 'react'
-import { MainBoxContainer } from './mainBox.js'
+import { MainBoxContainer } from './mainBoxStyle.js'
 
 const MainBox = () => {
   return (

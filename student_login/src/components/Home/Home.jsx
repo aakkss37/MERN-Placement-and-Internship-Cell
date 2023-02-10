@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, HomeConatiner,  LeftBoxDummy,  } from './homeStyle';
-import MainBox from './main/MainBox.jsx';
-import MenuBox from './menu/MenuBox.jsx';
+import MainBox from './main/MainBox';
+import MenuBox from './menu/MenuBox';
 
 
 const Home = () => {
