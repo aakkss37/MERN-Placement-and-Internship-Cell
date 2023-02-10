@@ -3,7 +3,7 @@ import { Box, styled, Typography } from '@mui/material';
 export const MenuBoxContainer = styled(Box)(({ theme }) => ({
 	position: 'fixed',
 	top: 65,
-	width: '13%',
+	width: '15%',
 	margin: '5px',
 	// border: '1px solid green',
 	borderRadius: 5,
@@ -25,14 +25,13 @@ export const MenuCategory = styled(Box)(({ theme }) => ({
 }));
 
 
-export const  CategoryHead = styled(Typography)`
-	font-size: 14px;
+export const  MenuItem= styled(Typography)`
+	font-size: 12px;
 	font-weight: 600;
 	color: #367D43;
-	font-family: 'Ubuntu';
-`
-export const  MenuItem = styled(Typography)`
-	font-size: 12px;
-	font-family: 'Ubuntu';
-
+	font-family: Ubuntu;
+	:hover {
+		cursor: pointer;
+		color: #fff;
+	};
 `

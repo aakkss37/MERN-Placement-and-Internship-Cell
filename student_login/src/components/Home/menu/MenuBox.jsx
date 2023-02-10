@@ -1,37 +1,29 @@
 import { Divider, } from '@mui/material'
 import React from 'react'
-import { CategoryHead, MenuBoxContainer, MenuCategory, MenuItem } from './menuBoxStyle.js'
+import { MenuItem, MenuBoxContainer, MenuCategory } from './menuBoxStyle.js'
 
 const MenuBox = () => {
 	return (
 		<MenuBoxContainer>
 			
 			<MenuCategory>
-				<CategoryHead >Menu</CategoryHead>
-				<MenuItem >Menu Item 1</MenuItem>
-				<MenuItem >Menu Item 2</MenuItem>
-				<MenuItem >Menu Item 3</MenuItem>
+				<MenuItem >PLACEMENT DRIVES</MenuItem>
 			</MenuCategory>
 			<Divider />
 			<MenuCategory>
-				<CategoryHead >Menu</CategoryHead>
-				<MenuItem >Menu Item 1</MenuItem>
-				<MenuItem >Menu Item 2</MenuItem>
-				<MenuItem >Menu Item 3</MenuItem>
+				<MenuItem >MY APPLICATION</MenuItem>
 			</MenuCategory>
 			<Divider />
 			<MenuCategory>
-				<CategoryHead >Menu</CategoryHead>
-				<MenuItem >Menu Item 1</MenuItem>
-				<MenuItem >Menu Item 2</MenuItem>
-				<MenuItem >Menu Item 3</MenuItem>
+				<MenuItem >CALANDER</MenuItem>
 			</MenuCategory>
 			<Divider />
 			<MenuCategory>
-				<CategoryHead >Menu</CategoryHead>
-				<MenuItem >Menu Item 1</MenuItem>
-				<MenuItem >Menu Item 2</MenuItem>
-				<MenuItem >Menu Item 3</MenuItem>
+				<MenuItem >SHARE EXPERIENCE</MenuItem>
+			</MenuCategory>
+			<Divider />
+			<MenuCategory>
+				<MenuItem >PLACEMENT HISTORY</MenuItem>
 			</MenuCategory>
 			
 		</MenuBoxContainer>
