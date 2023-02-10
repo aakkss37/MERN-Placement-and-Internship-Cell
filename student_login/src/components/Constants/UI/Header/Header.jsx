@@ -1,6 +1,6 @@
 import React from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
-import logo from '../../asset/logo.svg';
+import logo from '../../../../asset/logo.svg';
 
 import { GeneralText, HeaderStyled, IconButtonStyled, LogoConatiner, LogoutBox,  LogoutIcon,  ProfileContainer, ToolbarStyled } from './headerStyle.js';
 
