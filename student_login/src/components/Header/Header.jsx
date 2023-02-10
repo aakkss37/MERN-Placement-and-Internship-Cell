@@ -29,11 +29,11 @@ const header = () => {
 				<ProfileContainer>
 					<GeneralText style={{ marginRight: '40px', cursor: 'pointer' }}> Home</GeneralText>
 					<GeneralText style={{ marginRight: '40px', cursor: 'pointer' }}> About</GeneralText>
-					<GeneralText style={{ marginRight: '40px', cursor: 'pointer' }}> Applications</GeneralText>
+					<GeneralText style={{ marginRight: '40px', cursor: 'pointer' }}> Profile</GeneralText>
 				</ProfileContainer>
 				<LogoutBox>
 					<LogoutIcon />
-					<Typography>&nbsp;Username</Typography>
+					<Typography>&nbsp;Logout</Typography>
 				</LogoutBox>
 
 			</ToolbarStyled>

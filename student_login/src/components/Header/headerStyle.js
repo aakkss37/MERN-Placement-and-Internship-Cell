@@ -20,7 +20,6 @@ export const HeaderStyled = styled(AppBar)`
 	position: "static";
 	height: 55px;
 	background: rgb(202,219,194);
-	background: linear-gradient(90deg, rgba(202,219,194,1) 1%, rgba(54,125,67,1) 100%);
 `;
 
 export const ToolbarStyled = styled(Toolbar)(({theme})=>({
