@@ -1,4 +1,4 @@
-import { styled, Box, Divider, Typography } from '@mui/material';
+import { styled, Box, Typography } from '@mui/material';
 
 
 export const CardContainer = styled(Box)(({theme})=>({
@@ -54,7 +54,7 @@ export const Author = styled(Typography)(({theme})=>({
 /* BODY */
 
 export const CardBody = styled(Box)(({theme})=>({
-	
+	marginTop: 10,
 }));
 
 export const Experience = styled(Box)(({theme})=>({

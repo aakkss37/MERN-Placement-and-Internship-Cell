@@ -8,7 +8,7 @@ const Card = () => {
 		<CardContainer>
 
 			<CardHead>
-				<UserImg><AccountCircleIcon style={{ color: '#a5a2a2', fontSize: '2rem', padding: 0, }}/></UserImg>
+				<UserImg><AccountCircleIcon style={{ color: '#367D43', fontSize: '2rem', padding: 0, }}/></UserImg>
 				<UserDetail>
 					<ConpanyName>Company Name</ConpanyName>
 					<Author>User name || Department || Published Date</Author>
