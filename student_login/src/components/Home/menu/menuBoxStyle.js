@@ -29,8 +29,10 @@ export const  CategoryHead = styled(Typography)`
 	font-size: 14px;
 	font-weight: 600;
 	color: #367D43;
+	font-family: 'Ubuntu';
 `
 export const  MenuItem = styled(Typography)`
 	font-size: 12px;
+	font-family: 'Ubuntu';
 
 `

@@ -1,22 +1,27 @@
-import { Box, Divider, Typography } from '@mui/material'
+import { Divider,  } from '@mui/material'
 import React from 'react'
+import { Author, CardBody, CardContainer, CardHead, ConpanyName, Experience, UserDetail, UserImg } from './cardStyle.js'
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 const Card = () => {
 	return (
-		<Box>
-			<Box>
-				<Box>User pic</Box>
-				<Box>
-					<Typography>Company Name</Typography>
-					<Typography>User name || Department</Typography>
-				</Box>
-			</Box>
+		<CardContainer>
+
+			<CardHead>
+				<UserImg><AccountCircleIcon style={{ color: '#a5a2a2', fontSize: '2rem', padding: 0, }}/></UserImg>
+				<UserDetail>
+					<ConpanyName>Company Name</ConpanyName>
+					<Author>User name || Department || Published Date</Author>
+				</UserDetail>
+			</CardHead>
+
 			<Divider/>
-			<Box>
-				<Typography>
+
+			<CardBody>
+				<Experience>
 					To insert an icon, add the name of the icon class to any inline HTML element.
 
-					The  and  elements are widely used to add icons.
+					The  and  elements are widely used to add icons. git push 0u  - mazstrer 
 
 					All the icons in the icon libraries below, are scalable vector icons that can be customized with CSS (size, color, shadow, etc.)
 
@@ -35,16 +40,16 @@ const Card = () => {
 					npx create-react-app foldername
 					Step 2: After creating your project folder i.e. foldername, move to it using the following command:
 
-
 					cd foldername
 					Step 3: After creating the ReactJS application, Install the MUI modules using the following command:
 
 					npm install @mui/material
 					npm install @mui/icons-material
 					Project Structure: It will look like the following.
-				</Typography>
-			</Box>
-		</Box>
+				</Experience>
+			</CardBody>
+
+		</CardContainer>
 	)
 }
 

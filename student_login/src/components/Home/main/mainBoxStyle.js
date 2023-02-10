@@ -5,7 +5,7 @@ export const MainBoxContainer = styled(Box)(({ theme }) => ({
 	flexGrow: 4,
 	maxWidth: '75%',
 	margin: '5px',
-	border: '1px solid green',
+	// border: '1px solid green',
 	[theme.breakpoints.down('md')]: {
 		maxWidth: '100%',
 	}

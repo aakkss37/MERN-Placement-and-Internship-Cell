@@ -6,6 +6,12 @@ const MainBox = () => {
   return (
 	  <MainBoxContainer>
 		<Card/>
+		<Card/>
+		<Card/>
+		<Card/>
+		<Card/>
+		<Card/>
+		<Card/>
 	  </MainBoxContainer>
   )
 }
