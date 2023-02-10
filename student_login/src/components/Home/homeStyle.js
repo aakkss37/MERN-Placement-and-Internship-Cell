@@ -17,6 +17,7 @@ export const Container = styled(Box)(({ theme }) => ({
 
 export const LeftBoxDummy = styled(Box)(({ theme }) => ({
 	flexGrow: 1,
+	width: '13%',
 	margin: '5px',
 	// border: '1px solid green',
 	alignSelf: 'flex-start',
