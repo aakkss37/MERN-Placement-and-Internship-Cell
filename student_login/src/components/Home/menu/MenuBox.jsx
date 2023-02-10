@@ -1,19 +1,41 @@
+import { Divider, } from '@mui/material'
 import React from 'react'
-import { MenuBoxContainer } from './menuBox.js'
+import { CategoryHead, MenuBoxContainer, MenuCategory, MenuItem } from './menuBox.js'
 
 const MenuBox = () => {
-  return (
-	  <MenuBoxContainer>
-		  <div>Menu</div>
-		  <div>Menu</div>
-		  <div>Menu</div>
-		  <div>Menu</div>
-		  <div>Menu</div>
-		  <div>Menu</div>
-		  <div>Menu</div>
-		  <div>Menu</div>
-	  </MenuBoxContainer>
-  )
+	return (
+		<MenuBoxContainer>
+			
+			<MenuCategory>
+				<CategoryHead >Menu</CategoryHead>
+				<MenuItem >Menu Item 1</MenuItem>
+				<MenuItem >Menu Item 2</MenuItem>
+				<MenuItem >Menu Item 3</MenuItem>
+			</MenuCategory>
+			<Divider />
+			<MenuCategory>
+				<CategoryHead >Menu</CategoryHead>
+				<MenuItem >Menu Item 1</MenuItem>
+				<MenuItem >Menu Item 2</MenuItem>
+				<MenuItem >Menu Item 3</MenuItem>
+			</MenuCategory>
+			<Divider />
+			<MenuCategory>
+				<CategoryHead >Menu</CategoryHead>
+				<MenuItem >Menu Item 1</MenuItem>
+				<MenuItem >Menu Item 2</MenuItem>
+				<MenuItem >Menu Item 3</MenuItem>
+			</MenuCategory>
+			<Divider />
+			<MenuCategory>
+				<CategoryHead >Menu</CategoryHead>
+				<MenuItem >Menu Item 1</MenuItem>
+				<MenuItem >Menu Item 2</MenuItem>
+				<MenuItem >Menu Item 3</MenuItem>
+			</MenuCategory>
+			
+		</MenuBoxContainer>
+	)
 }
 
 export default MenuBox

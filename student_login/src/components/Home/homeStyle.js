@@ -7,7 +7,7 @@ export const HomeConatiner = styled(Box)`
 export const Container = styled(Box)(({ theme }) => ({
 	width: '75%',
 	margin: '0 auto',
-	border: '1px solid red',
+	// border: '1px solid red',
 	minHeight: 'fit-content',
 	display: 'flex',
 	[theme.breakpoints.down('md')]: {
@@ -18,7 +18,7 @@ export const Container = styled(Box)(({ theme }) => ({
 export const LeftBoxDummy = styled(Box)(({ theme }) => ({
 	flexGrow: 1,
 	margin: '5px',
-	border: '1px solid green',
+	// border: '1px solid green',
 	alignSelf: 'flex-start',
 	padding: '5px',
 	[theme.breakpoints.down('md')]: {
