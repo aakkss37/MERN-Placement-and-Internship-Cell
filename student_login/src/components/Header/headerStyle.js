@@ -57,9 +57,10 @@ export const LogoutBox = styled('div')(({ theme }) => ({
 	display: 'flex',
     justifyContent: 'flex-start',
     alignItems: 'center',
-	marginRight: '15px',
+	marginRight: '40px',
 	'& :hover': {
 		cursor: 'pointer',
+		color: 'red',
 	},
 	[theme.breakpoints.down('md')]: {
 	'& > p': {

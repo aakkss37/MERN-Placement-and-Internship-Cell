@@ -18,13 +18,24 @@ export const SearchContainer = styled(Box)(({ theme }) => ({
 export const InputSearchBase = styled(InputBase)(({ theme }) => ({
 	width: '100%',
 	paddingLeft: '10px',
+	
 	[theme.breakpoints.down('md')]: {
-
+		'& > .MuiInputBase-input': {
+			fontSize: 14,
+		},
+	},
+	[theme.breakpoints.down('sm')]: {
+		'& > .MuiInputBase-input': {
+			fontSize: 12,
+		},
 	}
 }))
 
-export const SearchIconWrapper = styled(Box)`
-  margin-left: auto;
-  padding: 5px;
-  display: flex;
-`;
+export const SearchIconWrapper = styled(Box)(({ theme }) => ({
+  marginLeft: 'auto',
+  padding: '5px',
+  display: 'flex',
+	[theme.breakpoints.down('sm')]: {
+		display: 'none',
+	}
+}))

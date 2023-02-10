@@ -3,7 +3,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import logo from '../../asset/logo.svg';
 
 import { GeneralText, HeaderStyled, IconButtonStyled, LogoConatiner, LogoutBox,  LogoutIcon,  ProfileContainer, ToolbarStyled } from './headerStyle.js';
-import { Typography } from '@mui/material';
+
 import Search from './Search';
  
 
@@ -27,13 +27,12 @@ const header = () => {
 				<Search/>
 
 				<ProfileContainer>
-					<GeneralText style={{ marginRight: '40px', cursor: 'pointer' }}> Home</GeneralText>
-					<GeneralText style={{ marginRight: '40px', cursor: 'pointer' }}> About</GeneralText>
-					<GeneralText style={{ marginRight: '40px', cursor: 'pointer' }}> Profile</GeneralText>
+					<GeneralText style={{ marginRight: '40px', cursor: 'pointer' }}> HOME</GeneralText>
+					<GeneralText style={{ marginRight: '40px', cursor: 'pointer' }}> ABOUT</GeneralText>
+					<GeneralText style={{ marginRight: '40px', cursor: 'pointer' }}> PROFILE</GeneralText>
 				</ProfileContainer>
 				<LogoutBox>
 					<LogoutIcon />
-					<Typography>&nbsp;Logout</Typography>
 				</LogoutBox>
 
 			</ToolbarStyled>
