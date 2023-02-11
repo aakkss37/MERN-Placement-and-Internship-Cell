@@ -1,13 +1,20 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
 import logo from '../../../../asset/logo.png';
-
-import { GeneralText, HeaderStyled, IconButtonStyled, LogoConatiner, LogoutBox,  LogoutIcon,  ProfileContainer, ToolbarStyled } from './headerStyle.js';
-
 import Search from './Search';
- 
+
+import { GeneralText, HeaderStyled, IconButtonStyled, LogoConatiner, LogoutBox, LogoutIcon, ProfileContainer, ToolbarStyled } from './headerStyle.js';
+
+
+
+
 
 const header = () => {
+	// eslint-disable-next-line react-hooks/rules-of-hooks
+	const navigate = useNavigate();
+
+
 	return (
 		<HeaderStyled>
 			<ToolbarStyled>
@@ -17,21 +24,23 @@ const header = () => {
 					aria-label="menu"
 					sx={{ mr: 2 }}
 				>
-					<MenuIcon style={{color: "#367D43"}} />
+					<MenuIcon style={{ color: "#367D43" }} />
 				</IconButtonStyled>
-				<LogoConatiner variant="h6"
-					component="div" sx={{ flexGrow: 1 }} >
-					<img src={logo} alt="Logo" style={{ width: '55px' }} />
+				<LogoConatiner 
+					variant="h6"
+					component="div" sx={{ flexGrow: 1 }} 
+				>
+					<img src={logo} alt="Logo" style={{ width: '55px' }} onClick={()=> navigate('/')}/>
 				</LogoConatiner>
-				
-				<Search/>
+
+				<Search />
 
 				<ProfileContainer>
-					<GeneralText style={{ marginRight: '40px', cursor: 'pointer' }}> HOME</GeneralText>
-					<GeneralText style={{ marginRight: '40px', cursor: 'pointer' }}> ABOUT</GeneralText>
-					<GeneralText style={{ marginRight: '40px', cursor: 'pointer' }}> PROFILE</GeneralText>
+					<GeneralText style={{ marginRight: '40px', cursor: 'pointer' }} onClick={() => navigate('/')}> HOME</GeneralText>
+					<GeneralText style={{ marginRight: '40px', cursor: 'pointer' }} onClick={() => navigate('/about')}> ABOUT</GeneralText>
+					<GeneralText style={{ marginRight: '40px', cursor: 'pointer' }} onClick={() => navigate('/profile')}> PROFILE</GeneralText>
 				</ProfileContainer>
-				<LogoutBox>
+				<LogoutBox onClick={() => navigate('/login')}>
 					<LogoutIcon />
 				</LogoutBox>
 

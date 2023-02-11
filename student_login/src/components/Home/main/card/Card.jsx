@@ -1,5 +1,5 @@
-import { Divider,  } from '@mui/material'
 import React from 'react'
+import { Divider,  } from '@mui/material'
 import { Author, CardBody, CardContainer, CardHead, ConpanyName, Experience, UserDetail, UserImg } from './cardStyle.js'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
