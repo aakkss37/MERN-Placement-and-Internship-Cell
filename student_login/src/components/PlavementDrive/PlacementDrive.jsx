@@ -1,6 +1,10 @@
 import React from 'react'
+
+
 import MenuBox from '../Constants/UI/menu/MenuBox'
-import { DriveContainer, Drives, LeftBoxDummy, MainConatiner } from './PlacementDriveStyle'
+import Cards from './Card/Card';
+import { DriveContainer, Drives, LeftBoxDummy, MainConatiner } from './PlacementDriveStyle.js';
+
 
 const PlacementDrive = () => {
 	return (
@@ -9,7 +13,9 @@ const PlacementDrive = () => {
 				<MenuBox/>
 				<LeftBoxDummy /> {/* having no content inside it.. just Helping mainBox not to occupy whole area and overlap the Menu */}
 				<Drives>
-					DriveContainer
+					<Cards/>
+					<Cards/>
+					<Cards/>
 				</Drives>
 			</DriveContainer>
 		</MainConatiner>
