@@ -1,6 +1,6 @@
 import { Box, styled } from '@mui/material';
 
-export const HomeConatiner = styled(Box)`
+export const ExperienceConatiner = styled(Box)`
 	margin-top: 65px;
 `
 

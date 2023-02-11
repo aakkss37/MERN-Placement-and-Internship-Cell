@@ -1,11 +1,11 @@
 import React from 'react';
-import { Container, HomeConatiner, LeftBoxDummy, MainCardContainer, } from './ExperienceStyle';
+import { Container, ExperienceConatiner, LeftBoxDummy, MainCardContainer, } from './ExperienceStyle';
 import MenuBox from '../Constants/UI/menu/MenuBox';
 import Card from './card/Card';
 
 const Home = () => {
 	return (
-		<HomeConatiner >
+		<ExperienceConatiner >
 
 			<Container >
 
@@ -21,7 +21,7 @@ const Home = () => {
 
 			</Container>
 
-		</HomeConatiner>
+		</ExperienceConatiner>
 	)
 }
 
