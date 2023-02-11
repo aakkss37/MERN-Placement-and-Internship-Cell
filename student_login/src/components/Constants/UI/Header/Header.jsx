@@ -24,7 +24,7 @@ const header = () => {
 					aria-label="menu"
 					sx={{ mr: 2 }}
 				>
-					<MenuIcon style={{ color: "#367D43" }} />
+					<MenuIcon style={{ color: "rgb(202,219,194)" }} />
 				</IconButtonStyled>
 				<LogoConatiner 
 					variant="h6"

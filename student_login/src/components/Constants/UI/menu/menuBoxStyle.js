@@ -15,16 +15,12 @@ export const MenuBoxContainer = styled(Box)(({ theme }) => ({
 }));
 
 export const MenuCategory = styled(Box)(({ theme }) => ({
-	// border: '1px solid red',
-	// margin: '5px',
 	padding: '15px',
+	transition: '0.3s',
 	':hover': {
 		cursor: 'pointer',
 		background: '#ecffef'
 	},
-	// ':hover > p': {
-	// 	color: '#367D43',
-	// },
 	[theme.breakpoints.down('md')]: {
 
 	}
@@ -36,8 +32,5 @@ export const  MenuItem= styled(Typography)`
 	font-weight: 600;
 	color: #367D43;
 	font-family: Ubuntu;
-	// :hover {
-	// 	cursor: pointer;
-	// 	color: #015411;
-	// };
+	
 `

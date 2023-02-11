@@ -8,6 +8,7 @@ export const GeneralText = styled(Typography)`
 	font-weight: 700;
 	font-size: 16px;
 	color: rgb(202,219,194);
+	transition: 0.3s;
 	:hover {
 		color: #015411;
 	}
@@ -59,6 +60,7 @@ export const LogoutBox = styled('div')(({ theme }) => ({
     alignItems: 'center',
 	marginRight: '40px',
 	color: 'rgb(202,219,194);',
+	transition: '0.3s',
 	'& :hover': {
 		cursor: 'pointer',
 		color: '#015411',
