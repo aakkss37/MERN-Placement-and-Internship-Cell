@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Header from './components/Constants/UI/Header/Header';
 import Home from './components/Home/Home';
+import PlacementDrive from './components/PlavementDrive/PlacementDrive';
 
 function App () {
 	return (
@@ -12,7 +13,7 @@ function App () {
 			<Box>
 				<Routes>
 					<Route path='/' element={<Home />} />
-					<Route path='/placement-drive' element={<Home />} />
+					<Route path='/placement-drive' element={<PlacementDrive />} />
 				</Routes>
 			</Box>
 		</BrowserRouter >
