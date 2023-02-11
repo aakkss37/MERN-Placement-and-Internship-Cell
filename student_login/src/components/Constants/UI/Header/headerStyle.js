@@ -5,11 +5,11 @@ import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
 
 export const GeneralText = styled(Typography)`
 	font-family: Ubuntu ;
-	font-size: 16px;
 	font-weight: 700;
+	font-size: 16px;
+	color: rgb(202,219,194);
 	:hover {
-		text-decoration: underline;
-		color: #367D43
+		color: #015411;
 	}
 `
 
@@ -18,8 +18,8 @@ export const HeaderStyled = styled(AppBar)`
 	width: 100%;
 	justify-content: center;
 	position: "static";
-	height: 55px;
-	background: rgb(202,219,194);
+	height: 60px;
+	background: #367D43;
 `;
 
 export const ToolbarStyled = styled(Toolbar)(({theme})=>({
@@ -40,7 +40,7 @@ export const IconButtonStyled = styled(IconButton)(({ theme }) => ({
 }));
 
 export const LogoConatiner = styled(Typography)`
-	margin-top: 5px;
+	margin-top: 15px;
 `;
 
 export const ProfileContainer = styled(Box)(({ theme }) => ({
@@ -58,9 +58,10 @@ export const LogoutBox = styled('div')(({ theme }) => ({
     justifyContent: 'flex-start',
     alignItems: 'center',
 	marginRight: '40px',
+	color: 'rgb(202,219,194);',
 	'& :hover': {
 		cursor: 'pointer',
-		color: 'red',
+		color: '#015411',
 	},
 	[theme.breakpoints.down('md')]: {
 	'& > p': {
@@ -70,7 +71,7 @@ export const LogoutBox = styled('div')(({ theme }) => ({
 }));
 
 export const LogoutIcon = styled(PowerSettingsNewIcon)(({ theme }) => ({
-	fontSize: 20,
+	fontSize: 22,
 	[theme.breakpoints.down('md')]: {
 		marginLeft: '10px',
 	}

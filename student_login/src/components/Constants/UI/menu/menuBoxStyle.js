@@ -2,7 +2,7 @@ import { Box, styled, Typography } from '@mui/material';
 
 export const MenuBoxContainer = styled(Box)(({ theme }) => ({
 	position: 'fixed',
-	top: 65,
+	top: 95,
 	width: '15%',
 	margin: '5px',
 	// border: '1px solid green',
@@ -32,6 +32,6 @@ export const  MenuItem= styled(Typography)`
 	font-family: Ubuntu;
 	:hover {
 		cursor: pointer;
-		color: #fff;
+		color: #015411;
 	};
 `

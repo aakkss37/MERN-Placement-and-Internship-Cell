@@ -1,6 +1,6 @@
 import React from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
-import logo from '../../../../asset/logo.svg';
+import logo from '../../../../asset/logo.png';
 
 import { GeneralText, HeaderStyled, IconButtonStyled, LogoConatiner, LogoutBox,  LogoutIcon,  ProfileContainer, ToolbarStyled } from './headerStyle.js';
 
@@ -21,7 +21,7 @@ const header = () => {
 				</IconButtonStyled>
 				<LogoConatiner variant="h6"
 					component="div" sx={{ flexGrow: 1 }} >
-					<img src={logo} alt="Logo" style={{ width: '45px' }} />
+					<img src={logo} alt="Logo" style={{ width: '55px' }} />
 				</LogoConatiner>
 				
 				<Search/>
@@ -39,4 +39,4 @@ const header = () => {
 		</HeaderStyled>
 	)
 }
-export default header
+export default header;

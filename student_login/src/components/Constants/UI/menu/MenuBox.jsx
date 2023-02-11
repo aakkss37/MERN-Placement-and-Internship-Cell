@@ -11,11 +11,15 @@ const MenuBox = () => {
 			</MenuCategory>
 			<Divider />
 			<MenuCategory>
+				<MenuItem >MY RESUME</MenuItem>
+			</MenuCategory>
+			<Divider />
+			<MenuCategory>
 				<MenuItem >MY APPLICATION</MenuItem>
 			</MenuCategory>
 			<Divider />
 			<MenuCategory>
-				<MenuItem >CALANDER</MenuItem>
+				<MenuItem >CALENDER</MenuItem>
 			</MenuCategory>
 			<Divider />
 			<MenuCategory>
@@ -24,6 +28,10 @@ const MenuBox = () => {
 			<Divider />
 			<MenuCategory>
 				<MenuItem >PLACEMENT HISTORY</MenuItem>
+			</MenuCategory>
+			<Divider />
+			<MenuCategory>
+				<MenuItem >CONTACT PIC</MenuItem>
 			</MenuCategory>
 			
 		</MenuBoxContainer>

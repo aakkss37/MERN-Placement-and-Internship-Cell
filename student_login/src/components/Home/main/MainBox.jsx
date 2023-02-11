@@ -12,6 +12,9 @@ const MainBox = () => {
 		<Card/>
 		<Card/>
 		<Card/>
+		<Card/>
+		<Card/>
+		<Card/>
 	  </MainBoxContainer>
   )
 }

@@ -3,7 +3,7 @@ import { styled, InputBase, Box, } from '@mui/material';
 
 
 export const SearchContainer = styled(Box)(({ theme }) => ({
-	borderBottom: '1px solid white',
+	borderBottom: '1px solid rgb(202,219,194)',
 	marginright: '10px',
 	marginleft: '10px',
 	width: '25%',
