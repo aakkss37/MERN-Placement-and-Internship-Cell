@@ -27,6 +27,10 @@ const MenuBox = () => {
 				<MenuItem >CALENDER</MenuItem>
 			</MenuCategory>
 			<Divider />
+			<MenuCategory onClick={() => navigate('/experiences')}>
+				<MenuItem >EXPERIENCES</MenuItem>
+			</MenuCategory>
+			<Divider />
 			<MenuCategory onClick={() => navigate('/share-experience')}>
 				<MenuItem >SHARE EXPERIENCE</MenuItem>
 			</MenuCategory>

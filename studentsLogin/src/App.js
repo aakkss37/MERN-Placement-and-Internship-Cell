@@ -13,8 +13,9 @@ function App () {
 			<Header />
 			<Box>
 				<Routes>
-					<Route path='/' element={<Experience />} />
+					<Route path='/' element={<PlacementDrive />} />
 					<Route path='/placement-drive' element={<PlacementDrive />} />
+					<Route path='/experiences' element={<Experience />} />
 					<Route path='/profile' element={<Profile />} />
 				</Routes>
 			</Box>
