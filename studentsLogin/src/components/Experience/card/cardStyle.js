@@ -1,6 +1,7 @@
 import { styled, Box, Typography } from '@mui/material';
 
 
+
 export const CardContainer = styled(Box)(({theme})=>({
 	padding: 10,
 	background: '#fff',

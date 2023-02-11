@@ -3,8 +3,9 @@ import { Box } from '@mui/material';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Header from './components/Constants/UI/Header/Header';
-import Home from './components/Home/Home';
+import Experience from './components/Experience/Experience';
 import PlacementDrive from './components/PlavementDrive/PlacementDrive';
+import Profile from './components/Profile/Profile';
 
 function App () {
 	return (
@@ -12,8 +13,9 @@ function App () {
 			<Header />
 			<Box>
 				<Routes>
-					<Route path='/' element={<Home />} />
+					<Route path='/' element={<Experience />} />
 					<Route path='/placement-drive' element={<PlacementDrive />} />
+					<Route path='/profile' element={<Profile />} />
 				</Routes>
 			</Box>
 		</BrowserRouter >

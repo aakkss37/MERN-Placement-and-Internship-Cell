@@ -1,8 +1,7 @@
 import React from 'react';
-import { Container, HomeConatiner,  LeftBoxDummy,  } from './homeStyle';
-import MainBox from './main/MainBox';
+import { Container, HomeConatiner, LeftBoxDummy, MainCardContainer, } from './ExperienceStyle';
 import MenuBox from '../Constants/UI/menu/MenuBox';
-
+import Card from './card/Card';
 
 const Home = () => {
 	return (
@@ -10,11 +9,15 @@ const Home = () => {
 
 			<Container >
 
-				<MenuBox style={{ boxShadow: '1px 1px 5px 4px rgb(0 0 0 / 30 %)' }}/>
-				
+				<MenuBox style={{ boxShadow: '1px 1px 5px 4px rgb(0 0 0 / 30 %)' }} />
+
 				<LeftBoxDummy /> {/* having no content inside it.. just Helping mainBox not to occupy whole area and overlap the Menu  */}
 
-				<MainBox/>
+				<MainCardContainer>
+					<Card />
+					<Card />
+					<Card />
+				</MainCardContainer>
 
 			</Container>
 
