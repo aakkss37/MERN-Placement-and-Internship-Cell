@@ -1,12 +1,23 @@
-import React from 'react';
-import { Box, Divider, Typography } from '@mui/material';
+import React, { useState } from 'react';
+import { Box, Button, Divider, Typography } from '@mui/material';
 import MenuBox from '../Constants/UI/menu/MenuBox.jsx';
-import { LeftBoxDummy, MainConatiner, ProfileConatiner, ProfileBox, ImageBox, ProfileBody, PersonalDetail, CollegeDetail, InfoKey, InfoValue, Email, } from './profileStyle.js';
+import { LeftBoxDummy, MainConatiner, ProfileConatiner, ProfileBox, ImageBox, ProfileBody, PersonalDetail, CollegeDetail, InfoKey, InfoValue, Email, ShowResume, UploadResume, SaveResume, } from './profileStyle.js';
 import AccountCircleRoundedIcon from '@mui/icons-material/AccountCircleRounded';
+import { FileUploader } from "react-drag-drop-files";
+import BackupIcon from '@mui/icons-material/Backup';
 
 
+const fileTypes = ['PDF'];
 
 const Profile = () => {
+
+
+	const [file, setFile] = useState(null);
+	const handleChange = (file) => {
+		setFile(file);
+		console.log(file)
+	};
+
 
 
 	return (
@@ -28,6 +39,7 @@ const Profile = () => {
 					</ImageBox>
 					<ProfileBody>
 						<PersonalDetail>
+							<Typography textAlign='center' color='#367d43' fontWeight='600'>Personal Information</Typography>
 							<Box style={{ marginBottom: 5 }}>
 								<InfoKey >Gender: </InfoKey>
 								<InfoValue >Male </InfoValue>
@@ -47,9 +59,14 @@ const Profile = () => {
 						</PersonalDetail>
 						<Divider style={{ marginTop: 8, marginBottom: 16 }} />
 						<CollegeDetail>
+							<Typography textAlign='center' color='#367d43' fontWeight='600'>College Information</Typography>
 							<Box>
 								<InfoKey>Registeration no.: </InfoKey>
 								<InfoValue >20CSU135 </InfoValue>
+							</Box>
+							<Box>
+								<InfoKey>College email: </InfoKey>
+								<InfoValue >20csu135@kahedu.edu.in </InfoValue>
 							</Box>
 							<Box>
 								<InfoKey>Department.: </InfoKey>
@@ -71,8 +88,35 @@ const Profile = () => {
 								<InfoKey>Active Backlog: </InfoKey>
 								<InfoValue >Yes</InfoValue>
 							</Box>
+							<Box>
+								<InfoKey>Year gap: </InfoKey>
+								<InfoValue >Yes</InfoValue>
+							</Box>
+
 						</CollegeDetail>
+
+						<Divider style={{ marginTop: 8, marginBottom: 16 }} />
+
+						<Box >
+							<ShowResume >Show My Resume</ShowResume>
+							<Typography marginTop='20px' marginLeft='20px' lineHeight='1' color='gray'>{file ? `Selected File: ${file.name}` : 'No file Selected'}</Typography>
+							<FileUploader handleChange={handleChange} name="file" types={fileTypes} >
+								<UploadResume>
+									<Box>
+										<BackupIcon style={{ fontSize: '4rem', color: '#cadbc2', marginLeft: '10%', }} />
+										<Typography style={{ fontSize: '12px', color: '#cadbc2', fontWeight: 600, textAlign: 'center', }}>Upload Resume</Typography>
+										<Typography style={{ fontSize: '10px', color: '#cadbc2', textAlign: 'center', }}>OR</Typography>
+										<Typography style={{ fontSize: '12px', color: '#cadbc2', fontWeight: 600, textAlign: 'center', }}>Drag & Drop</Typography>
+									</Box>
+								</UploadResume>
+							</FileUploader>
+							<Box textAlign='center'>
+								<SaveResume >Save</SaveResume>
+							</Box>
+						</Box>
+
 					</ProfileBody>
+
 				</ProfileBox>
 
 			</ProfileConatiner>
