@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Divider, Typography } from '@mui/material';
 import MenuBox from '../Constants/UI/menu/MenuBox.jsx';
-import { LeftBoxDummy, MainConatiner, ProfileConatiner, ProfileBox, ImageBox, ProfileBody, PersonalDetail, CollegeDetail, InfoKey, InfoValue, } from './profileStyle.js';
+import { LeftBoxDummy, MainConatiner, ProfileConatiner, ProfileBox, ImageBox, ProfileBody, PersonalDetail, CollegeDetail, InfoKey, InfoValue, Email, } from './profileStyle.js';
 import AccountCircleRoundedIcon from '@mui/icons-material/AccountCircleRounded';
 
 
@@ -38,7 +38,7 @@ const Profile = () => {
 							</Box>
 							<Box style={{ marginBottom: 5 }}>
 								<InfoKey>Email: </InfoKey>
-								<InfoValue style={{overflow: 'scroll', }}>amarfullstack.workspace.124@gmail.com</InfoValue>
+								<Email>amarfullstack.workspace.124@gmail.com</Email>
 							</Box>
 							<Box style={{ marginBottom: 5 }}>
 								<InfoKey>Address: </InfoKey>

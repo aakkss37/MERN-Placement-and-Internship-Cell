@@ -86,3 +86,11 @@ export const InfoValue = styled(Typography)(({theme})=> ({
 		fontSize: 14
 	}
 }))
+
+export const Email = styled(Typography)`
+	overflow-x: scroll;
+	&::-webkit-scrollbar {
+		width: 4;
+		background: transparent;
+	}
+`
