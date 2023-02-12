@@ -65,13 +65,12 @@ const Cards = () => {
 			<Collapse in={isExpanded} timeout="auto" unmountOnExit>
 				<CardContent>
 					<Box>
-						<DetailHead>Elegiblity:</DetailHead>
+						<DetailHead>Eligiblity:</DetailHead>
 						<GeneralText>CGPA: 8.0</GeneralText>
-						<GeneralText>Backlog: Allowed</GeneralText>
+						<GeneralText>Backlog: Allowed (do not show if allowed)</GeneralText>
 						<GeneralText>Active Backlog: Not Allowed</GeneralText>
-						<GeneralText>Year Gap: Allowed</GeneralText>
 						<GeneralText>Department: B.Tech || BE || M.Tech || ME (CS/ECE/EE) || B.Sc cs || M.Sc cs || BCS || BCA || MCA || IT </GeneralText>
-						<GeneralText>Open For: 3rd Year or above</GeneralText>
+						<GeneralText>Pass out: 2023</GeneralText>
 
 					</Box>
 					<Divider style={{marginTop: 4, marginBottom: 4}} />
