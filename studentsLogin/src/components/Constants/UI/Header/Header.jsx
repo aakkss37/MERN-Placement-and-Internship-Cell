@@ -2,7 +2,6 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
 import logo from '../../../../asset/logo.png';
-import Search from './Search';
 
 import { GeneralText, HeaderStyled, IconButtonStyled, LogoConatiner, LogoutBox, LogoutIcon, ProfileContainer, ToolbarStyled } from './headerStyle.js';
 
@@ -32,8 +31,6 @@ const header = () => {
 				>
 					<img src={logo} alt="Logo" style={{ width: '55px' }} onClick={()=> navigate('/')}/>
 				</LogoConatiner>
-
-				<Search />
 
 				<ProfileContainer>
 					<GeneralText style={{ marginRight: '40px', cursor: 'pointer' }} onClick={() => navigate('/')}> HOME</GeneralText>
