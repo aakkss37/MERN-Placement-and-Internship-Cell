@@ -23,8 +23,12 @@ const MenuBox = () => {
 				<MenuItem >MY APPLICATION</MenuItem>
 			</MenuCategory>
 			<Divider />
-			<MenuCategory onClick={() => navigate('/calender')}>
-				<MenuItem >CALENDER</MenuItem>
+			<MenuCategory onClick={() => navigate('/calendar')}>
+				<MenuItem >CALENDAR</MenuItem>
+			</MenuCategory>
+			<Divider />
+			<MenuCategory onClick={() => navigate('/results')}>
+				<MenuItem >RESULTS</MenuItem>
 			</MenuCategory>
 			<Divider />
 			<MenuCategory onClick={() => navigate('/experiences')}>
