@@ -15,7 +15,6 @@ const Profile = () => {
 	const [file, setFile] = useState(null);
 	const handleChange = (file) => {
 		setFile(file);
-		console.log(file)
 	};
 
 
