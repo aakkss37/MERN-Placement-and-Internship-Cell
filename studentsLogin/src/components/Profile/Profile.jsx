@@ -1,17 +1,22 @@
 import React, { useState } from 'react';
 import { Box, Divider, Typography } from '@mui/material';
 import MenuBox from '../Constants/UI/menu/MenuBox.jsx';
-import { LeftBoxDummy, MainConatiner, ProfileConatiner, ProfileBox, ImageBox, ProfileBody, PersonalDetail, CollegeDetail, InfoKey, InfoValue, Email, ShowResume, UploadResume, SaveResume, } from './profileStyle.js';
+import { LeftBoxDummy, MainConatiner, ProfileConatiner, ProfileBox, ImageBox, ProfileBody, PersonalDetail, CollegeDetail, InfoKey, InfoValue, ShowResume, UploadResume, SaveResume, LongInfoValue, } from './profileStyle.js';
 import AccountCircleRoundedIcon from '@mui/icons-material/AccountCircleRounded';
 import { FileUploader } from "react-drag-drop-files";
 import BackupIcon from '@mui/icons-material/Backup';
 
 
 const fileTypes = ['PDF'];
+const dropMessageStyle = {
+	backgroundColor: 'white',
+	fontSize: 24,
+	color: 'green',
+	fontWeight: 600,
+}
+
 
 const Profile = () => {
-
-
 	const [file, setFile] = useState(null);
 	const handleChange = (file) => {
 		setFile(file);
@@ -49,7 +54,11 @@ const Profile = () => {
 							</Box>
 							<Box style={{ marginBottom: 5 }}>
 								<InfoKey>Email: </InfoKey>
-								<Email>amarfullstack.workspace.124@gmail.com</Email>
+								<LongInfoValue>amarfullstack.workspace.124@gmail.com</LongInfoValue>
+							</Box>
+							<Box style={{ marginBottom: 5 }}>
+								<InfoKey>LinkedIn: </InfoKey>
+								<LongInfoValue >amar-kumar-sharma-44202a203</LongInfoValue>
 							</Box>
 							<Box style={{ marginBottom: 5 }}>
 								<InfoKey>Address: </InfoKey>
@@ -99,7 +108,7 @@ const Profile = () => {
 						<Box >
 							<ShowResume >Show My Resume</ShowResume>
 							<Typography marginTop='20px' marginLeft='20px' lineHeight='1' color='gray'>{file ? `Selected File: ${file.name}` : 'No file Selected'}</Typography>
-							<FileUploader handleChange={handleChange} name="file" types={fileTypes} >
+							<FileUploader handleChange={handleChange} name="file" types={fileTypes} dropMessageStyle={dropMessageStyle}>
 								<UploadResume>
 									<Box>
 										<BackupIcon style={{ fontSize: '4rem', color: '#cadbc2', marginLeft: '10%', }} />

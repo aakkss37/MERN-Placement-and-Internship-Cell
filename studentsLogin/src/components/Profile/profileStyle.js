@@ -2,7 +2,7 @@ import { Box, Button, styled, Typography } from "@mui/material";
 
 
 export const MainConatiner = styled(Box)`
-	margin-top: 65px;
+	margin-top: 95px;
 `
 
 export const ProfileConatiner = styled(Box)(({ theme }) => ({
@@ -87,7 +87,7 @@ export const InfoValue = styled(Typography)(({theme})=> ({
 	}
 }))
 
-export const Email = styled(Typography)`
+export const LongInfoValue = styled(Typography)`
 	overflow-x: scroll;
 	&::-webkit-scrollbar {
 		background: transparent;
@@ -113,8 +113,8 @@ export const ShowResume = styled(Button)(({theme})=>({
 }))
 
 export const UploadResume = styled(Box)(({theme})=> ({
-	margin: 20,
-	border: '2px dotted #367d43',
+	marginTop: 10,
+	marginBottom: 20,
 	borderRadius: '5px',
 	height: 150,
 	display: 'flex',
@@ -124,7 +124,7 @@ export const UploadResume = styled(Box)(({theme})=> ({
 	transition: '0.3s',
 	cursor: 'pointer',
 	':hover': {
-		background: '#458f53',
+		background: '#367d43a8',
 	},
 }));
 
