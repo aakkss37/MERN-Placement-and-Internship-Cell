@@ -11,7 +11,7 @@ const Search = () => {
 				placeholder='Search Company'
 			/>
 			<SearchIconWrapper>
-				<SearchIcon style={{ color: 'rgb(202,219,194)'}} />
+				<SearchIcon style={{ color: '#367D43'}} />
 			</SearchIconWrapper>
 		</SearchContainer>
 	)

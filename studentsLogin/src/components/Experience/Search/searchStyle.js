@@ -3,9 +3,8 @@ import { styled, InputBase, Box, } from '@mui/material';
 
 
 export const SearchContainer = styled(Box)(({ theme }) => ({
-	borderBottom: '1px solid rgb(202,219,194)',
-	marginright: '10px',
-	marginleft: '10px',
+	borderBottom: '1px solid #367D43',
+	margin: 30,
 	width: '25%',
 	display: 'flex',
 	alignItems: 'center',
@@ -18,7 +17,9 @@ export const SearchContainer = styled(Box)(({ theme }) => ({
 export const InputSearchBase = styled(InputBase)(({ theme }) => ({
 	width: '100%',
 	paddingLeft: '10px',
-	
+	'& > .MuiInputBase-input': {
+		fontSize: 18,
+	},
 	[theme.breakpoints.down('md')]: {
 		'& > .MuiInputBase-input': {
 			fontSize: 14,
@@ -35,7 +36,4 @@ export const SearchIconWrapper = styled(Box)(({ theme }) => ({
   marginLeft: 'auto',
   padding: '5px',
   display: 'flex',
-	[theme.breakpoints.down('sm')]: {
-		display: 'none',
-	}
 }))
