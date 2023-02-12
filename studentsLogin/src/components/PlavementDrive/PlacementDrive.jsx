@@ -9,15 +9,21 @@ import { DriveContainer, Drives, LeftBoxDummy, MainConatiner } from './Placement
 const PlacementDrive = () => {
 	return (
 		<MainConatiner>
+
 			<DriveContainer>
-				<MenuBox/>
+
+				<MenuBox style={{ boxShadow: '1px 1px 5px 4px rgb(0 0 0 / 30 %)' }} />
+
 				<LeftBoxDummy /> {/* having no content inside it.. just Helping mainBox not to occupy whole area and overlap the Menu */}
+
 				<Drives>
 					<Cards/>
 					<Cards/>
 					<Cards/>
 				</Drives>
+
 			</DriveContainer>
+
 		</MainConatiner>
 	)
 }
