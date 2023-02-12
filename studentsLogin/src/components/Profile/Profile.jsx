@@ -89,17 +89,10 @@ const Profile = () => {
 								<InfoValue >8.6 </InfoValue>
 							</Box>
 							<Box>
-								<InfoKey>Backlog: </InfoKey>
-								<InfoValue >Yes </InfoValue>
-							</Box>
-							<Box>
 								<InfoKey>Active Backlog: </InfoKey>
 								<InfoValue >Yes</InfoValue>
 							</Box>
-							<Box>
-								<InfoKey>Year gap: </InfoKey>
-								<InfoValue >Yes</InfoValue>
-							</Box>
+							
 
 						</CollegeDetail>
 
