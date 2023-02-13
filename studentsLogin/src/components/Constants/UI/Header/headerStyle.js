@@ -1,4 +1,4 @@
-import { AppBar, Toolbar, Typography, IconButton, styled, Box, } from '@mui/material';
+import { AppBar, Toolbar, Typography, IconButton, styled, Box, Drawer, } from '@mui/material';
 import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
 
 
@@ -33,7 +33,7 @@ export const ToolbarStyled = styled(Toolbar)(({theme})=>({
 	}
 }));
 
-export const IconButtonStyled = styled(IconButton)(({ theme }) => ({
+export const MenuButton = styled(IconButton)(({ theme }) => ({
 	display: 'none',
 	[theme.breakpoints.down('md')]: {
 		display: 'block',
@@ -76,5 +76,15 @@ export const LogoutIcon = styled(PowerSettingsNewIcon)(({ theme }) => ({
 	fontSize: 22,
 	[theme.breakpoints.down('md')]: {
 		marginLeft: '10px',
+	}
+}));
+
+
+// DRAWER
+export const DrawerStyled = styled(Drawer)(({ theme }) => ({
+	[theme.breakpoints.down('md')]: {
+		'& > .css-4t3x6l-MuiPaper-root-MuiDrawer-paper': {
+			background: 'red',
+		}
 	}
 }));

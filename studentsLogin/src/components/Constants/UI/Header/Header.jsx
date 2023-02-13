@@ -1,35 +1,94 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
 import logo from '../../../../asset/logo.png';
 
-import { GeneralText, HeaderStyled, IconButtonStyled, LogoConatiner, LogoutBox, LogoutIcon, ProfileContainer, ToolbarStyled } from './headerStyle.js';
+import { GeneralText, HeaderStyled, LogoConatiner, LogoutBox, LogoutIcon, MenuButton, ProfileContainer, ToolbarStyled, DrawerStyled } from './headerStyle.js';
+import { Box, Divider, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText,  } from '@mui/material';
+
+
+
+// DRAWER
+const menuList = [
+	{ text: 'PLACEMENT DRIVES', icon: '' },
+	{ text: 'MY RESUME', icon: '' },
+	{ text: 'MY APPLICATION', icon: ''},
+	{ text: 'CALENDAR', icon: ''},
+	{ text: 'RESULTS', icon: ''},
+	{ text: 'EXPERIENCES', icon: '' },
+	{ text: 'SHARE EXPERIENCE', icon: '' },
+	{ text: 'PLACEMENT HISTORY', icon: '' },
+	{ text: 'CONTACT PIC', icon: '' },
+]
 
 
 
 
 
-const header = () => {
-	// eslint-disable-next-line react-hooks/rules-of-hooks
+
+
+
+const Header = () => {
+
 	const navigate = useNavigate();
+	const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+	
+	const drawerItems = () => {
+		return (
+			<Box
+				style={{ width: 150,  marginTop: 65 }}
+				role="presentation"
+				onClick={()=> setIsDrawerOpen(false)}
+				onKeyDown={()=> setIsDrawerOpen(false)}
+			>
+				<List >
+					{menuList.map((item) => (
+						<>
+							<ListItem key={item.text} disablePadding >
+								<ListItemButton style={{ padding: 15, fontSize: 12 }}>
+									<ListItemIcon>
+										icon
+									</ListItemIcon>
+									<ListItemText primary={item.text} fontSize='12px'/>
+								</ListItemButton>
+							</ListItem>
+							<Divider />
+						</>
+					))}
+				</List>
+			</Box>
 
+		)
+	}
 
 	return (
 		<HeaderStyled>
 			<ToolbarStyled>
-				<IconButtonStyled
+				<MenuButton
 					size="large"
 					edge="start"
 					aria-label="menu"
 					sx={{ mr: 2 }}
+					onClick={()=> setIsDrawerOpen(true)}
 				>
 					<MenuIcon style={{ color: "rgb(202,219,194)" }} />
-				</IconButtonStyled>
-				<LogoConatiner 
-					variant="h6"
-					component="div" sx={{ flexGrow: 1 }} 
+				</MenuButton>
+				<DrawerStyled 
+					anchor="left"
+					open={isDrawerOpen}
+					onClose={()=> setIsDrawerOpen(false) }
 				>
-					<img src={logo} alt="Logo" style={{ width: '55px' }} onClick={()=> navigate('/')}/>
+					{drawerItems()}
+				</DrawerStyled>
+
+
+
+
+				<LogoConatiner
+					variant="h6"
+					component="div" sx={{ flexGrow: 1 }}
+				>
+					<img src={logo} alt="Logo" style={{ width: '55px' }} onClick={() => navigate('/')} />
 				</LogoConatiner>
 
 				<ProfileContainer>
@@ -45,4 +104,4 @@ const header = () => {
 		</HeaderStyled>
 	)
 }
-export default header;
+export default Header;
