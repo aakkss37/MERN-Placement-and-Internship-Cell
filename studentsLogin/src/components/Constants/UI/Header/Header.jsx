@@ -28,12 +28,8 @@ const menuList = [
 	{ text: 'EXPERIENCES', icon: <AttachFileRoundedIcon style={{ color: '#367d43' }} /> },
 	{ text: 'SHARE EXPERIENCE', icon: <EditRoundedIcon style={{ color: '#367d43' }} /> },
 	{ text: 'PLACEMENT HISTORY', icon: <RestoreRoundedIcon style={{ color: '#367d43' }} /> },
-	{ text: 'CONTACT PIC', icon: <ContactSupportRoundedIcon style={{ color: '#367d43' }} />},
+	{ text: 'CONTACT PIC', icon: <ContactSupportRoundedIcon style={{ color: '#367d43' }} />}
 ]
-
-
-
-
 
 
 
