@@ -5,26 +5,14 @@ import { CurretPath, MainConatiner, ModelBody, ModelBodyItem, ModelTextHead, Mod
 
 
 
-const rowsData = [
-	{ companyName: 'Google', date: '12 Nov 2022', status: 'Selected' },
-	{ companyName: 'Microsoft', date: '11 Oct 2022', status: 'Applied' },
-	{ companyName: 'Netflix', date: '12 Dec 2022', status: 'Selected' },
-	{ companyName: 'Adobe', date: '27 Nov 2022', status: 'Interview' },
-	{ companyName: 'Starlink', date: '17 Dec 2022', status: 'Applied' },
-	{ companyName: 'Phonepe', date: '22 Jan 2023', status: 'Interview' },
-	{ companyName: 'Google', date: '12 Nov 2022', status: 'Selected' },
-	{ companyName: 'Microsoft', date: '11 Oct 2022', status: 'Applied' },
-	{ companyName: 'Netflix', date: '12 Dec 2022', status: 'Selected' },
-	{ companyName: 'Adobe', date: '27 Nov 2022', status: 'Interview' },
-	{ companyName: 'Starlink', date: '17 Dec 2022', status: 'Applied' },
-	{ companyName: 'Phonepe', date: '22 Jan 2023', status: 'Interview' },
-	{ companyName: 'Google', date: '12 Nov 2022', status: 'Selected' },
-	{ companyName: 'Microsoft', date: '11 Oct 2022', status: 'Applied' },
-	{ companyName: 'Netflix', date: '12 Dec 2022', status: 'Selected' },
-	{ companyName: 'Adobe', date: '27 Nov 2022', status: 'Interview' },
-	{ companyName: 'Starlink', date: '17 Dec 2022', status: 'Applied' },
-	{ companyName: 'Phonepe', date: '22 Jan 2023', status: 'Interview' },
-];
+const companyData = [
+	{ companyName: 'Google', date: '12 Nov 2022', status: 'Selected', ctc: '3200000', jobRole: 'STD I', location: 'Banglore (IND)', jobType: 'Full Time' },
+	{ companyName: 'Microsoft', date: '11 Oct 2022', status: 'Applied', ctc: '1800000', jobRole: 'SDE I', location: 'Banglore (IND)', jobType: 'Full Time' },
+	{ companyName: 'Netflix', date: '12 Dec 2022', status: 'Selected', ctc: '1400000', jobRole: 'Full Stack Developer', location: 'Haydrabad (IND)', jobType: 'Full Time' },
+	{ companyName: 'Adobe', date: '27 Nov 2022', status: 'Interview', ctc: '1750000', jobRole: 'Data scientist', location: 'Banglore (IND)', jobType: 'Full Time' },
+	{ companyName: 'Starlink', date: '17 Dec 2022', status: 'Applied', ctc: '4400000', jobRole: 'Data scientist', location: 'New York (US)', jobType: 'Full Time' },
+	{ companyName: 'Phonepe', date: '22 Jan 2023', status: 'Interview', ctc: '2200000', jobRole: 'DevOps Engg.', location: 'Pune (IND)', jobType: 'Full Time' },
+]
 
 
 
@@ -34,8 +22,12 @@ const rowsData = [
 const MyApplication = () => {
 
 	const [isModelOpen, setIsModelOpen] = useState(false);
+	const [dataInModdal, setdataInModdal] = useState({})
 
-	const handleOpen = () => setIsModelOpen(true);
+	const modelOpenHandler = (dataForModal) => {
+		setdataInModdal(dataForModal)
+		setIsModelOpen(true)
+	};
 	const handleClose = () => setIsModelOpen(false);
 
 
@@ -57,12 +49,23 @@ const MyApplication = () => {
 							</TableRow>
 						</TableHead>
 						<TableBody>
-							{rowsData.map((row, index) => (
-								<StyledTableRow key={row.name} onClick={handleOpen}>
+							{companyData.map((company, index) => (
+								
+								<StyledTableRow 
+									key={company.name} 
+									onClick={() =>
+										 modelOpenHandler({
+											ctc: company.ctc, 
+											jobRole: company.jobRole, 
+											location: company.location, 
+											jobType: company.jobType,
+										})
+									}
+								>
 									<StyledTableCell component="th" scope="row">  {index + 1}. </StyledTableCell>
-									<StyledTableCell >{row.companyName}</StyledTableCell>
-									<StyledTableCell align="right">{row.date}</StyledTableCell>
-									<StyledTableCell align="right">{row.status}</StyledTableCell>
+									<StyledTableCell >{company.companyName}</StyledTableCell>
+									<StyledTableCell align="right">{company.date}</StyledTableCell>
+									<StyledTableCell align="right">{company.status}</StyledTableCell>
 								</StyledTableRow>
 							))}
 						</TableBody>
@@ -82,19 +85,19 @@ const MyApplication = () => {
 							<Box>
 								<ModelBodyItem>
 									<ModelTextKey>CTC:</ModelTextKey>
-									<ModelTextValue>1600000</ModelTextValue>
+									<ModelTextValue>Rs. {dataInModdal.ctc} </ModelTextValue>
 								</ModelBodyItem>
 								<ModelBodyItem>
 									<ModelTextKey>Job Role:</ModelTextKey>
-									<ModelTextValue>Full stack Developer</ModelTextValue>
+									<ModelTextValue>{dataInModdal.jobRole}</ModelTextValue>
 								</ModelBodyItem>
 								<ModelBodyItem>
 									<ModelTextKey>Location: </ModelTextKey>
-									<ModelTextValue>Pune</ModelTextValue>
+									<ModelTextValue>{dataInModdal.location}</ModelTextValue>
 								</ModelBodyItem>
 								<ModelBodyItem>
 									<ModelTextKey>Job Type: </ModelTextKey>
-									<ModelTextValue>Full Time</ModelTextValue>
+									<ModelTextValue>{dataInModdal.jobType}</ModelTextValue>
 								</ModelBodyItem>
 							</Box>
 						</Box>

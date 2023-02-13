@@ -54,6 +54,7 @@ export const CurretPath = styled(Typography)(({ theme }) => ({
 
 
 export const ModelBody = styled(Box)(({ theme }) => ({
+	
 	position: 'absolute',
 	top: '50%',
 	left: '50%',
@@ -61,11 +62,12 @@ export const ModelBody = styled(Box)(({ theme }) => ({
 	width: 250,
 	minHeight: 250,
 	background: '#cadbc2',
-	boxShadow: 24,
-	p: 4,
 	borderRadius: 5,
 	display: 'flex',
 	justifyContent: 'center',
+	':focus': {
+		outline: 'none',
+	}
 }));
 
 export const ModelTextHead = styled(Box)(({ theme }) => ({
