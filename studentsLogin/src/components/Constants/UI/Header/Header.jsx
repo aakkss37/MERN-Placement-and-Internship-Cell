@@ -3,22 +3,32 @@ import { useNavigate } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
 import logo from '../../../../asset/logo.png';
 
-import { GeneralText, HeaderStyled, LogoConatiner, LogoutBox, LogoutIcon, MenuButton, ProfileContainer, ToolbarStyled, DrawerStyled } from './headerStyle.js';
-import { Box, Divider, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText,  } from '@mui/material';
+import { GeneralText, HeaderStyled, LogoConatiner, LogoutBox, LogoutIcon, MenuButton, ProfileContainer, ToolbarStyled, DrawerStyled, ListItemTextStyled } from './headerStyle.js';
+import { Box, Divider, List, ListItem, ListItemButton, ListItemIcon, } from '@mui/material';
 
+
+import SchoolRoundedIcon from '@mui/icons-material/SchoolRounded';
+import ArticleRoundedIcon from '@mui/icons-material/ArticleRounded';
+import LinkRoundedIcon from '@mui/icons-material/LinkRounded';
+import DateRangeRoundedIcon from '@mui/icons-material/DateRangeRounded';
+import LocalFireDepartmentRoundedIcon from '@mui/icons-material/LocalFireDepartmentRounded'
+import AttachFileRoundedIcon from '@mui/icons-material/AttachFileRounded';
+import EditRoundedIcon from '@mui/icons-material/EditRounded';
+import RestoreRoundedIcon from '@mui/icons-material/RestoreRounded';
+import ContactSupportRoundedIcon from '@mui/icons-material/ContactSupportRounded';
 
 
 // DRAWER
 const menuList = [
-	{ text: 'PLACEMENT DRIVES', icon: '' },
-	{ text: 'MY RESUME', icon: '' },
-	{ text: 'MY APPLICATION', icon: ''},
-	{ text: 'CALENDAR', icon: ''},
-	{ text: 'RESULTS', icon: ''},
-	{ text: 'EXPERIENCES', icon: '' },
-	{ text: 'SHARE EXPERIENCE', icon: '' },
-	{ text: 'PLACEMENT HISTORY', icon: '' },
-	{ text: 'CONTACT PIC', icon: '' },
+	{ text: 'PLACEMENT DRIVES', icon: <SchoolRoundedIcon style={{ color: '#367d43' }} /> },
+	{ text: 'MY RESUME', icon: <ArticleRoundedIcon style={{ color: '#367d43' }} /> },
+	{ text: 'MY APPLICATION', icon: <LinkRoundedIcon style={{ color: '#367d43' }} /> },
+	{ text: 'CALENDAR', icon: <DateRangeRoundedIcon style={{ color: '#367d43' }} /> },
+	{ text: 'RESULTS', icon: <LocalFireDepartmentRoundedIcon style={{ color: '#367d43' }} /> },
+	{ text: 'EXPERIENCES', icon: <AttachFileRoundedIcon style={{ color: '#367d43' }} /> },
+	{ text: 'SHARE EXPERIENCE', icon: <EditRoundedIcon style={{ color: '#367d43' }} /> },
+	{ text: 'PLACEMENT HISTORY', icon: <RestoreRoundedIcon style={{ color: '#367d43' }} /> },
+	{ text: 'CONTACT PIC', icon: <ContactSupportRoundedIcon style={{ color: '#367d43' }} />},
 ]
 
 
@@ -32,27 +42,26 @@ const Header = () => {
 
 	const navigate = useNavigate();
 	const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-	
+
 	const drawerItems = () => {
 		return (
 			<Box
-				style={{ width: 150,  marginTop: 65 }}
 				role="presentation"
-				onClick={()=> setIsDrawerOpen(false)}
-				onKeyDown={()=> setIsDrawerOpen(false)}
+				onClick={() => setIsDrawerOpen(false)}
+				onKeyDown={() => setIsDrawerOpen(false)}
 			>
 				<List >
-					{menuList.map((item) => (
+					{menuList.map((item, index) => (
 						<>
 							<ListItem key={item.text} disablePadding >
 								<ListItemButton style={{ padding: 15, fontSize: 12 }}>
 									<ListItemIcon>
-										icon
+										{item.icon}
 									</ListItemIcon>
-									<ListItemText primary={item.text} fontSize='12px'/>
+									<ListItemTextStyled primary={item.text} />
 								</ListItemButton>
 							</ListItem>
-							<Divider />
+							{index < menuList.length - 1 && <Divider />}
 						</>
 					))}
 				</List>
@@ -69,14 +78,14 @@ const Header = () => {
 					edge="start"
 					aria-label="menu"
 					sx={{ mr: 2 }}
-					onClick={()=> setIsDrawerOpen(true)}
+					onClick={() => setIsDrawerOpen(true)}
 				>
 					<MenuIcon style={{ color: "rgb(202,219,194)" }} />
 				</MenuButton>
-				<DrawerStyled 
-					anchor="left"
+				<DrawerStyled
+					anchor="right"
 					open={isDrawerOpen}
-					onClose={()=> setIsDrawerOpen(false) }
+					onClose={() => setIsDrawerOpen(false)}
 				>
 					{drawerItems()}
 				</DrawerStyled>

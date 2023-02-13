@@ -1,4 +1,4 @@
-import { AppBar, Toolbar, Typography, IconButton, styled, Box, Drawer, } from '@mui/material';
+import { AppBar, Toolbar, Typography, IconButton, styled, Box, Drawer, ListItemText, } from '@mui/material';
 import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
 
 
@@ -83,8 +83,20 @@ export const LogoutIcon = styled(PowerSettingsNewIcon)(({ theme }) => ({
 // DRAWER
 export const DrawerStyled = styled(Drawer)(({ theme }) => ({
 	[theme.breakpoints.down('md')]: {
-		'& > .css-4t3x6l-MuiPaper-root-MuiDrawer-paper': {
-			background: 'red',
+		'& > .css-1160xiw-MuiPaper-root-MuiDrawer-paper': {
+			background: '#cadbc2',
+			width: 250,
+			marginTop: '60px',
+			height: 'calc(100% - 280px)',
 		}
 	}
+}));
+
+
+export const ListItemTextStyled = styled(ListItemText)(({ theme }) => ({
+	color: '#367d43',
+	'& > .css-10hburv-MuiTypography-root': {
+		fontSize: 12,
+		fontWeight: 600,
+	},
 }));
