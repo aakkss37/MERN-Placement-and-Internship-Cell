@@ -10,8 +10,8 @@ import { Box, Divider, List, ListItem, ListItemButton, ListItemIcon, } from '@mu
 import SchoolRoundedIcon from '@mui/icons-material/SchoolRounded';
 import ArticleRoundedIcon from '@mui/icons-material/ArticleRounded';
 import LinkRoundedIcon from '@mui/icons-material/LinkRounded';
-import DateRangeRoundedIcon from '@mui/icons-material/DateRangeRounded';
-import LocalFireDepartmentRoundedIcon from '@mui/icons-material/LocalFireDepartmentRounded'
+import DateRangeRoundedIcon from '@mui/icons-material/DateRangeRounded'; 
+import LocalActivityIcon from '@mui/icons-material/LocalActivity';
 import AttachFileRoundedIcon from '@mui/icons-material/AttachFileRounded';
 import EditRoundedIcon from '@mui/icons-material/EditRounded';
 import RestoreRoundedIcon from '@mui/icons-material/RestoreRounded';
@@ -24,7 +24,7 @@ const menuList = [
 	{ text: 'MY RESUME', icon: <ArticleRoundedIcon style={{ color: '#367d43' }} />, route: '/profile/#resume' },
 	{ text: 'MY APPLICATION', icon: <LinkRoundedIcon style={{ color: '#367d43' }} />, route: '/my-application'  },
 	{ text: 'CALENDAR', icon: <DateRangeRoundedIcon style={{ color: '#367d43' }} />, route: '/calendar'  },
-	{ text: 'RESULTS', icon: <LocalFireDepartmentRoundedIcon style={{ color: '#367d43' }} />, route: '/results'  },
+	{ text: 'RESULTS', icon: <LocalActivityIcon style={{ color: '#367d43' }} />, route: '/results'  },
 	{ text: 'EXPERIENCES', icon: <AttachFileRoundedIcon style={{ color: '#367d43' }} />, route: '/experiences'  },
 	{ text: 'SHARE EXPERIENCE', icon: <EditRoundedIcon style={{ color: '#367d43' }} />, route: '/share-experience'  },
 	{ text: 'PLACEMENT HISTORY', icon: <RestoreRoundedIcon style={{ color: '#367d43' }} />, route: '/placement-history'  },

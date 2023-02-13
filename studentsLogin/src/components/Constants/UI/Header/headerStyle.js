@@ -87,7 +87,7 @@ export const DrawerStyled = styled(Drawer)(({ theme }) => ({
 			background: '#cadbc2',
 			width: 250,
 			marginTop: '60px',
-			height: 'calc(100% - 280px)',
+			height: 'calc(100% - 390px)',
 		}
 	}
 }));
