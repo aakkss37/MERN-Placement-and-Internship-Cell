@@ -4,8 +4,7 @@ import { styled, InputBase, Box, } from '@mui/material';
 
 export const SearchContainer = styled(Box)(({ theme }) => ({
 	borderBottom: '1px solid #367D43',
-	margin: 30,
-	width: '25%',
+	width: '35%',
 	display: 'flex',
 	alignItems: 'center',
 	paddingTop: '2px',
@@ -16,7 +15,6 @@ export const SearchContainer = styled(Box)(({ theme }) => ({
 }))
 export const InputSearchBase = styled(InputBase)(({ theme }) => ({
 	width: '100%',
-	paddingLeft: '10px',
 	'& > .MuiInputBase-input': {
 		fontSize: 18,
 	},
