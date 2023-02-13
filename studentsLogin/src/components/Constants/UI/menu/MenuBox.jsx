@@ -15,7 +15,7 @@ const MenuBox = () => {
 				<MenuItem >PLACEMENT DRIVES</MenuItem>
 			</MenuCategory>
 			<Divider />
-			<MenuCategory onClick={() => navigate('/profile')}>
+			<MenuCategory onClick={() => navigate('/profile/#resume')}>
 				<MenuItem >MY RESUME</MenuItem>
 			</MenuCategory>
 			<Divider />

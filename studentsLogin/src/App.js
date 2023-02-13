@@ -17,6 +17,7 @@ function App () {
 					<Route path='/placement-drive' element={<PlacementDrive />} />
 					<Route path='/experiences' element={<Experience />} />
 					<Route path='/profile' element={<Profile />} />
+					<Route path='/profile/#resume' element={<Profile />} />
 				</Routes>
 			</Box>
 		</BrowserRouter >

@@ -98,7 +98,7 @@ const Profile = () => {
 
 						<Divider style={{ marginTop: 8, marginBottom: 16 }} />
 
-						<Box >
+						<div className='resume'>
 							<ShowResume >Show My Resume</ShowResume>
 							<Typography marginTop='20px' marginLeft='20px' lineHeight='1' color='gray'>{file ? `Selected File: ${file.name}` : 'No file Selected'}</Typography>
 							<FileUploader handleChange={handleChange} name="file" types={fileTypes} dropMessageStyle={dropMessageStyle}>
@@ -114,7 +114,7 @@ const Profile = () => {
 							<Box textAlign='center'>
 								<SaveResume >Save</SaveResume>
 							</Box>
-						</Box>
+						</div>
 
 					</ProfileBody>
 
