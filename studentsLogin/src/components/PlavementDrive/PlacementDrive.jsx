@@ -1,10 +1,7 @@
 import React from 'react'
-
-
-import { Typography } from '@mui/material';
 import MenuBox from '../Constants/UI/menu/MenuBox'
 import Cards from './Card/Card';
-import { DriveContainer, Drives, LeftBoxDummy, MainConatiner } from './PlacementDriveStyle.js';
+import { CurretPath, DriveContainer, Drives, LeftBoxDummy, MainConatiner } from './PlacementDriveStyle.js';
 
 
 const PlacementDrive = () => {
@@ -17,7 +14,7 @@ const PlacementDrive = () => {
 				<LeftBoxDummy /> {/* having no content inside it.. just Helping mainBox not to occupy whole area and overlap the Menu */}
 
 				<Drives>
-					<Typography style={{margin: '20px', color: 'gray', fontWeight: 600,}}>PLACEMENT DRIVE</Typography>
+					<CurretPath style={{margin: '20px', color: 'gray', fontWeight: 600,}}>PLACEMENT DRIVE</CurretPath>
 					<Cards />
 					<Cards />
 					<Cards />

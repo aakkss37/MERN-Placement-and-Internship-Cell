@@ -1,4 +1,4 @@
-import { Box, styled, } from '@mui/material';
+import { Box, styled, Typography, } from '@mui/material';
 
 
 export const MainConatiner = styled(Box)`
@@ -36,5 +36,12 @@ export const Drives = styled(Box)(({ theme }) => ({
 	// border: '1px solid green',
 	[theme.breakpoints.down('md')]: {
 		maxWidth: '100%',
+	}
+}));
+
+export const CurretPath = styled(Typography)(({theme})=>({
+	margin: '20px', color: 'gray', fontWeight: 600,
+	[theme.breakpoints.down('sm')]: {
+		fontSize: 14,
 	}
 }));
