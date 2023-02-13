@@ -20,15 +20,15 @@ import ContactSupportRoundedIcon from '@mui/icons-material/ContactSupportRounded
 
 // DRAWER
 const menuList = [
-	{ text: 'PLACEMENT DRIVES', icon: <SchoolRoundedIcon style={{ color: '#367d43' }} /> },
-	{ text: 'MY RESUME', icon: <ArticleRoundedIcon style={{ color: '#367d43' }} /> },
-	{ text: 'MY APPLICATION', icon: <LinkRoundedIcon style={{ color: '#367d43' }} /> },
-	{ text: 'CALENDAR', icon: <DateRangeRoundedIcon style={{ color: '#367d43' }} /> },
-	{ text: 'RESULTS', icon: <LocalFireDepartmentRoundedIcon style={{ color: '#367d43' }} /> },
-	{ text: 'EXPERIENCES', icon: <AttachFileRoundedIcon style={{ color: '#367d43' }} /> },
-	{ text: 'SHARE EXPERIENCE', icon: <EditRoundedIcon style={{ color: '#367d43' }} /> },
-	{ text: 'PLACEMENT HISTORY', icon: <RestoreRoundedIcon style={{ color: '#367d43' }} /> },
-	{ text: 'CONTACT PIC', icon: <ContactSupportRoundedIcon style={{ color: '#367d43' }} />}
+	{ text: 'PLACEMENT DRIVES', icon: <SchoolRoundedIcon style={{ color: '#367d43' }} />, route: '/placement-drive' },
+	{ text: 'MY RESUME', icon: <ArticleRoundedIcon style={{ color: '#367d43' }} />, route: '/profile/#resume' },
+	{ text: 'MY APPLICATION', icon: <LinkRoundedIcon style={{ color: '#367d43' }} />, route: '/myapplication'  },
+	{ text: 'CALENDAR', icon: <DateRangeRoundedIcon style={{ color: '#367d43' }} />, route: '/calendar'  },
+	{ text: 'RESULTS', icon: <LocalFireDepartmentRoundedIcon style={{ color: '#367d43' }} />, route: '/results'  },
+	{ text: 'EXPERIENCES', icon: <AttachFileRoundedIcon style={{ color: '#367d43' }} />, route: '/experiences'  },
+	{ text: 'SHARE EXPERIENCE', icon: <EditRoundedIcon style={{ color: '#367d43' }} />, route: '/share-experience'  },
+	{ text: 'PLACEMENT HISTORY', icon: <RestoreRoundedIcon style={{ color: '#367d43' }} />, route: '/placement-history'  },
+	{ text: 'CONTACT PIC', icon: <ContactSupportRoundedIcon style={{ color: '#367d43' }} />, route: '/contact-placement-and-internship-cell' }
 ]
 
 
@@ -50,7 +50,7 @@ const Header = () => {
 					{menuList.map((item, index) => (
 						<>
 							<ListItem key={item.text} disablePadding >
-								<ListItemButton style={{ padding: 15, fontSize: 12 }}>
+								<ListItemButton style={{ padding: 15, fontSize: 12 }} onClick={()=> navigate(item.route)}>
 									<ListItemIcon>
 										{item.icon}
 									</ListItemIcon>
