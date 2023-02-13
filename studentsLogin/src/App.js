@@ -6,6 +6,7 @@ import Header from './components/Constants/UI/Header/Header';
 import Experience from './components/Experience/Experience';
 import PlacementDrive from './components/PlavementDrive/PlacementDrive';
 import Profile from './components/Profile/Profile';
+import MyApplication from './components/MyApplication/MyApplication';
 
 function App () {
 	return (
@@ -18,6 +19,7 @@ function App () {
 					<Route path='/experiences' element={<Experience />} />
 					<Route path='/profile' element={<Profile />} />
 					<Route path='/profile/#resume' element={<Profile />} />
+					<Route path='/my-application' element={<MyApplication />} />
 				</Routes>
 			</Box>
 		</BrowserRouter >
