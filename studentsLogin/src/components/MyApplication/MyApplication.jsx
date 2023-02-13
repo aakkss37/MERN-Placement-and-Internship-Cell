@@ -47,7 +47,7 @@ const MyApplication = () => {
 					  <TableBody>
 						  {rowsData.map((row, index) => (
 							  <StyledTableRow key={row.name}>
-								  <StyledTableCell component="th" scope="row">  {index+1} </StyledTableCell>
+								  <StyledTableCell component="th" scope="row">  {index+1}. </StyledTableCell>
 								  <StyledTableCell >{row.companyName}</StyledTableCell>
 								  <StyledTableCell align="right">{row.date}</StyledTableCell>
 								  <StyledTableCell align="right">{row.status}</StyledTableCell>

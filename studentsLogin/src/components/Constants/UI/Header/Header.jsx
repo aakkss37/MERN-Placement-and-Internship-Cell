@@ -22,7 +22,7 @@ import ContactSupportRoundedIcon from '@mui/icons-material/ContactSupportRounded
 const menuList = [
 	{ text: 'PLACEMENT DRIVES', icon: <SchoolRoundedIcon style={{ color: '#367d43' }} />, route: '/placement-drive' },
 	{ text: 'MY RESUME', icon: <ArticleRoundedIcon style={{ color: '#367d43' }} />, route: '/profile/#resume' },
-	{ text: 'MY APPLICATION', icon: <LinkRoundedIcon style={{ color: '#367d43' }} />, route: '/myapplication'  },
+	{ text: 'MY APPLICATION', icon: <LinkRoundedIcon style={{ color: '#367d43' }} />, route: '/my-application'  },
 	{ text: 'CALENDAR', icon: <DateRangeRoundedIcon style={{ color: '#367d43' }} />, route: '/calendar'  },
 	{ text: 'RESULTS', icon: <LocalFireDepartmentRoundedIcon style={{ color: '#367d43' }} />, route: '/results'  },
 	{ text: 'EXPERIENCES', icon: <AttachFileRoundedIcon style={{ color: '#367d43' }} />, route: '/experiences'  },
