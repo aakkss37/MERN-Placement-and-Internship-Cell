@@ -51,3 +51,41 @@ export const CurretPath = styled(Typography)(({ theme }) => ({
 		fontSize: 14,
 	}
 }));
+
+
+export const ModelBody = styled(Box)(({ theme }) => ({
+	position: 'absolute',
+	top: '50%',
+	left: '50%',
+	transform: 'translate(-50%, -50%)',
+	width: 250,
+	minHeight: 250,
+	background: '#cadbc2',
+	boxShadow: 24,
+	p: 4,
+	borderRadius: 5,
+	display: 'flex',
+	justifyContent: 'center',
+}));
+
+export const ModelTextHead = styled(Box)(({ theme }) => ({
+	fontSize: 16,
+	fontWeight: 600,
+	color: "green",
+	margin: 20,
+}));
+
+export const ModelBodyItem = styled(Box)(({theme})=>({
+	marginTop: 10,
+	marginBottom: 10,
+}))
+
+export const ModelTextKey = styled(Box)(({ theme }) => ({
+	fontSize: 12,
+	color: "gray",
+}))
+export const ModelTextValue = styled(Box)(({ theme }) => ({
+	fontSize: 14,
+	fontWeight: 400,
+}))
+

@@ -100,3 +100,4 @@ export const ListItemTextStyled = styled(ListItemText)(({ theme }) => ({
 		fontWeight: 600,
 	},
 }));
+
