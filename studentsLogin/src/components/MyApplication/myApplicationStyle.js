@@ -33,9 +33,17 @@ export const StyledTableCell = styled(TableCell)(({ theme }) => ({
 export const StyledTableRow = styled(TableRow)(({ theme }) => ({
 	'&:nth-of-type(odd)': {
 		backgroundColor: 'white',
+		transition: '0.3s',
+		':hover': {
+			backgroundColor: '#367d433b'
+		}
 	},
 	'&:nth-of-type(even)': {
 		backgroundColor: '#d4e1ce29',
+		transition: '0.3s',
+		':hover': {
+			backgroundColor: '#367d433b'
+		}
 	},
 	// hide last border
 	'&:last-child td, &:last-child th': {
