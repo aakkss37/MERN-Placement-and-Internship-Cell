@@ -1,4 +1,4 @@
-import { Box, styled } from '@mui/material';
+import { Box, styled, Typography } from '@mui/material';
 
 export const ExperienceConatiner = styled(Box)`
 	margin-top: 65px;
@@ -40,5 +40,10 @@ export const MainCardContainer = styled(Box)(({ theme }) => ({
 }));
 
 
-
+export const CurretPath = styled(Typography)(({ theme }) => ({
+	marginTop: '20px', color: 'gray', fontWeight: 600,
+	[theme.breakpoints.down('sm')]: {
+		fontSize: 14,
+	}
+}));
 
