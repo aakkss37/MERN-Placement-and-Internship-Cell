@@ -51,7 +51,20 @@ const events = [
 ];
 
 const PlacementCalendar = () => {
-	
+	const [isModelOpen, setIsModelOpen] = useState(false);
+	const [dataInModdal, setdataInModdal] = useState({})
+
+
+	const handleOpenModel = (event)=>{
+		console.log(event)
+		setIsModelOpen(true)
+		// setdataInModdal({
+		// 	companyName: event.eventOf,
+		// 	event: event.title,
+		// 	date: event.start
+		// })
+	}
+
 	return (
 		<MainConatiner>
 			<CalendarContainer>
@@ -68,10 +81,25 @@ const PlacementCalendar = () => {
 						startAccessor="start"
 						endAccessor="end"
 						style={{ height: 500, margin: "50px" }}
+						onSelectEvent={(event) => handleOpenModel(event)}
 					/>
 				</CalendarBody>
 
-				
+				<Modal
+					open={isModelOpen}
+					onClose={() => setIsModelOpen(false)}
+					aria-labelledby="modal-modal-title"
+					aria-describedby="modal-modal-description"
+				>
+					<Box sx={modalStyle}>
+						<Typography id="modal-modal-title" variant="h6" component="h2">
+							Text in a modal
+						</Typography>
+						<Typography id="modal-modal-description" sx={{ mt: 2 }}>
+							Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+						</Typography>
+					</Box>
+				</Modal>
 
 			</CalendarContainer>
 
