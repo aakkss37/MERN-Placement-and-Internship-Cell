@@ -7,6 +7,7 @@ import Experience from './components/Experience/Experience';
 import PlacementDrive from './components/PlavementDrive/PlacementDrive';
 import Profile from './components/Profile/Profile';
 import MyApplication from './components/MyApplication/MyApplication';
+import Error404 from './components/Constants/UI/Error404/Error404';
 
 function App () {
 	return (
@@ -20,6 +21,7 @@ function App () {
 					<Route path='/profile' element={<Profile />} />
 					<Route path='/profile/#resume' element={<Profile />} />
 					<Route path='/my-application' element={<MyApplication />} />
+					<Route path='*' element={<Error404 />} />
 				</Routes>
 			</Box>
 		</BrowserRouter >
