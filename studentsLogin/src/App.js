@@ -8,6 +8,7 @@ import PlacementDrive from './components/PlavementDrive/PlacementDrive';
 import Profile from './components/Profile/Profile';
 import MyApplication from './components/MyApplication/MyApplication';
 import Error404 from './components/Constants/UI/Error404/Error404';
+import UnderConstruction from './components/Constants/UI/UnderConstruction/UnderConstruction';
 
 function App () {
 	return (
@@ -21,6 +22,11 @@ function App () {
 					<Route path='/profile' element={<Profile />} />
 					<Route path='/profile/#resume' element={<Profile />} />
 					<Route path='/my-application' element={<MyApplication />} />
+					<Route path='/calendar' element={<UnderConstruction />} />
+					<Route path='/results' element={<UnderConstruction />} />
+					<Route path='/share-experience' element={<UnderConstruction />} />
+					<Route path='/placement-history' element={<UnderConstruction />} />
+					<Route path='/placement-support' element={<UnderConstruction />} />
 					<Route path='*' element={<Error404 />} />
 				</Routes>
 			</Box>
