@@ -29,7 +29,7 @@ export const LeftBoxDummy = styled(Box)(({ theme }) => ({
 }));
 
 export const CurretPath = styled(Typography)(({ theme }) => ({
-	margin: '20px', color: 'gray', fontWeight: 600,
+	margin: '30px', color: 'gray', fontWeight: 600,
 	[theme.breakpoints.down('sm')]: {
 		fontSize: 14,
 	}
@@ -37,11 +37,12 @@ export const CurretPath = styled(Typography)(({ theme }) => ({
 
 
 export const CalendarBody =  styled(Box)(({theme})=>({
-	marginTop: 25,
+	marginTop: 30,
 	// border: '1px solid red',
 	width: '70%',
 	background: 'white',
 	boxShadow: '1px 1px 5px 4px rgb(0, 0, 0, 0.3)',
+	
 	[theme.breakpoints.down('md')]: {
 	width: '100%',
 }

@@ -99,7 +99,7 @@ const PlacementCalendar = () => {
 						events={events}
 						startAccessor="start"
 						endAccessor="end"
-						style={{ height: 500, margin: "50px",  }}
+						style={{ height: 500, marginTop: "50px", margin: '3px', '& > .rbc-today': { background: 'green' } }}
 						onSelectEvent={(event) => handleOpenModel(event)}
 					/>
 				</CalendarBody>
