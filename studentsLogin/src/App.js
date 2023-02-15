@@ -10,6 +10,7 @@ import MyApplication from './components/MyApplication/MyApplication';
 import Error404 from './components/Constants/UI/Error404/Error404';
 import UnderConstruction from './components/Constants/UI/UnderConstruction/UnderConstruction';
 import PlacementCalendar from './components/Calendar/Calendar';
+import Result from './components/Results/Result';
 
 function App () {
 	return (
@@ -24,7 +25,7 @@ function App () {
 					<Route path='/profile/#resume' element={<Profile />} />
 					<Route path='/my-application' element={<MyApplication />} />
 					<Route path='/calendar' element={<PlacementCalendar />} />
-					<Route path='/results' element={<UnderConstruction />} />
+					<Route path='/results' element={<Result />} />
 					<Route path='/share-experience' element={<UnderConstruction />} />
 					<Route path='/placement-history' element={<UnderConstruction />} />
 					<Route path='/placement-support' element={<UnderConstruction />} />
