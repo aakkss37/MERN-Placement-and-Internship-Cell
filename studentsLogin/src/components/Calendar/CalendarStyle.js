@@ -1,4 +1,4 @@
-import { Box, styled, } from '@mui/material';
+import { Box, styled, Typography, } from '@mui/material';
 
 
 export const MainConatiner = styled(Box)`
@@ -28,25 +28,37 @@ export const LeftBoxDummy = styled(Box)(({ theme }) => ({
 	}
 }));
 
+export const CurretPath = styled(Typography)(({ theme }) => ({
+	margin: '20px', color: 'gray', fontWeight: 600,
+	[theme.breakpoints.down('sm')]: {
+		fontSize: 14,
+	}
+}));
+
 
 export const CalendarBody =  styled(Box)(({theme})=>({
 	marginTop: 25,
-	border: '1px solid red',
-	width: '65%',
+	// border: '1px solid red',
+	width: '70%',
 	background: 'white',
+	boxShadow: '1px 1px 5px 4px rgb(0, 0, 0, 0.3)',
 	[theme.breakpoints.down('md')]: {
 	width: '100%',
 }
 }))
 
-export const modalStyle = {
+export const ModelBody = styled(Box)(({ theme }) => ({
+
 	position: 'absolute',
 	top: '50%',
 	left: '50%',
 	transform: 'translate(-50%, -50%)',
-	width: 400,
-	bgcolor: 'background.paper',
-	border: '2px solid #000',
-	boxShadow: 24,
-	p: 4,
-};
+	width: 250,
+	minHeight: 250,
+	background: '#cadbc2',
+	borderRadius: 5,
+	padding: '10px',
+	':focus': {
+		outline: 'none',
+	}
+}));
