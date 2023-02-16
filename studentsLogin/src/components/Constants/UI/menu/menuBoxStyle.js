@@ -6,6 +6,7 @@ export const MenuBoxContainer = styled(Box)(({ theme }) => ({
 	width: '15%',
 	margin: '5px',
 	// border: '1px solid green',
+	height: '720px',
 	borderRadius: 5,
 	background: '#cadbc2',
 	boxShadow: '1px 1px 5px 4px rgb(0, 0, 0, 0.3)',
