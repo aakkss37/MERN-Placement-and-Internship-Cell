@@ -52,7 +52,7 @@ const MyApplication = () => {
 							{companyData.map((company, index) => (
 								
 								<StyledTableRow 
-									key={company.name} 
+									key={company.companyName} 
 									onClick={() =>
 										 modelOpenHandler({
 											ctc: company.ctc, 
