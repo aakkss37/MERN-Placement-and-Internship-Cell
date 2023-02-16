@@ -1,5 +1,5 @@
 import React from 'react'
-import { Divider, } from '@mui/material'
+import { Divider, Typography, } from '@mui/material'
 import { Author, CardBody, CardContainer, CardHead, ConpanyName, Experience, UserDetail, UserImg } from './cardStyle.js'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
@@ -18,6 +18,7 @@ const Card = () => {
 				<Divider />
 
 				<CardBody>
+					<Typography fontWeight='600'>Experience Type</Typography><br/>
 					<Experience>
 						To insert an icon, add the name of the icon class to any inline HTML element.
 
