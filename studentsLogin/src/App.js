@@ -12,6 +12,7 @@ import UnderConstruction from './components/Constants/UI/UnderConstruction/Under
 import PlacementCalendar from './components/Calendar/Calendar';
 import Result from './components/Results/Result';
 import SelectedStudents from './components/Results-selectedStudents/SelectedStudents';
+import ShareExperience from './components/ShareExperience/ShareExperience';
 
 function App () {
 	return (
@@ -28,7 +29,7 @@ function App () {
 					<Route path='/calendar' element={<PlacementCalendar />} />
 					<Route path='/results' element={<Result />} />
 					<Route path='/results/selected-students/' element={<SelectedStudents />} />
-					<Route path='/share-experience' element={<UnderConstruction />} />
+					<Route path='/share-experience' element={<ShareExperience />} />
 					<Route path='/placement-history' element={<UnderConstruction />} />
 					<Route path='/placement-support' element={<UnderConstruction />} />
 					<Route path='*' element={<Error404 />} />
