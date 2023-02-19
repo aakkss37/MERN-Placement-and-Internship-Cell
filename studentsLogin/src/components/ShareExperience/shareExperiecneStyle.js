@@ -40,11 +40,55 @@ export const MainCardContainer = styled(Box)(({ theme }) => ({
 	}
 }));
 
-export const CompanyName = styled(TextField)(({ theme })=>({
+export const CompanyName = styled(TextField)(({ theme }) => ({
 	marginBottom: 20,
+	'& label.Mui-focused': {
+		color: 'green',
+	},
+	'& .MuiInput-underline:after': {
+		borderBottomColor: 'green',
+	},
+}));
+
+export const ExperienceType = styled('select')(({ theme }) => ({
+	width: '100%',
+	height: 40,
+	borderRadius: 5,
+	padding: 5,
+	borderColor: 'gray',
+	fontSize: '16px',
+	outline: 0,
+	border: '1cdpx solid #000000',
+	background: 'rgb(224, 230, 225)',
+	color: '#7b7b7b',
+	appearance: 'none',
 	
 }));
-export const ExperienceTextField = styled(TextField)(({ theme })=>({
+
+// Not working =================>
+export const Option = styled('option')`
+	& :hover {
+		background-color: red;
+  	}
+
+`
+
+
+export const ExperienceTextField = styled(TextField)(({ theme }) => ({
 	marginTop: 20,
+	'& label.Mui-focused': {
+		color: 'green',
+	},
+	'& .MuiOutlinedInput-root': {
+		// '& fieldset': {
+		// 	borderColor: 'red',
+		// },
+		// '&:hover fieldset': {
+		// 	borderColor: 'yellow',
+		// },
+		'&.Mui-focused fieldset': {
+			borderColor: 'green',
+		},
+	},
 }));
 

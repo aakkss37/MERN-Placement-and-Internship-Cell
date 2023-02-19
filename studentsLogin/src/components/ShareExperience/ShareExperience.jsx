@@ -1,13 +1,15 @@
 import React, { useState } from 'react'
 import MenuBox from '../Constants/UI/menu/MenuBox';
-import { Box, FormControl, InputLabel, MenuItem, Select } from '@mui/material'
-import { CompanyName, ExperienceTextField, LeftBoxDummy, MainCardContainer, MainConatiner, ShareExperienceConainer } from './shareExperiecneStyle'
+import { Box, } from '@mui/material'
+import { CompanyName, ExperienceTextField, ExperienceType, LeftBoxDummy, MainCardContainer, MainConatiner, Option, ShareExperienceConainer } from './shareExperiecneStyle'
+
 
 
 
 const ShareExperience = () => {
-	const [experienceType, setExperienceType] = useState("");
+	// const [experienceType, setExperienceType] = useState("");
 	const [companyName, setCompanyName] = useState("");
+	const [yourExperience, setyourExperience] = useState("");
 
 
 
@@ -35,22 +37,23 @@ const ShareExperience = () => {
 						onChange={(event) => setCompanyName(event.target.value)}
 					/>
 					<Box>
-						<FormControl fullWidth>
-							<InputLabel id="demo-simple-select-label">Age</InputLabel>
-							<Select
-								labelId="demo-simple-select-label"
-								id="demo-simple-select"
-								value={experienceType}
-								label="Age"
-								onChange={(event) => setExperienceType(event.target.value)}
-							>
-								<MenuItem value={10}>Ten</MenuItem>
-								<MenuItem value={20}>Twenty</MenuItem>
-								<MenuItem value={30}>Thirty</MenuItem>
-							</Select>
-						</FormControl>
+						<form>
+							<ExperienceType name="languages" id="lang" >
+								<Option value="">--Select Experience Type--</Option>
+								<Option value="Interview">Interview Experience</Option>
+								<Option value="Internship">Internship Experience</Option>
+								<Option value="Test">Test Experience</Option>
+							</ExperienceType>
+						</form>
 					</Box>
-					<ExperienceTextField fullWidth label="fullWidth" id="fullWidth" multiline={true} minRows={10} />
+					<ExperienceTextField 
+						fullWidth label="Write Your Experience Here" 
+						id="fullWidth" 
+						multiline={true} 
+						minRows={13} 
+						value={yourExperience}
+						onChange={(event) => setyourExperience(event.target.value)}
+					/>
 
 
 				</MainCardContainer>
