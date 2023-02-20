@@ -1,4 +1,4 @@
-import { Box, styled, } from '@mui/material';
+import { Box, styled, TextField, } from '@mui/material';
 
 
 export const MainConatiner = styled(Box)`
@@ -25,4 +25,47 @@ export const LeftBoxDummy = styled(Box)(({ theme }) => ({
 	[theme.breakpoints.down('md')]: {
 		display: 'none',
 	}
+}));
+
+
+export const AskQuery = styled(Box)(({ theme }) => ({
+	flexGrow: 4,
+	maxWidth: '75%',
+	margin: '5px',
+	marginTop: '25px',
+	// border: '1px solid green',
+	[theme.breakpoints.down('md')]: {
+		maxWidth: '100%',
+	}
+}));
+
+
+export const Subject = styled(TextField)(({ theme }) => ({
+	marginBottom: 20,
+	'& label.Mui-focused': {
+		color: 'green',
+	},
+	'& .MuiOutlinedInput-root': {
+		'&.Mui-focused fieldset': {
+			borderColor: 'green',
+		},
+	},
+}));
+
+export const Query = styled(TextField)(({ theme }) => ({
+	marginTop: 20,
+	'& label.Mui-focused': {
+		color: 'green',
+	},
+	'& .MuiOutlinedInput-root': {
+		// '& fieldset': {
+		// 	borderColor: 'red',
+		// },
+		// '&:hover fieldset': {
+		// 	borderColor: 'yellow',
+		// },
+		'&.Mui-focused fieldset': {
+			borderColor: 'green',
+		},
+	},
 }));
