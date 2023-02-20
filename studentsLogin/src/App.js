@@ -13,6 +13,7 @@ import PlacementCalendar from './components/Calendar/Calendar';
 import Result from './components/Results/Result';
 import SelectedStudents from './components/Results-selectedStudents/SelectedStudents';
 import ShareExperience from './components/ShareExperience/ShareExperience';
+import ContactPIC from './components/ContactPIC/ContactPIC';
 
 function App () {
 	return (
@@ -31,7 +32,7 @@ function App () {
 					<Route path='/results/selected-students/' element={<SelectedStudents />} />
 					<Route path='/share-experience' element={<ShareExperience />} />
 					<Route path='/placement-history' element={<UnderConstruction />} />
-					<Route path='/placement-support' element={<UnderConstruction />} />
+					<Route path='/placement-support' element={<ContactPIC />} />
 					<Route path='*' element={<Error404 />} />
 				</Routes>
 			</Box>
