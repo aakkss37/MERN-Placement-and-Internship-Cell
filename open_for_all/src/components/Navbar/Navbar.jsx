@@ -19,10 +19,12 @@ const Navbar = () => {
 					<NavbarMenu />
 				</div>
 			</div>
-			<button className='navbar-sign'>
-				Student Login
-				<BiLogIn style={{color: '#fff', fontSize: 24}}/>
-			</button>
+			<div className='navbar-sign'>
+				<a href='http://localhost:3000/'>
+					Student Login
+					<BiLogIn style={{color: '#fff', fontSize: 24}}/>
+				</a>
+			</div>
 
 			{/* Navbar hamburger */}
 			<div className='navbar-menu'>
@@ -40,13 +42,14 @@ const Navbar = () => {
 						<div className='navbar-menu_container scale-up-center'>
 							<NavbarMenu onClick={() => setToggleMenu(false)} />
 							<div className='navbar-menu_container-links-sign'>
-								<p>Sign-in</p>
-								<button type='button'>Sign up</button>
+								<a href='http://localhost:3000/'>
+									Student login
+									<BiLogIn style={{ color: '#fff', fontSize: 24 }} />
+								</a>
 							</div>
 						</div>
 
 					)
-
 				}
 			</div>
 		</div>

@@ -4,10 +4,10 @@ export const NavbarMenu = (props) => {
 	return (
 		<>
 			<p><a href='#home' onClick={props.onClick}>Home</a></p>
-			<p><a href='#wgpt3' onClick={props.onClick}>What is GPT</a></p>
-			<p><a href='#possibility' onClick={props.onClick}>Open AI</a></p>
-			<p><a href='#future' onClick={props.onClick}>Case study</a></p>
-			<p><a href='#blog' onClick={props.onClick}>Library</a></p>
+			<p><a href='#statistic' onClick={props.onClick}>Statistic</a></p>
+			<p><a href='#news' onClick={props.onClick}>News</a></p>
+			<p><a href='#hiring-partners' onClick={props.onClick}>Hiring Partners</a></p>
+			<p><a href='#testimonials' onClick={props.onClick}>Testimonials</a></p>
 		</>
 	);
 };
