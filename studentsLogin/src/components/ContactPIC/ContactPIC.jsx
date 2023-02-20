@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Box, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 import MenuBox from '../Constants/UI/menu/MenuBox';
 import { AskQuery, ContactPICContainer, LeftBoxDummy, MainConatiner, Query, Subject } from './contactPICStyle';
 
