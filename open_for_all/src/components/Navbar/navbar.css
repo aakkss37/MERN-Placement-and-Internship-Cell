@@ -29,6 +29,14 @@
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
+	color: #fff;
+	font-size: 18px;
+	background-color: #FF4820;
+	border: none;
+	padding: 10px;
+	padding-left: 15px;
+	padding-right: 15px;
+	border-radius: 5px;
 }
 
 .navbar-links_container p,

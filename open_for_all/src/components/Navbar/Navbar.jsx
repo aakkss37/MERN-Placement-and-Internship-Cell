@@ -3,8 +3,8 @@ import './navbar.css';
 import logo from '../../Assets/logo.png'
 // Import icons -> inbuilt in react
 import { RiMenu3Line, RiCloseLine } from 'react-icons/ri';
+import { BiLogIn } from 'react-icons/bi';
 import NavbarMenu from './NavbarMenu';
-
 const Navbar = () => {
 
 	const [toggleMenu, setToggleMenu] = useState(false)
@@ -19,10 +19,10 @@ const Navbar = () => {
 					<NavbarMenu />
 				</div>
 			</div>
-			<div className='navbar-sign'>
-				<p>Sign-in</p>
-				<button type='button'>Sign up</button>
-			</div>
+			<button className='navbar-sign'>
+				Student Login
+				<BiLogIn style={{color: '#fff', fontSize: 24}}/>
+			</button>
 
 			{/* Navbar hamburger */}
 			<div className='navbar-menu'>
