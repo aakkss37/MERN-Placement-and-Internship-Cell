@@ -7,11 +7,17 @@
 .hiring_partners_heading {
 	margin: 1rem;
 	text-align: center;
+	font-family: var(--font-family);
 }
 
 .hiring_partners_heading h1 {
 	color: #d4d4d4;
+}
+.hiring_partners_paragraph p {
 	font-family: var(--font-family);
+	color: var(--color-text);
+	text-align: justify;
+	margin: 10px;
 }
 
 .hiring_partners_icon {
