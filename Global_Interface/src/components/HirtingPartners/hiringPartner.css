@@ -24,6 +24,8 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
 
 .hiring_partners_icon svg {
@@ -45,6 +47,9 @@
 		padding-right: 10px;
 	}
 
+	.hiring_partners_heading {
+		margin: 0;
+	}
 	.hiring_partners_heading h1 {
 		font-size: 1.5rem;
 	}
