@@ -107,12 +107,18 @@
 		font-size: 44px;
 		line-height: 65px;
 	}
-	.home_enquiry_form{
+
+	.home_enquiry_form {
 		margin-bottom: 3rem;
 	}
 }
 
 @media screen and (max-width: 550px) {
+	.home_text h1 {
+		font-size: 44px;
+		line-height: 45px;
+	}
+
 	.home_enquiry_form {
 		padding: 3rem 0.5rem;
 	}
