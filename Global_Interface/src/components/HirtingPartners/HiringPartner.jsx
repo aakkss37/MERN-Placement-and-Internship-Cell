@@ -9,38 +9,35 @@ import { AiOutlineGoogle } from 'react-icons/ai';
 import { TfiMicrosoftAlt } from 'react-icons/tfi';
 
 
-const companyStyle = {
-	margin: 25
-}
-
 
 const HiringPartner = () => {
 	return (
 		<div className='hiring_partners section__padding' id='hiring-partners'>
 			<div className='hiring_partners_heading'>
-				<h1>OUR &nbsp; TOP &nbsp; CORPORATE &nbsp; PARTNERS</h1>
+				<h1>OUR TOP CORPORATE PARTNERS</h1>
+				<p>The employment landscape can be challenging to navigate, but for students and job seekers, the future looks bright. At our institution, we take great pride in offering our students and alumni a plethora of job opportunities. We are pleased to share that over 500 companies from various industries come to our campus for placements, bringing with them over 1500 unique opportunities. Our team works closely with these organizations to ensure that each placement aligns with the skill set and career aspirations of our students. Our commitment to providing a diverse array of job opportunities not only helps our students to kickstart their careers, but it also strengthens our relationships with our industry partners. We firmly believe that our students are the workforce of tomorrow, and we are proud to provide them with the tools and resources they need to succeed in their chosen fields.</p>
 			</div>
 			<div className='hiring_partners_icon'>
-				<AiOutlineGoogle style={companyStyle} />
-				<TfiMicrosoftAlt style={companyStyle} />
-				<SiFacebook style={companyStyle} />
-				<SiZoho style={companyStyle} />
-				<SiPaytm style={companyStyle} />
-				<SiPhonepe style={companyStyle} />
-				<SiIntel style={companyStyle} />
-				<SiNvidia style={companyStyle} />
-				<SiAmd style={companyStyle} />
-				<SiSamsung style={companyStyle} />
-				<SiZomato style={companyStyle} />
-				<SiSwiggy style={companyStyle} />
-				<SiAcer style={companyStyle} />
-				<SiDell style={companyStyle} />
-				<SiFlipkart style={companyStyle} />
-				<SiAmazon style={companyStyle} />
-				<SiAmazonaws style={companyStyle} />
-				<SiNetflix style={companyStyle} />
-				<SiMercedes style={companyStyle} />
-				<SiEbay style={companyStyle} />
+				<AiOutlineGoogle />
+				<TfiMicrosoftAlt />
+				<SiFacebook />
+				<SiZoho />
+				<SiPaytm />
+				<SiPhonepe />
+				<SiIntel />
+				<SiNvidia />
+				<SiAmd />
+				<SiSamsung />
+				<SiZomato />
+				<SiSwiggy />
+				<SiAcer />
+				<SiDell />
+				<SiFlipkart />
+				<SiAmazon />
+				<SiAmazonaws />
+				<SiNetflix />
+				<SiMercedes />
+				<SiEbay />
 			</div>
 		</div>
 	)
