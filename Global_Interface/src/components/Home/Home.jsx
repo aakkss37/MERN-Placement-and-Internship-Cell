@@ -7,7 +7,7 @@ const Home = () => {
 		<div className="home section__padding" id="home">
 			<div className="home_text">
 				<h1 className="gradient__text">Let's Explore one of the top Institution Karpagam Academy of Higher Education</h1>
-				<p>Yet bed any for travelling assistance indulgence unpleasing. Not thoughts all exercise blessing. Indulgence way everything joy alteration boisterous the attachment. Party we years to order allow asked of.</p>
+				<p>Karpagam Academy of Higher Education (KAHE) is a top institution located in Coimbatore, Tamil Nadu. KAHE offers high-quality education in a variety of fields, with a highly qualified faculty, modern facilities, and a commitment to producing well-rounded graduates. The institution also offers a wide range of extracurricular activities and social service initiatives.</p>
 
 
 				<div className="home_people_visited">
