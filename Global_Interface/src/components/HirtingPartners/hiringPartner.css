@@ -1,0 +1,50 @@
+.hiring_partners {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.hiring_partners_heading {
+	margin: 1rem;
+	text-align: center;
+}
+
+.hiring_partners_heading h1 {
+	color: #d4d4d4;
+	font-family: var(--font-family);
+}
+
+.hiring_partners_icon {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.hiring_partners_icon svg {
+	margin: 25px;
+	font-size: 4rem;
+	color: gray;
+}
+
+
+
+
+@media screen and (max-width: 1050px) {}
+
+@media screen and (max-width: 700px) {}
+
+@media screen and (max-width: 550px) {
+	.hiring_partners {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+	.hiring_partners_heading h1 {
+		font-size: 1.5rem;
+	}
+
+		.hiring_partners_icon svg {
+			margin: 15px;
+			font-size: 2.5rem;
+		}
+}

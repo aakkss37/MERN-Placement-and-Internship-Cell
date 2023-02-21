@@ -107,6 +107,9 @@
 		font-size: 44px;
 		line-height: 65px;
 	}
+	.home_enquiry_form{
+		margin-bottom: 3rem;
+	}
 }
 
 @media screen and (max-width: 550px) {
