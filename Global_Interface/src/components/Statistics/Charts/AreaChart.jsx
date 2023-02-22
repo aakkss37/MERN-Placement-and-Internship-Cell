@@ -4,9 +4,9 @@ import { data } from './chartData'
 
 const AreaChartComponent = () => {
   return (
-	  <div>
+	  <div className='graph_container'>
 		  <h2 className="chart-heading">Area Chart</h2>
-		  <ResponsiveContainer width="100%" aspect={3}>
+		  <ResponsiveContainer width="100%" height='90%'>
 			  <AreaChart data={data}>
 				  <XAxis dataKey="year" />
 				  <YAxis />

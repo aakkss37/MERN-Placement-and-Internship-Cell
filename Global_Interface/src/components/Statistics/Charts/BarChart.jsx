@@ -4,9 +4,9 @@ import { data } from './chartData'
 
 const BarChartComponent = () => {
   return (
-	  <div>
+	  <div className='graph_container'>
 		  <h2 className="chart-heading">Bar Chart</h2>
-		  <ResponsiveContainer width="100%" aspect={3}>
+		  <ResponsiveContainer width="100%" height='90%'>
 			  <BarChart
 				  data={data}
 			  >

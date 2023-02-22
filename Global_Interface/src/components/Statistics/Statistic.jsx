@@ -3,6 +3,9 @@ import './statistic.css';
 import CountUp from 'react-countup';
 import ScrollTrigger from 'react-scroll-trigger';
 import LineChartComponent from './Charts/LineChart';
+import AreaChartComponent from './Charts/AreaChart';
+import BarChartComponent from './Charts/BarChart';
+import PieChartComponent from './Charts/PieChart';
 
 
 
@@ -37,9 +40,10 @@ const Statistic = () => {
 				</div>
 
 				<div className='statistic_graph'>
-					<div className='line_chart'>
 						<LineChartComponent/>
-					</div>
+						<AreaChartComponent/>
+						<BarChartComponent/>
+						<PieChartComponent/>
 				</div>
 			</ScrollTrigger>
 

@@ -1,17 +1,23 @@
 import React from 'react'
 import { LineChart, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer,  } from 'recharts';
 import { data } from './chartData.js';
-
+import './chart.css'
 
 
 
 const LineChartComponent = () => {
+
+
 	return (
-		<>
-			<div>
-				<h2>Offered package for KAHE Students (L.P.A)</h2>
-				<ResponsiveContainer width="100%" aspect={3}>
-					<LineChart data={data} >
+			<div className='graph_container'>
+				<h2>CTC Offered</h2>
+			<ResponsiveContainer width="100%" height='90%' >
+				<LineChart data={data} margin={{
+					top: 5,
+					right: 30,
+					left: 0,
+					bottom: 0,
+				}}>
 						{/* <CartesianGrid strokeDasharray="3 3" /> */}
 						<XAxis dataKey="year" interval={'preserveStartEnd'} />
 						<YAxis />
@@ -23,9 +29,6 @@ const LineChartComponent = () => {
 					</LineChart>
 				</ResponsiveContainer>
 			</div>
-		
-			
-		</>
 	)
 }
 
