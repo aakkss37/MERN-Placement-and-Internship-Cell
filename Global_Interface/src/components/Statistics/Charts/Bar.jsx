@@ -24,6 +24,7 @@ const Bar = () => {
 			height="400px"
 			data={data}
 			options={options}
+			
 		/>
 	);
 }

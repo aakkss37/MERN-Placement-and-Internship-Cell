@@ -1,6 +1,10 @@
 import React from 'react';
 import './statistic.css';
 import CountUp from 'react-countup';
+import Bar from './Charts/Bar';
+import Column from './Charts/Column';
+import Line from './Charts/Line';
+import Pie from './Charts/Pie';
 
 const Statistic = () => {
 	return (
@@ -25,12 +29,10 @@ const Statistic = () => {
 				</div>
 			</div>
 			<div>
-				<div>
-					
-				</div>
-				<div>graph</div>
-				<div>graph</div>
-				<div>graph</div>
+				<div><Bar/></div>
+				<div><Column /></div>
+				<div><Line /></div>
+				<div><Pie /></div>
 			</div>
 		</div>
 	)
