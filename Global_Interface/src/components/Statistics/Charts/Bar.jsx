@@ -14,6 +14,8 @@ const options = {
 		title: "Company Performance",
 		subtitle: "Sales, Expenses, and Profit: 2014-2017",
 	},
+	fill: 'transparent'
+	
 };
 
 const Bar = () => {
@@ -24,7 +26,6 @@ const Bar = () => {
 			height="400px"
 			data={data}
 			options={options}
-			
 		/>
 	);
 }
