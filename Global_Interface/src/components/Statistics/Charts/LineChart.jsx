@@ -1,6 +1,7 @@
 import React from 'react'
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, AreaChart, Area, BarChart, Bar, } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer, AreaChart, Area, BarChart, Bar, PieChart, Pie, } from 'recharts';
 import { data } from './chartData.js';
+
 
 
 
@@ -50,6 +51,17 @@ const LineChartComponent = () => {
 						<Bar dataKey="lowest" fill="#82ca9d" />
 						<Bar dataKey="average" fill="#FF8A71" />
 					</BarChart>
+				</ResponsiveContainer>
+			</div>
+			<div>
+				<h1 className="chart-heading">Bar Chart</h1>
+				<ResponsiveContainer width="100%" aspect={3}>
+					<PieChart  >
+						<Pie data={data} dataKey="highest" nameKey="year" cx="50%" cy="50%" outerRadius={50} fill="#8884d8" />
+						<Tooltip />
+						<Legend />
+						
+					</PieChart>
 				</ResponsiveContainer>
 			</div>
 		</>
