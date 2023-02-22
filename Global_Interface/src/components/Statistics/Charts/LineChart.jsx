@@ -14,8 +14,8 @@ const LineChartComponent = () => {
 			<ResponsiveContainer width="100%" height='90%' >
 				<LineChart data={data} margin={{
 					top: 5,
-					right: 30,
-					left: 0,
+					right: 20,
+					left: -30,
 					bottom: 0,
 				}}>
 						{/* <CartesianGrid strokeDasharray="3 3" /> */}

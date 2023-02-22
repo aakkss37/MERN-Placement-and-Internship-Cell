@@ -7,7 +7,12 @@ const AreaChartComponent = () => {
 	  <div className='graph_container'>
 		  <h2 className="chart-heading">Area Chart</h2>
 		  <ResponsiveContainer width="100%" height='90%'>
-			  <AreaChart data={data}>
+			  <AreaChart data={data} margin={{
+				  top: 5,
+				  right: 20,
+				  left: -30,
+				  bottom: 0,
+			  }}>
 				  <XAxis dataKey="year" />
 				  <YAxis />
 				  <Tooltip />
