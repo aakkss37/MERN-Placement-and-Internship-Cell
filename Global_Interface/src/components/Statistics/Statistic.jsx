@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import './statistic.css';
 import CountUp from 'react-countup';
 import ScrollTrigger from 'react-scroll-trigger';
+import LineChartComponent from './Charts/LineChart';
+
+
 
 
 
@@ -32,7 +35,15 @@ const Statistic = () => {
 						<p>Heighest CTC <b>(Lakh p.a)</b></p>
 					</div>
 				</div>
+
+				<div className='statistic_graph'>
+					<div className='line_chart'>
+						<LineChartComponent/>
+					</div>
+				</div>
 			</ScrollTrigger>
+
+			
 
 		</div>
 	)
