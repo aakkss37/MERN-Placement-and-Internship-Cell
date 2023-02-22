@@ -1,0 +1,13 @@
+.statistic{
+	margin: 4rem 6rem;
+	padding: 1rem 3rem;
+	color: #fff;
+	background: var(--color-blog);
+	font-family: var(--font-family);
+}
+
+.statistic h1{
+	text-align: center;
+	font-size: 3rem;
+	font-weight: 800;
+}

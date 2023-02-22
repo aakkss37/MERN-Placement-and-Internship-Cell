@@ -1,8 +1,25 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './home.css'
 import people from '../../Assets/people.png'
 
+
+const initialFormValues = {
+	name: '',
+	email: '',
+	phone: '',
+	query: '',
+}
+
 const Home = () => {
+	const [formValues, setFormValues] = useState(initialFormValues);
+
+	const formValueChangeHandler = (event)=> {
+		console.log(event.target.value)
+		setFormValues((prevState)=>{
+			
+		})
+	}
+
 	return (
 		<div className="home section__padding" id="home">
 			<div className="home_text">
@@ -17,10 +34,10 @@ const Home = () => {
 			</div>
 
 			<div className="home_enquiry_form">
-					<input type='text' name='name' value='' placeholder='Name' />
-					<input type='email' name='email' value='' placeholder='E-mail' />
-					<input type='numbar' name='phone' value='' placeholder='Phone numbar' />
-					<textarea placeholder='What is your query' rows='5' name='query' value='' />
+					<input type='text' name='name' value={formValues.name} placeholder='Name' onChange={formValueChangeHandler}/>
+				<input type='email' name='email' value={formValues.email} placeholder='E-mail' onChange={formValueChangeHandler}/>
+				<input type='numbar' name='phone' value={formValues.phone} placeholder='Phone numbar' onChange={formValueChangeHandler}/>
+				<textarea placeholder='What is your query' value={formValues.query} rows='5' name='query' onChange={formValueChangeHandler}/>
 					<button>Submit</button>
 			</div>
 		</div>
