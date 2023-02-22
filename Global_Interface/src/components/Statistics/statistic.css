@@ -1,6 +1,6 @@
 .statistic {
 	margin: 4rem 6rem;
-	padding: 1rem 3rem;
+	padding: 1rem 1rem;
 	color: #fff;
 	background: var(--color-blog);
 	font-family: var(--font-family);
@@ -18,13 +18,12 @@
 	justify-content: center;
 	align-items: center;
 	gap: 3.5rem;
-	margin: 2rem 6rem;
+	margin: 2rem 2rem;
 }
 
-.counter_box{
+.counter_box {
 	border-left: 8px solid #040C18;
 	padding: 30px;
-	width: 200px;
 	width: 230px;
 	height: 200px;
 	background-color: #050f1e8c;
@@ -32,11 +31,12 @@
 	border-bottom-right-radius: 5px;
 	/* box-shadow: inset 0px 0px 15px 20px #042C54; */
 }
+
 /* .counter span:first-child{
 	color: #FF8A71;
 	font-size: 3.5rem;
 } */
-.counter_box span{
+.counter_box span {
 	color: #FF8A71;
 	font-size: 3.5rem;
 	font-weight: 600;
@@ -52,14 +52,41 @@
 
 
 
-@media screen and (max-width: 1050px) {
-	
-}
 
 @media screen and (max-width: 700px) {
-	
+	.statistic {
+		margin: 4rem 2rem;
+	}
+
+	.statistic h1 {
+		font-size: 2.5rem;
+	}
+
+	.counter_box {
+		padding: 20px;
+		width: 150px;
+		height: 150px;
+	}
+
+	.counter_box span {
+		font-size: 2rem;
+	}
+
+	.counter_box p {
+		font-size: 12px;
+	}
 }
 
-@media screen and (max-width: 550px) {
-	
+@media screen and (max-width: 530px) {
+	.counter_box {
+		padding: 20px;
+		height: auto;
+		flex-grow: 1;
+	}
+}
+
+@media screen and (max-width: 350px) {
+	.statistic h1 {
+		font-size: 2rem;
+	}
 }
