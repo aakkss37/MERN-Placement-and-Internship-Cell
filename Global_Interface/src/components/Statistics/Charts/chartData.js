@@ -70,10 +70,14 @@ export const data = [
 
 
 export const pieData = [
-	{ company: 'TCS', offered: 18 },
-	{ company: 'TCS', offered: 23 },
+	{ company: 'IBM', offered: 18 },
+	{ company: 'Amazon', offered: 23 },
 	{ company: 'Capgemini', offered: 17 },
 	{ company: 'Wipro', offered: 28 },
 	{ company: 'Accenture', offered: 28 },
-	{ company: 'TCS', offered: 46 },
+	{ company: 'TCS', offered: 32 },
+	{ company: 'Cognizant', offered: 16 },
+	{ company: 'Infosys', offered: 27 },
+	{ company: 'DXC', offered: 9 },
+	{ company: 'LTIS', offered: 11 },
 ]
