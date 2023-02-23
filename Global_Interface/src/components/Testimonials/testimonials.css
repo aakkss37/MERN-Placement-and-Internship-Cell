@@ -63,15 +63,18 @@
 	.join_us_bar {
 		padding: 10px 10px;
 	}
-		.join_us_bar .join_us_text p {
-			font-size: 14px;
-		}
-		.join_us_bar .join_us_text span {
-			font-size: 1rem;
-			font-weight: 600;
-		}
-				.join_us_button {
-					margin: 1.5rem;
-					margin-top: 2rem;
-				}
+
+	.join_us_bar .join_us_text p {
+		font-size: 14px;
+	}
+
+	.join_us_bar .join_us_text span {
+		font-size: 1rem;
+		font-weight: 600;
+	}
+
+	.join_us_button {
+		margin: 1.5rem;
+		margin-top: 2rem;
+	}
 }
