@@ -9,7 +9,6 @@ export const data = [
 		avove5: 117,
 		above10: 84,
 		above15: 49,
-		topRecruter: {TCS: 18}
 	},
 	{
 		year: '2019',
@@ -21,7 +20,6 @@ export const data = [
 		avove5: 74,
 		above10: 127,
 		above15: 82,
-		topRecruter: { TCS: 23 }
 	},
 	{
 		year: '2020',
@@ -33,7 +31,6 @@ export const data = [
 		avove5: 155,
 		above10: 93,
 		above15: 66,
-		topRecruter: { Capgemini: 17 }
 	},
 	{
 		year: '2021',
@@ -45,7 +42,6 @@ export const data = [
 		avove5: 213,
 		above10: 81,
 		above15: 55,
-		topRecruter: { Wipro: 28 }
 	},
 	{
 		year: '2022',
@@ -57,7 +53,6 @@ export const data = [
 		avove5: 213,
 		above10: 81,
 		above15: 55,
-		topRecruter: { Accenture: 28 }
 	},
 	{
 		year: '2023',
@@ -69,7 +64,16 @@ export const data = [
 		avove5: 401,
 		above10: 158,
 		above15: 32,
-		topRecruter: { TCS: 46 }
 	},
 
+]
+
+
+export const pieData = [
+	{ company: 'TCS', offered: 18 },
+	{ company: 'TCS', offered: 23 },
+	{ company: 'Capgemini', offered: 17 },
+	{ company: 'Wipro', offered: 28 },
+	{ company: 'Accenture', offered: 28 },
+	{ company: 'TCS', offered: 46 },
 ]
