@@ -48,7 +48,7 @@ const Statistic = () => {
 				<BarChartComponent />
 				<PieChartComponent />
 			</div>
-
+		
 		</div>
 	)
 }
