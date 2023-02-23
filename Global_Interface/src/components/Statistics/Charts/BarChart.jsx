@@ -20,10 +20,10 @@ const BarChartComponent = () => {
 				  <XAxis dataKey="year" />
 				  <YAxis />
 				  <Tooltip />
-				  <Legend />
-				  <Bar dataKey="highest" fill="#8884d8" />
-				  <Bar dataKey="lowest" fill="#82ca9d" />
-				  <Bar dataKey="average" fill="#FF8A71" />
+				  <Legend  />
+				  <Bar dataKey="max" fill="#8884d8" />
+				  <Bar dataKey="min" fill="#82ca9d" />
+				  <Bar dataKey="avg" fill="#FF8A71" />
 			  </BarChart>
 		  </ResponsiveContainer>
 	  </div>

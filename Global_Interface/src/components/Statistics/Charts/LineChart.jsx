@@ -10,7 +10,7 @@ const LineChartComponent = () => {
 
 	return (
 			<div className='graph_container'>
-				<h2>CTC Offered</h2>
+				<h2>CTC Offered(lakh.p.a)</h2>
 			<ResponsiveContainer width="100%" height='90%' >
 				<LineChart data={data} margin={{
 					top: 5,
@@ -21,11 +21,9 @@ const LineChartComponent = () => {
 						{/* <CartesianGrid strokeDasharray="3 3" /> */}
 						<XAxis dataKey="year" interval={'preserveStartEnd'} />
 						<YAxis />
-						<Tooltip contentStyle={{ backgroundColor: 'yellow' }} />
-						<Legend />
-						<Line dataKey="highest" stroke="red" activeDot={{ r: 8 }} />
-						<Line dataKey="lowest" stroke="green" activeDot={{ r: 8 }} />
-						<Line dataKey="average" stroke="yellow" activeDot={{ r: 8 }} />
+					<Tooltip contentStyle={{ backgroundColor: '#050f1e8c' }} />
+					<Legend />
+						<Line dataKey="max" stroke="red" activeDot={{ r: 8 }} />
 					</LineChart>
 				</ResponsiveContainer>
 			</div>

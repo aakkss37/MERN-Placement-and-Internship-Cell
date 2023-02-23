@@ -16,8 +16,8 @@ const AreaChartComponent = () => {
 				  <XAxis dataKey="year" />
 				  <YAxis />
 				  <Tooltip />
-				  <Legend />
-				  <Area dataKey="highest" stroke="#8884d8" fill="#8884d8" />
+				  <Legend  />
+				  <Area dataKey="max" stroke="#8884d8" fill="#8884d8" />
 			  </AreaChart>
 		  </ResponsiveContainer>
 	  </div>
