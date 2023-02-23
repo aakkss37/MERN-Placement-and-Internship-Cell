@@ -19,6 +19,7 @@
 .join_us_bar .join_us_text h2 {
 	font-size: 1.7rem;
 	font-weight: 800;
+	line-height: 50px;
 }
 
 .join_us_bar .join_us_text span {
@@ -34,4 +35,43 @@
 	font-size: 1.3rem;
 	font-weight: 600;
 	cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1050px) {}
+
+@media screen and (max-width: 768px) {
+	.join_us_bar {
+		flex-direction: column;
+		text-align: justify;
+	}
+
+	.join_us_button {
+		margin: 15px;
+		margin-top: 3rem;
+	}
+}
+
+@media screen and (max-width: 550px) {
+	.join_us_bar {
+		padding: 10px 10px;
+	}
+		.join_us_bar .join_us_text p {
+			font-size: 14px;
+		}
+		.join_us_bar .join_us_text span {
+			font-size: 1rem;
+			font-weight: 600;
+		}
+				.join_us_button {
+					margin: 1.5rem;
+					margin-top: 2rem;
+				}
 }
