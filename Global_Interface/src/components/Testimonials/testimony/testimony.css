@@ -1,0 +1,47 @@
+.testimony_container .carousel-wrapper .testimony {
+	height: 400px;
+	width: 100%;
+	background-color: #050f1e8c;
+	color: #fff;
+	margin: 15px;
+	scroll-behavior: smooth;
+}
+
+.testimony_image_container{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.testimony_image_container img{
+	height: 100px;
+	width: 100px;
+	border-radius: 50%;
+	border: 2px solid #fff;
+	margin: 15px auto;
+}
+
+.testimony h3{
+	font-size: 1.2rem;
+	text-align: center;
+	font-weight: 800;
+}
+.testimony .review {
+	font-size: 14px;
+	line-height: 17px;
+	text-align: justify;
+	margin: 15px;
+	max-height: 150px;
+	overflow-y: scroll;
+	color: #81AFDD;
+}
+
+.testimony .branch{
+	margin: 5px 15px;
+	font-weight: 600;
+	color: #FF8A71;
+} 
+
+.testimony h6{
+	margin: 5px 15px;
+	color: #71e5ff;
+}

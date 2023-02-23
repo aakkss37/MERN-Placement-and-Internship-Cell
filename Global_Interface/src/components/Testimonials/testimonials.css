@@ -5,6 +5,7 @@
 
 .join_us_bar {
 	background: var(--gradient-bar);
+	margin: 4rem 10%;
 	padding: 1.5rem 2rem;
 	display: flex;
 	justify-content: space-between;
@@ -39,8 +40,18 @@
 
 
 
+/* =========================== */
 
 
+
+
+.testimony_container{
+	background-color: var(--color-blog);
+
+}
+.testimony_container img{
+	width: 150px;
+}
 
 
 
@@ -76,5 +87,10 @@
 	.join_us_button {
 		margin: 1.5rem;
 		margin-top: 2rem;
+	}
+
+
+	.testimony_container{
+		padding: 4rem 0px;
 	}
 }
