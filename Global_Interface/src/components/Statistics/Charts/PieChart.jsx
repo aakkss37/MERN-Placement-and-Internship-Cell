@@ -9,7 +9,7 @@ const PieChartComponent = () => {
 		  <ResponsiveContainer width="100%" height='90%'>
 			  <PieChart width={1030} height={720} >
 				  <Pie data={pieData} dataKey="offered" nameKey="company" cx="50%" cy="50%" innerRadius={40} outerRadius={60} fill="#8884d8" label />
-				  <Tooltip  />
+				  <Tooltip contentStyle={{ background: '#FF8A71', border: 'none', borderRadius: '3px'}}/>
 				  <Legend payload={[{value: 2023, type: 'line'},]}/>
 			  </PieChart>
 		  </ResponsiveContainer>
