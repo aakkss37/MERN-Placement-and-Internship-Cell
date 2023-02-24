@@ -5,6 +5,7 @@ import Home from './components/Home/Home';
 import Navbar from './components/Navbar/Navbar';
 import Statistic from './components/Statistics/Statistic';
 import Testimonials from './components/Testimonials/Testimonials';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
 		<HiringPartner/>
 		<Statistic/>
 		<Testimonials/>
-		
+		<Footer/>
 		
 		  <ScrollToTop 
 		  	smooth 
