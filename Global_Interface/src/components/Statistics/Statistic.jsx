@@ -9,6 +9,14 @@ import PieChartComponent from './Charts/PieChart';
 
 
 
+const counterData = {
+	totalCompany: 600,
+	offerAbove5: 400,
+	totalOffer: 1750,
+	heighestCTC: 62,
+}
+
+
 
 
 const Statistic = () => {
@@ -23,19 +31,19 @@ const Statistic = () => {
 			<ScrollTrigger onEnter={() => setCountOn(true)} onExit={() => setCountOn(false)}>
 				<div className='statistic_counter'>
 					<div className='counter_box'>
-						{countOn && <CountUp start={0} end={320} duration={4} useEasing={true} />}<span>+</span>
+						{countOn && <CountUp start={0} end={counterData.totalCompany} duration={4} useEasing={true} />}<span>+</span>
 						<p>Companies Chose KAHE students</p>
 					</div>
 					<div className='counter_box'>
-						{countOn && <CountUp start={0} end={150} duration={4} useEasing={true} />}<span>+</span>
+						{countOn && <CountUp start={0} end={counterData.offerAbove5} duration={4} useEasing={true} />}<span>+</span>
 						<p>Companies offering CTC 5 Lacs p.a. or above</p>
 					</div>
 					<div className='counter_box'>
-						{countOn && <CountUp start={0} end={750} duration={4} useEasing={true} />}<span>+</span>
+						{countOn && <CountUp start={0} end={counterData.totalOffer} duration={4} useEasing={true} />}<span>+</span>
 						<p>Numbar of Offers(p.a) for KAHE Students</p>
 					</div>
 					<div className='counter_box'>
-						<span>₹</span>{countOn && <CountUp start={0} end={34} duration={4} useEasing={true} />}
+						<span>₹</span>{countOn && <CountUp start={0} end={counterData.heighestCTC} duration={4} useEasing={true} />}
 						<p>Heighest CTC <b>(Lakh p.a)</b></p>
 					</div>
 				</div>
