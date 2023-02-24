@@ -1,0 +1,12 @@
+{
+  "name": "kahe-placement-and-internship-cell-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+		"start": "nodemon server.js"
+	},
+  "author": "amarkumar.sharma.124@gmail.com",
+  "license": "ISC"
+}
