@@ -20,7 +20,7 @@ const Navbar = () => {
 				</div>
 			</div>
 			<div className='navbar-sign'>
-				<a href='http://localhost:3000/'>
+				<a href='http://localhost:3000/profile' target="_blank" rel="noreferrer">
 					Student Login
 					<BiLogIn style={{color: '#fff', fontSize: 24}}/>
 				</a>
