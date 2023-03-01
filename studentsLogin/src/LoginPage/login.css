@@ -1,0 +1,22 @@
+.kahe_login {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100vh;
+	background-color: #367D43;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+
+.kahe_login_container {
+	border: 2px solid red;
+	text-align: center;
+}
+
+
+.kahe_google_logo{}
+
+.kahe_logon_button{}
