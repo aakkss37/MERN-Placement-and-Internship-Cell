@@ -1,7 +1,8 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
-
+import dotenv from 'dotenv';
+dotenv.config();
 
 // EXPRESS INITIALIZATION
 const app = express()
@@ -27,7 +28,7 @@ mongoseConnection();
 // app.use('/', router)
 
 
-const PORT = 8000;
+const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
 	console.log(`Server is running on ${PORT}`)
 })
