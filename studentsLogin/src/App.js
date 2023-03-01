@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box } from '@mui/material';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate, Outlet, } from 'react-router-dom';
 import './App.css';
 import Header from './components/Constants/UI/Header/Header';
 import Experience from './components/Experience/Experience';
@@ -14,6 +14,8 @@ import Result from './components/Results/Result';
 import SelectedStudents from './components/Results-selectedStudents/SelectedStudents';
 import ShareExperience from './components/ShareExperience/ShareExperience';
 import ContactPIC from './components/ContactPIC/ContactPIC';
+
+
 
 function App () {
 	return (
