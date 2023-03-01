@@ -1,6 +1,6 @@
 // import React, { useEffect } from 'react'
 import './login.css';
-import logo from '../asset/logo.png'
+import logo from '../asset/KAHE_LOGO.png'
 import { LoginSocialGoogle } from 'reactjs-social-login';
 // import axios from 'axios';
 // import { useNavigate } from 'react-router-dom';
@@ -71,9 +71,11 @@ const Login = (props) => {
 				<div className='kahe_logo'>
 					<img src={logo} alt='logo' />
 				</div>
-				<h3>Karpagan Academy of Higher Education</h3>
-				<p>Placement and Internship Cell</p>
 
+				<div className='kahe_login_text'>
+					<h3>Karpagan Academy of Higher Education</h3>
+					<p>Placement and Internship Cell</p>
+				</div>
 
 				<LoginSocialGoogle
 					client_id={process.env.REACT_APP_CLIENT_ID}
