@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react'
+// import React, { useEffect } from 'react'
 import './login.css';
 import logo from '../asset/logo.png'
 import { LoginSocialGoogle } from 'reactjs-social-login';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+// import axios from 'axios';
+// import { useNavigate } from 'react-router-dom';
 import LoginButton from './LoginButton/LoginButton';
 
 
@@ -22,7 +22,7 @@ import LoginButton from './LoginButton/LoginButton';
 
 
 const Login = (props) => {
-	const navigate = useNavigate();
+	// const navigate = useNavigate();
 
 
 

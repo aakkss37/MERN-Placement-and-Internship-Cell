@@ -17,6 +17,13 @@
 }
 
 
-.kahe_google_logo{}
+.kahe_google_logo{
+	width: 24px;
+	height: 24px;
+}
 
-.kahe_logon_button{}
+.kahe_logon_button{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
