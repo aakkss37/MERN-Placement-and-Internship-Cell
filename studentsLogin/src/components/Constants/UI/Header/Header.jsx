@@ -34,10 +34,14 @@ const menuList = [
 
 
 
-const Header = () => {
+const Header = (props) => {
 
 	const navigate = useNavigate();
 	const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+	const logoutHandler = () => {
+		localStorage.removeItem('accessToken');
+		navigate('/')
+	}
 
 	const drawerItems = () => {
 		return (
@@ -101,7 +105,7 @@ const Header = () => {
 					<GeneralText style={{ marginRight: '40px', cursor: 'pointer' }} onClick={() => navigate('/about')}> ABOUT</GeneralText>
 					<GeneralText style={{ marginRight: '40px', cursor: 'pointer' }} onClick={() => navigate('/profile')}> PROFILE</GeneralText>
 				</ProfileContainer>
-				<LogoutBox onClick={() => navigate('/login')}>
+				<LogoutBox onClick={logoutHandler}>
 					<LogoutIcon />
 				</LogoutBox>
 
