@@ -1,10 +1,16 @@
 import axios from 'axios';
 import dotenv from 'dotenv';
+import jwt from 'jsonwebtoken';
 dotenv.config();
 import Student from '../model/studentSchema.js';
 
 
 
+const createToken = (student) => {
+	const accessTokan = jwt.sign(student.toJSON(), process.env.ACCESS_TOKEN_SECRET_KEY, { expiresIn: '365d' });
+	const refreshToken = jwt.sign(student.toJSON(), process.env.REFRESH_TOKEN_SECRET_KEY);
+	return { accessTokan: accessTokan, refreshToken: refreshToken }
+}
 
 
 
@@ -23,6 +29,7 @@ export const loginStudent = async (req, resp) => {
 		// console.log("authanticated data==> ",responce.data)
 
 		const student = await Student.findOne({ email: responce.data.email });
+		// console.log("student 1=====>>>>>>>>> ", student)
 		if (student) {
 			if (!student.everLogedIn) {
 				const studentData = {
@@ -35,8 +42,11 @@ export const loginStudent = async (req, resp) => {
 				updateStudent.save();
 				// console.log("updated student ===> ", updateStudent)
 				const student = await Student.findOne({ email: responce.data.email });
-				// console.log("student =====>>>>>>>>> ", student)
+				const { accessTokan, refreshToken } =  createToken(student)
+				// console.log("student 2=====>>>>>>>>> ", student)
 				return resp.status(200).json({
+					jwtAccessToken: accessTokan,
+					jwtRefreshToken: refreshToken,
 					name: student.name,
 					email: student.email,
 					picture: student.picture,
@@ -46,8 +56,11 @@ export const loginStudent = async (req, resp) => {
 				})
 			}
 			else{
-				// console.log("student =====>>>>>>>>> ", student)
+				// console.log("student 3=====>>>>>>>>> ", student)
+				const { accessTokan, refreshToken } =  createToken(student)
 				return resp.status(200).json({
+					jwtAccessToken: accessTokan,
+					jwtRefreshToken: refreshToken,
 					name: student.name,
 					email: student.email,
 					picture: student.picture,
