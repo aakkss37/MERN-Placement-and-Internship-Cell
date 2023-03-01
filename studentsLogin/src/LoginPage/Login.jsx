@@ -13,7 +13,7 @@ const validateAccessTokan = async (aaccessToken) => {
 			aaccessToken: aaccessToken
 		});
 
-		console.log(responce.data);
+		// console.log(responce.data);
 		return responce.data
 	} catch (error) {
 		console.log(error);
@@ -28,11 +28,11 @@ const Login = (props) => {
 
 	useEffect(() => {
 		const aaccessToken = localStorage.getItem("accessToken");
-		console.log("aaccessToken from localStorage ==>>>>>>>>", aaccessToken)
+		// console.log("aaccessToken from localStorage ==>>>>>>>>", aaccessToken)
 		const validateToken = async () => {
 			if (aaccessToken) {
 				const userData = await validateAccessTokan(aaccessToken)
-				console.log(userData)
+				// console.log(userData)
 				props.setUser(userData);
 				navigate('/placement-drive')
 			}
@@ -49,7 +49,7 @@ const Login = (props) => {
 			const responce = await axios.post(`http://localhost:${PORT}/login`, {
 				access_token: data.access_token,
 			})
-			console.log(responce.data)
+			// console.log(responce.data)
 			localStorage.setItem('accessToken', `Bearer ${responce.data.jwtAccessToken}`) //SESSION STORAGE
 			localStorage.setItem('refreshToken', `Bearer ${responce.data.jwtRefreshToken}`)
 			props.setUser({
@@ -84,7 +84,7 @@ const Login = (props) => {
 					access_type="offline"
 					onResolve={({ provider, data }) => {
 						handleLoginResponce(data)
-						console.log(data)
+						// console.log(data)
 					}}
 					onReject={err => {
 						console.log(err);
