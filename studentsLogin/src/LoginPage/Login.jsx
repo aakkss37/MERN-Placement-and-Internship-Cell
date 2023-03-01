@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react'
+// import React, { useEffect } from 'react'
 import './login.css';
 import logo from '../asset/KAHE_LOGO.png'
 import { LoginSocialGoogle } from 'reactjs-social-login';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import LoginButton from './LoginButton/LoginButton';
 
 const PORT = process.env.REACT_APP_SERVER_PORT;
@@ -49,14 +49,14 @@ const Login = (props) => {
 			const responce = await axios.post(`http://localhost:${PORT}/login`, {
 				access_token: data.access_token,
 			})
-			// console.log(resp.data)
-			localStorage.setItem('accessToken', `Bearer ${responce.data.jwtAccessToken}`) //SESSION STORAGE
-			localStorage.setItem('refreshToken', `Bearer ${responce.data.jwtRefreshToken}`)
-			props.setUser({
-				name: responce.data.name,
-				email: responce.data.email,
-				img: responce.data.picture
-			})
+			console.log(responce.data)
+			// localStorage.setItem('accessToken', `Bearer ${responce.data.jwtAccessToken}`) //SESSION STORAGE
+			// localStorage.setItem('refreshToken', `Bearer ${responce.data.jwtRefreshToken}`)
+			// props.setUser({
+			// 	name: responce.data.name,
+			// 	email: responce.data.email,
+			// 	img: responce.data.picture
+			// })
 
 			// navigate('/home')
 		} catch (error) {

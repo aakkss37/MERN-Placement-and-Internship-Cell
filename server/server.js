@@ -24,8 +24,8 @@ mongoseConnection();
 
 
 // ROUTING
-// import router from './router/routes.js';
-// app.use('/', router)
+import router from './router/route.js';
+app.use('/', router)
 
 
 const PORT = process.env.PORT || 8000;
