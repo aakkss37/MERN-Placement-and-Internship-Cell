@@ -3,8 +3,10 @@ import './login.css';
 import logo from '../asset/KAHE_LOGO.png'
 import { LoginSocialGoogle } from 'reactjs-social-login';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
 import LoginButton from './LoginButton/LoginButton';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { saveLogedInStudentData } from '../redux/actions/studentAction';
 
 const PORT = process.env.REACT_APP_SERVER_PORT;
 const validateAccessTokan = async (aaccessToken) => {
@@ -23,7 +25,7 @@ const validateAccessTokan = async (aaccessToken) => {
 
 const Login = (props) => {
 	const navigate = useNavigate();
-
+	const dispatch = useDispatch();
 
 
 	useEffect(() => {
@@ -31,9 +33,9 @@ const Login = (props) => {
 		// console.log("aaccessToken from localStorage ==>>>>>>>>", aaccessToken)
 		const validateToken = async () => {
 			if (aaccessToken) {
-				const userData = await validateAccessTokan(aaccessToken)
+				const studentData = await validateAccessTokan(aaccessToken)
 				// console.log(userData)
-				props.setUser(userData);
+				dispatch(saveLogedInStudentData(studentData))
 				navigate('/placement-drive')
 			}
 		}
@@ -52,11 +54,15 @@ const Login = (props) => {
 			// console.log(responce.data)
 			localStorage.setItem('accessToken', `Bearer ${responce.data.jwtAccessToken}`) //SESSION STORAGE
 			localStorage.setItem('refreshToken', `Bearer ${responce.data.jwtRefreshToken}`)
-			props.setUser({
+			const studentData = {
 				name: responce.data.name,
 				email: responce.data.email,
-				img: responce.data.picture
-			})
+				picture: responce.data.picture,
+				cgpa: responce.data.cgpa,
+				activeBack: responce.data.activeBack,
+				phone: responce.data.phone,
+			}
+			dispatch(saveLogedInStudentData(studentData))
 
 			navigate('/placement-drive')
 		} catch (error) {
