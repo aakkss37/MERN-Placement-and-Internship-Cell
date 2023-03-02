@@ -30,7 +30,7 @@ const PrivateRoute = (props) => (
 
 function App () {
 	const student = useSelector(state => state.logedinStudent)
-
+	console.log(student)
 	return (
 		<BrowserRouter>
 			

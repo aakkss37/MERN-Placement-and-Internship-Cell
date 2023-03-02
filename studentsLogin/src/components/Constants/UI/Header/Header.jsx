@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
 import logo from '../../../../asset/logo.png';
+import { useDispatch } from 'react-redux';
+import { removeLogedInStudentData } from '../../../../redux/actions/studentAction'; 
 
 import { GeneralText, HeaderStyled, LogoConatiner, LogoutBox, LogoutIcon, MenuButton, ProfileContainer, ToolbarStyled, DrawerStyled, ListItemTextStyled } from './headerStyle.js';
 import { Box, Divider, List, ListItem, ListItemButton, ListItemIcon, } from '@mui/material';
@@ -35,11 +37,12 @@ const menuList = [
 
 
 const Header = (props) => {
-
+	const dispatch = useDispatch();
 	const navigate = useNavigate();
 	const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 	const logoutHandler = () => {
 		localStorage.removeItem('accessToken');
+		dispatch(removeLogedInStudentData())
 		navigate('/')
 	}
 
