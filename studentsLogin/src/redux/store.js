@@ -21,11 +21,11 @@ place, rather than spreading it across multiple action creators and reducers.
 */
 
 
-import { studentReducer } from "./reducer/getStudent";
+import { studentLoginReducer } from "./reducer/studentReducer.js";
 
 
 const reducer = combineReducers({
-	logedinUser: studentReducer,
+	logedinStudent: studentLoginReducer,
 })
 
 
