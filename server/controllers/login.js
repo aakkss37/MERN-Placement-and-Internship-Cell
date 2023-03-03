@@ -29,7 +29,9 @@ export const loginStudent = async (req, resp) => {
 		// console.log("authanticated data==> ",responce.data)
 
 		const student = await Student.findOne({ email: responce.data.email });
-		// console.log("student 1=====>>>>>>>>> ", student)
+		// console.log("student data from db =====>>>>>>>>> ", student)
+		// console.log("student inside data =====>>>>>>>>> ", {...student})
+
 		if (student) {
 			if (!student.everLogedIn) {
 				const studentData = {
@@ -42,31 +44,21 @@ export const loginStudent = async (req, resp) => {
 				updateStudent.save();
 				// console.log("updated student ===> ", updateStudent)
 				const student = await Student.findOne({ email: responce.data.email });
-				const { accessTokan, refreshToken } =  createToken(student)
+				const { accessTokan, refreshToken } = createToken(student)
 				// console.log("student 2=====>>>>>>>>> ", student)
 				return resp.status(200).json({
+					...student._doc,  //---> this ._doc is bcause with spread operater don't know why the whole student data is inside this ._doc field.
 					jwtAccessToken: accessTokan,
 					jwtRefreshToken: refreshToken,
-					name: student.name,
-					email: student.email,
-					picture: student.picture,
-					cgpa: student.cgpa,
-					activeBack: student.activeBack,
-					phone: student.phone,
 				})
 			}
-			else{
-				// console.log("student 3=====>>>>>>>>> ", student)
-				const { accessTokan, refreshToken } =  createToken(student)
+			else {
+				const { accessTokan, refreshToken } = createToken(student)
+				// console.log("updated student ===> ", {...student._doc})
 				return resp.status(200).json({
+					...student._doc,  //---> this ._doc is bcause with spread operater don't know why the whole student data is inside this ._doc field.
 					jwtAccessToken: accessTokan,
 					jwtRefreshToken: refreshToken,
-					name: student.name,
-					email: student.email,
-					picture: student.picture,
-					cgpa: student.cgpa,
-					activeBack: student.activeBack,
-					phone: student.phone,
 				})
 			}
 
