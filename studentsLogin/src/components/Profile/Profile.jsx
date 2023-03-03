@@ -5,6 +5,7 @@ import { LeftBoxDummy, MainConatiner, ProfileConatiner, ProfileBox, ImageBox, Pr
 import AccountCircleRoundedIcon from '@mui/icons-material/AccountCircleRounded';
 import { FileUploader } from "react-drag-drop-files";
 import BackupIcon from '@mui/icons-material/Backup';
+import { useSelector } from 'react-redux';
 
 
 const fileTypes = ['PDF'];
@@ -22,8 +23,15 @@ const Profile = () => {
 		setFile(file);
 	};
 
+	const student = useSelector(state => state.logedinStudent)
+	// console.log(student.admission)
+	// console.log(student.passout)
+	const admission = new Date(student.admission)
+	const passout = new Date(student.passout)
+	const admissionYear = admission.getFullYear()
+	const passoutYear = passout.getFullYear()
 
-
+	
 	return (
 		<MainConatiner>
 
@@ -38,7 +46,7 @@ const Profile = () => {
 					<ImageBox>
 						<Box>
 							<AccountCircleRoundedIcon style={{ fontSize: '7rem', color: '#367d43' }} />
-							<Typography textAlign='center'>Amar kumar</Typography>
+							<Typography textAlign='center'>{student.name}</Typography>
 						</Box>
 					</ImageBox>
 					<ProfileBody>
@@ -46,23 +54,23 @@ const Profile = () => {
 							<Typography textAlign='center' color='#367d43' fontWeight='600'>Personal Information</Typography>
 							<Box style={{ marginBottom: 5 }}>
 								<InfoKey >Gender: </InfoKey>
-								<InfoValue >Male </InfoValue>
+								<InfoValue >{student.gender} </InfoValue>
 							</Box>
 							<Box style={{ marginBottom: 5 }}>
 								<InfoKey>Phone: </InfoKey>
-								<InfoValue >9999999999 </InfoValue>
+								<InfoValue >{student.phone} </InfoValue>
 							</Box>
 							<Box style={{ marginBottom: 5 }}>
 								<InfoKey>Email: </InfoKey>
-								<LongInfoValue>amarfullstack.workspace.124@gmail.com</LongInfoValue>
+								<LongInfoValue>{student.personalEmail}</LongInfoValue>
 							</Box>
 							<Box style={{ marginBottom: 5 }}>
 								<InfoKey>LinkedIn: </InfoKey>
-								<LongInfoValue >amar-kumar-sharma-44202a203</LongInfoValue>
+								<LongInfoValue >{student.linkedIn}</LongInfoValue>
 							</Box>
 							<Box style={{ marginBottom: 5 }}>
 								<InfoKey>Address: </InfoKey>
-								<InfoValue >142 CFS mutthupalayam-Thekkalur Road Pelampatti, Tamil Nadu 555555, Gaudupatti, Bhoimbatore, Tamil Nadu - </InfoValue>
+								<InfoValue >{student.address}</InfoValue>
 							</Box>
 						</PersonalDetail>
 						<Divider style={{ marginTop: 8, marginBottom: 16 }} />
@@ -70,27 +78,27 @@ const Profile = () => {
 							<Typography textAlign='center' color='#367d43' fontWeight='600'>College Information</Typography>
 							<Box>
 								<InfoKey>Registeration no.: </InfoKey>
-								<InfoValue >20CSU135 </InfoValue>
+								<InfoValue >{student.studentId} </InfoValue>
 							</Box>
 							<Box>
 								<InfoKey>College email: </InfoKey>
-								<InfoValue >20csu135@kahedu.edu.in </InfoValue>
+								<InfoValue >{student.email} </InfoValue>
 							</Box>
 							<Box>
 								<InfoKey>Department.: </InfoKey>
-								<InfoValue >B.Sc Computer Science </InfoValue>
+								<InfoValue >{student.department} </InfoValue>
 							</Box>
 							<Box>
-								<InfoKey>Year: </InfoKey>
-								<InfoValue >3rd </InfoValue>
+								<InfoKey>Batch: </InfoKey>
+								<InfoValue >{admissionYear} - {passoutYear} </InfoValue>
 							</Box>
 							<Box>
 								<InfoKey>CGPA: </InfoKey>
-								<InfoValue >8.6 </InfoValue>
+								<InfoValue >{student.cgpa} </InfoValue>
 							</Box>
 							<Box>
 								<InfoKey>Active Backlog: </InfoKey>
-								<InfoValue >Yes</InfoValue>
+								<InfoValue >{student.activeBack}</InfoValue>
 							</Box>
 							
 
