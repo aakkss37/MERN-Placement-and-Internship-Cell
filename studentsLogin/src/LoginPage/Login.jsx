@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, {useEffect} from 'react'
 import './login.css';
 import logo from '../asset/KAHE_LOGO.png'
 import { LoginSocialGoogle } from 'reactjs-social-login';
@@ -34,7 +34,7 @@ const Login = (props) => {
 		const validateToken = async () => {
 			if (aaccessToken) {
 				const studentData = await validateAccessTokan(aaccessToken)
-				// console.log(userData)
+				// console.log(studentData)
 				dispatch(saveLogedInStudentData(studentData))
 				navigate('/placement-drive')
 			}
@@ -54,16 +54,7 @@ const Login = (props) => {
 			// console.log(responce.data)
 			localStorage.setItem('accessToken', `Bearer ${responce.data.jwtAccessToken}`) //SESSION STORAGE
 			localStorage.setItem('refreshToken', `Bearer ${responce.data.jwtRefreshToken}`)
-			const studentData = {
-				name: responce.data.name,
-				email: responce.data.email,
-				picture: responce.data.picture,
-				cgpa: responce.data.cgpa,
-				activeBack: responce.data.activeBack,
-				phone: responce.data.phone,
-			}
-			dispatch(saveLogedInStudentData(studentData))
-
+			dispatch(saveLogedInStudentData(responce.data))
 			navigate('/placement-drive')
 		} catch (error) {
 			console.log(error)
