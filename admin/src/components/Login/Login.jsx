@@ -1,5 +1,5 @@
 import React from 'react';
-import './logo.css'
+import './login.css'
 import logo from '../../assets/KAHE_LOGO.png';
 
 const Login = () => {
