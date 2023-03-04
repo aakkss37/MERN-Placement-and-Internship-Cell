@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Box, Divider, Typography } from '@mui/material';
 import MenuBox from '../Constants/UI/menu/MenuBox.jsx';
 import { LeftBoxDummy, MainConatiner, ProfileConatiner, ProfileBox, ImageBox, ProfileBody, PersonalDetail, CollegeDetail, InfoKey, InfoValue, ShowResume, UploadResume, SaveResume, LongInfoValue, } from './profileStyle.js';
-import AccountCircleRoundedIcon from '@mui/icons-material/AccountCircleRounded';
+// import AccountCircleRoundedIcon from '@mui/icons-material/AccountCircleRounded';
 import { FileUploader } from "react-drag-drop-files";
 import BackupIcon from '@mui/icons-material/Backup';
 import { useSelector } from 'react-redux';
@@ -31,7 +31,7 @@ const Profile = () => {
 	const admissionYear = admission.getFullYear()
 	const passoutYear = passout.getFullYear()
 
-	
+
 	return (
 		<MainConatiner>
 
@@ -45,7 +45,8 @@ const Profile = () => {
 				<ProfileBox>
 					<ImageBox>
 						<Box>
-							<AccountCircleRoundedIcon style={{ fontSize: '7rem', color: '#367d43' }} />
+							{/* <AccountCircleRoundedIcon style={{ fontSize: '7rem', color: '#367d43' }} /> */}
+							<img src={student.picture} alt="img" style={{borderRadius: "50%", width: '100px', border: '1px solid red'}}/>
 							<Typography textAlign='center'>{student.name}</Typography>
 						</Box>
 					</ImageBox>
