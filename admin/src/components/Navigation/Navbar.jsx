@@ -12,6 +12,7 @@ const Navbar = () => {
 			<div className='navbar_links'>
 				<span>Home</span>
 				<span>New Company</span>
+				<span>Placement Data</span>
 				<span>Students</span>
 			</div>
 			  <div className='navbar_logout'>
