@@ -11,8 +11,8 @@ const Navbar = () => {
 			</div>		
 			<div className='navbar_links'>
 				<span>Home</span>
-				<span>xyz</span>
-				<span>xyz</span>
+				<span>New Company</span>
+				<span>Students</span>
 			</div>
 			  <div className='navbar_logout'>
 				<span>Logout</span>

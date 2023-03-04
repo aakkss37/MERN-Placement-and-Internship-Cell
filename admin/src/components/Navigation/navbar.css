@@ -13,13 +13,13 @@
 }
 
 .navbar_logo img {
-	width: 50px;
+	width: 35px;
 }
 
 .navbar_links span {
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: 800;
-	margin-left: 2.5rem;
+	margin-left: 2rem;
 	padding: 10px;
 	border-radius: 10px;
 	transition: 0.3s;
@@ -31,7 +31,7 @@
 }
 
 .navbar_logout{
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: 800;
 	padding: 10px;
 	border-radius: 10px;
