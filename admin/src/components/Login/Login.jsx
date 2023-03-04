@@ -1,8 +1,14 @@
 import React from 'react';
 import './login.css'
 import logo from '../../assets/KAHE_LOGO.png';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
+	const navigate = useNavigate()
+	const loginHandler = ()=>{
+		navigate('/home')
+	}
+
 	return (
 		<div className='login'>
 			<div className='login_container'>
@@ -16,7 +22,7 @@ const Login = () => {
 				<div className='login_form_container'>
 					<input type="text" placeholder='Username'/>
 					<input type="password" placeholder='Password'/>
-					<button>Login</button>
+					<button onClick={loginHandler}>Login</button>
 				</div>
 			</div>
 		</div>
