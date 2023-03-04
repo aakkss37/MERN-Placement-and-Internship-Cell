@@ -1,11 +1,19 @@
 import React from 'react'
+import { BrowserRouter, Routes, Route, Navigate, Outlet, } from 'react-router-dom';
+
 import './App.css'
+import Home from './components/Home/Home';
+import Navbar from './components/Navigation/Navbar'
+
 
 const App = () => {
   return (
-	<div>
-		<h1>Admin page</h1>
-	</div>
+	<BrowserRouter>
+		<Navbar/>
+		<Routes>
+			<Route path='/' element={<Home/>} />
+		</Routes>
+	</BrowserRouter>
   )
 }
 
