@@ -25,7 +25,7 @@ const Profile = () => {
 
 	const student = useSelector(state => state.logedinStudent)
 	// console.log(student.admission)
-	// console.log(student.passout)
+	console.log(student.picture)
 	const admission = new Date(student.admission)
 	const passout = new Date(student.passout)
 	const admissionYear = admission.getFullYear()
@@ -46,7 +46,7 @@ const Profile = () => {
 					<ImageBox>
 						<Box>
 							{/* <AccountCircleRoundedIcon style={{ fontSize: '7rem', color: '#367d43' }} /> */}
-							<img src={student.picture} alt="img" style={{borderRadius: "50%", width: '100px', border: '1px solid red'}}/>
+							<img src={student.picture} alt="img" style={{borderRadius: "50%", width: '100px'}}/>
 							<Typography textAlign='center'>{student.name}</Typography>
 						</Box>
 					</ImageBox>

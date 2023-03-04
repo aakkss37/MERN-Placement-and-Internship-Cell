@@ -34,7 +34,7 @@ const Login = (props) => {
 		const validateToken = async () => {
 			if (aaccessToken) {
 				const studentData = await validateAccessTokan(aaccessToken)
-				// console.log(studentData)
+				console.log(studentData)
 				dispatch(saveLogedInStudentData(studentData))
 				navigate('/placement-drive')
 			}
@@ -70,7 +70,7 @@ const Login = (props) => {
 				</div>
 
 				<div className='kahe_login_text'>
-					<h3>Karpagan Academy of Higher Education</h3>
+					<h3>Karpagam Academy of Higher Education</h3>
 					<p>Placement and Internship Cell</p>
 				</div>
 

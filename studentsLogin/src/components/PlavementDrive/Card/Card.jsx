@@ -43,8 +43,8 @@ const Cards = () => {
 			<CardMedia
 				component="img"
 				height="194"
-				// image="https://play-lh.googleusercontent.com/1-hPxafOxdYpYZEOKzNIkSP43HXCNftVJVttoo4ucl7rsMASXW3Xr6GlXURCubE1tA=w3840-h2160-rw"
-				image={googleImage}
+				image="https://play-lh.googleusercontent.com/1-hPxafOxdYpYZEOKzNIkSP43HXCNftVJVttoo4ucl7rsMASXW3Xr6GlXURCubE1tA=w3840-h2160-rw"
+				// image={googleImage}
 				alt="Paella dish"
 			/>
 			<CardContent>
