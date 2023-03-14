@@ -5,7 +5,7 @@ import './newCompany.css'
 
 const CGPA = [6, 6.5, 7, 7.5, 8, 8.5, 9]
 const passoutYear = [2022, 2023, 2024, 2025, 2026]
-const departmentList = ["All","Anthropology", "Biology", "Business", "Chemical Engineering", "Chemistry", "Civil Engineering", "Communications", "Computer Science", "Economics", "Education", "Electrical Engineering", "English", "Environmental Science", "Foreign Languages", "Geography", "History", "Law", "Mathematics", "Mechanical Engineering", "Philosophy", "Physics", "Political Science", "Psychology", "Sociology", "Bachelor of Arts", "Bachelor of Science", "Master of Arts", "Master of Business Administration", "Master of Education", "Master of Engineering", "Master of Science"]
+const departmentList = ["All", "Anthropology", "Biology", "Business", "Chemical Engineering", "Chemistry", "Civil Engineering", "Communications", "Computer Science", "Economics", "Education", "Electrical Engineering", "English", "Environmental Science", "Foreign Languages", "Geography", "History", "Law", "Mathematics", "Mechanical Engineering", "Philosophy", "Physics", "Political Science", "Psychology", "Sociology", "Bachelor of Arts", "Bachelor of Science", "Master of Arts", "Master of Business Administration", "Master of Education", "Master of Engineering", "Master of Science"]
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
 const MenuProps = {
@@ -57,7 +57,7 @@ const NewCompany = () => {
 				<div className='eligibility_and_detail'>
 					<SectionHeading>Eligibility and Job Details</SectionHeading>
 					<div className='form_container'>
-						<Box sx={{ minWidth: 220 }}>
+						<Box sx={{ minWidth: 250 }}>
 							<FormControl fullWidth required variant='standard'>
 								<InputLabel id="demo-simple-select-label">CGPA</InputLabel>
 								<Select
@@ -77,15 +77,15 @@ const NewCompany = () => {
 								</Select>
 							</FormControl>
 						</Box>
-						<Box sx={{ minWidth: 220 }}>
+						<Box sx={{ minWidth: 250 }}>
 							<FormControl fullWidth required variant='standard'>
 								<InputLabel id="demo-simple-select-label">Passout Year</InputLabel>
 								<Select
 									labelId="demo-simple-select-label"
 									id="demo-simple-select"
 									value={formData.passoutYear}
-									name='activeBack'
-									label="Active Backlog"
+									name='passoutYear'
+									label="Passout Year"
 									onChange={(e) => { formChangeHandler(e) }}
 								>
 									<MenuItem value={0}>All</MenuItem>
@@ -97,7 +97,7 @@ const NewCompany = () => {
 								</Select>
 							</FormControl>
 						</Box>
-						<Box sx={{ minWidth: 220 }}>
+						<Box sx={{ minWidth: 250 }}>
 							<FormControl fullWidth required variant='standard'>
 								<InputLabel id="demo-simple-select-label">Active Backlog</InputLabel>
 								<Select
@@ -113,44 +113,35 @@ const NewCompany = () => {
 								</Select>
 							</FormControl>
 						</Box>
-						<Box sx={{ minWidth: 220 }}>
+						<Box sx={{ minWidth: 250 }}>
 							<FormControl fullWidth required variant='standard'>
 								<InputLabel id="demo-simple-select-label">Job Type</InputLabel>
 								<Select
 									labelId="demo-simple-select-label"
 									id="demo-simple-select"
 									value={formData.jobType}
-									name='activeBack'
-									label="Active Backlog"
+									name='jobType'
+									label="Job Type"
 									onChange={(e) => { formChangeHandler(e) }}
 								>
-									<MenuItem value={true}>Full-Time Internship</MenuItem>
-									<MenuItem value={true}>Part-Time Internship</MenuItem>
-									<MenuItem value={true}>Full-Time Job</MenuItem>
-									<MenuItem value={true}>Part-Time Job</MenuItem>
+									<MenuItem value={"Full-Time Internship"}>Full-Time Internship</MenuItem>
+									<MenuItem value={"Part-Time Internship"}>Part-Time Internship</MenuItem>
+									<MenuItem value={"Full-Time Job"}>Full-Time Job</MenuItem>
+									<MenuItem value={"Part-Time Job"}>Part-Time Job</MenuItem>
 								</Select>
 							</FormControl>
 						</Box>
-						<Box sx={{ minWidth: 220 }}>
-							<FormControl fullWidth required variant='standard'>
-								<InputLabel id="demo-simple-select-label">Job Type</InputLabel>
-								<Select
-									labelId="demo-simple-select-label"
-									id="demo-simple-select"
-									value={formData.jobType}
-									name='activeBack'
-									label="Active Backlog"
-									onChange={(e) => { formChangeHandler(e) }}
-								>
-									<MenuItem value={true}>Full-Time Internship</MenuItem>
-									<MenuItem value={true}>Part-Time Internship</MenuItem>
-									<MenuItem value={true}>Full-Time Job</MenuItem>
-									<MenuItem value={true}>Part-Time Job</MenuItem>
-								</Select>
-							</FormControl>
+						<Box sx={{ minWidth: 250 }}>
+							<TextField fullWidth id="standard-basic" label="Job Role" variant="standard" required value={formData.jobRole} name="jobRole" onChange={(e) => { formChangeHandler(e) }}/>
 						</Box>
-						<Box sx={{ minWidth: 220 }}>
-							<FormControl sx={{ m: 1, width: 220 }}>
+						<Box sx={{ minWidth: 250 }}>
+							<TextField fullWidth id="standard-basic" label="CTC (Package)" variant="standard" required value={formData.CTC} name="CTC" onChange={(e) => { formChangeHandler(e) }}/>
+						</Box>
+						<Box sx={{ minWidth: 250 }}>
+							<TextField fullWidth id="standard-basic" label="Job Location" variant="standard" required value={formData.jobLocation} name="jobLocation" onChange={(e) => { formChangeHandler(e) }}/>
+						</Box>
+						<Box sx={{ minWidth: 250 }}>
+							<FormControl sx={{ m: 1, width: 250 }}>
 								<InputLabel id="demo-multiple-checkbox-label">Departments</InputLabel>
 								<Select
 									labelId="demo-multiple-checkbox-label"
@@ -171,7 +162,7 @@ const NewCompany = () => {
 								</Select>
 							</FormControl>
 						</Box>
-						
+
 					</div>
 				</div>
 				{/* <Button variant="contained" component="label">

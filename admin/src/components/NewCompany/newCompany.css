@@ -6,7 +6,7 @@
 .form_container{
 	margin: 20px;
 	display: flex;
-	gap: 3rem;
+	gap: 4rem;
 	justify-content: space-between;
 	flex-wrap: wrap;
 }
