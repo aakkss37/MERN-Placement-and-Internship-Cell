@@ -4,8 +4,8 @@ import { styled, TableCell, tableCellClasses, TableRow, Typography } from "@mui/
 
 export const StyledTableCell = styled(TableCell)(({ theme }) => ({
 	[`&.${tableCellClasses.head}`]: {
-		backgroundColor: '#cbddc3ad',
-		color: '#367D43',
+		backgroundColor: '#5badff5c',
+		fontSize: 15,
 	},
 	[`&.${tableCellClasses.body}`]: {
 		fontSize: 14,
@@ -14,17 +14,17 @@ export const StyledTableCell = styled(TableCell)(({ theme }) => ({
 
 export const StyledTableRow = styled(TableRow)(({ theme }) => ({
 	'&:nth-of-type(odd)': {
-		backgroundColor: 'white',
+		backgroundColor: '#00000002',
 		transition: '0.3s',
 		':hover': {
-			backgroundColor: '#adadad29'
+			backgroundColor: '#3332321c'
 		}
 	},
 	'&:nth-of-type(even)': {
-		backgroundColor: '#d4e1ce29',
+		backgroundColor: '#00000008',
 		transition: '0.3s',
 		':hover': {
-			backgroundColor: '#adadad29'
+			backgroundColor: '#3332321c'
 		}
 	},
 	// hide last border
