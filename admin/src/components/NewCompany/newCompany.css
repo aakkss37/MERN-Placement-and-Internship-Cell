@@ -1,4 +1,13 @@
 .newCompany_container {
 	margin-left: 8%;
 	margin-right: 8%;
+	margin-top: 0.8rem;
+}
+.current_path{
+	padding: 10px;
+	padding-left: 20px;
+}
+
+.css-tfc4f3-MuiButtonBase-root-MuiButton-root:hover {
+	background-color: #848e99;
 }
