@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Box, Button, Checkbox, Container, FormControl, Input, InputLabel, ListItemText, MenuItem, OutlinedInput, Select, TextField, Typography } from "@mui/material";
+import { Box, Checkbox,  FormControl, InputLabel, ListItemText, MenuItem, OutlinedInput, Select, TextField } from "@mui/material";
 import { CurretPath, SectionHeading } from './newCompanyStyle';
 import './newCompany.css'
 
@@ -102,7 +102,6 @@ const NewCompany = () => {
 							</Box>
 						</div>
 						
-
 					</div>
 				</div>
 				<div className='eligibility_and_detail'>

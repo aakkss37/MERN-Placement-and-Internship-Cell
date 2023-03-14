@@ -1,4 +1,4 @@
-import { styled, TableCell, tableCellClasses, TableRow, Typography } from "@mui/material";
+import { styled, Typography } from "@mui/material";
 
 
 export const CurretPath = styled(Typography)(({ theme }) => ({
