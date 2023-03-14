@@ -3,3 +3,10 @@
 	margin-right: 8%;
 }
 
+.form_container{
+	margin: 20px;
+	display: flex;
+	gap: 3rem;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}

@@ -7,7 +7,6 @@ export const CurretPath = styled(Typography)(({ theme }) => ({
 	fontWeight: 600,
 }));
 export const SectionHeading = styled(Typography)(({ theme }) => ({
-	margin: '20px',
 	background: '#1976d254',
 	color: 'gray', 
 	textAlign: 'center',
