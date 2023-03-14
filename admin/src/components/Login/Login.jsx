@@ -1,32 +1,64 @@
-import React from 'react';
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import {  Button, Container,  TextField, Typography } from "@mui/material";
 import './login.css'
-import logo from '../../assets/KAHE_LOGO.png';
-import { useNavigate } from 'react-router-dom';
 
-const Login = () => {
+
+
+const Login = ()=> {
 	const navigate = useNavigate()
 	const loginHandler = ()=>{
 		navigate('/home')
 	}
 
 	return (
-		<div className='login'>
+		<Container component="main" maxWidth="sm" className="login">
 			<div className='login_container'>
-				<div className='login_college_logo'>
-					<img src={logo} alt="img" />
-				</div>
-				<div className='kahe_login_text'>
-					<h3>Karpagan Academy of Higher Education</h3>
-					<p>Placement and Internship Cell</p>
-				</div>
-				<div className='login_form_container'>
-					<input type="text" placeholder='Username'/>
-					<input type="password" placeholder='Password'/>
-					<button onClick={loginHandler}>Login</button>
-				</div>
+				<Typography component="h1" variant="h4" color="primary" style={{fontWeight: 600, color: "gray"}}>
+					Admin Login
+				</Typography>
+				<Typography component="h1" variant="h5">
+					Karpagam Academy of Higher Education Placement and Internship Cell
+				</Typography>
+				<form  >
+					<TextField
+						variant="outlined"
+						margin="normal"
+						required
+						fullWidth
+						id="username"
+						label="Username"
+						name="username"
+						autoComplete="username"
+						autoFocus
+					/>
+					<TextField
+						variant="outlined"
+						margin="normal"
+						required
+						fullWidth
+						name="password"
+						label="Password"
+						type="password"
+						id="password"
+						autoComplete="current-password"
+					/>
+					
+					<Button
+						type="submit"
+						fullWidth
+						variant="contained"
+						color="primary"
+						sx={{marginTop: '1rem'}}
+						onClick={loginHandler}
+					>
+						Login
+					</Button>
+					
+				</form>
 			</div>
-		</div>
-	)
+		</Container>
+	);
 }
 
 export default Login
