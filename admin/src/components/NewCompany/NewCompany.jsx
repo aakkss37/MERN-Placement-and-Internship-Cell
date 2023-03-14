@@ -21,8 +21,15 @@ const initialFormData = {
 
 const NewCompany = () => {
 	const [formData, setFormData] = useState(initialFormData)
-	const [cgpa, setCgpa] = useState()
-	const [activeBack, setActiveBack] = useState()
+
+	const formChangeHandler = (event) => {
+		const { value, name } = event.target;
+		setFormData(prevFormData => ({
+			...prevFormData,
+			[name]: value
+		}))
+	}
+	console.log(formData)
 	return (
 		<div className='new_company'>
 			<div className='new_company_container'>
@@ -36,13 +43,14 @@ const NewCompany = () => {
 								<Select
 									labelId="demo-simple-select-label"
 									id="demo-simple-select"
-									value={cgpa}
+									value={formData.cgpa}
+									name='cgpa'
 									label="CGPA"
-									onChange={(e) => { setCgpa(e.target.value) }}
+									onChange={(e) => { formChangeHandler(e) }}
 								>
 									<MenuItem value={0}>All</MenuItem>
 									{
-										CGPA.map((cgpa, index)=>(
+										CGPA.map((cgpa, index) => (
 											<MenuItem key={index} value={cgpa}>Above {cgpa}</MenuItem>
 										))
 									}
