@@ -12,7 +12,7 @@ const Login = ()=> {
 	}
 
 	return (
-		<Container component="main" maxWidth="sm" className="login">
+		<Container component="main" maxWidth="sm" className="login" style={{display: 'flex'}}>
 			<div className='login_container'>
 				<Typography component="h1" variant="h4" color="primary" style={{fontWeight: 600, color: "gray"}}>
 					Admin Login

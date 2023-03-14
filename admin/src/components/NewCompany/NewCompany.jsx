@@ -9,9 +9,9 @@ const CGPA = [6, 6.5, 7, 7.5, 8, 8.5, 9]
 const initialFormData = {
 	cgpa: '',
 	activeBack: '',
-	department: [],
 	passoutYear: '',
 	jobType: '',
+	department: [],
 	jobRole: '',
 	CTC: '',
 	jobLocation: '',
@@ -54,6 +54,38 @@ const NewCompany = () => {
 											<MenuItem key={index} value={cgpa}>Above {cgpa}</MenuItem>
 										))
 									}
+								</Select>
+							</FormControl>
+						</Box>
+						<Box sx={{ minWidth: 220 }}>
+							<FormControl fullWidth required variant='standard'>
+								<InputLabel id="demo-simple-select-label">Passout Year</InputLabel>
+								<Select
+									labelId="demo-simple-select-label"
+									id="demo-simple-select"
+									value={formData.passoutYear}
+									name='activeBack'
+									label="Active Backlog"
+									onChange={(e) => { formChangeHandler(e) }}
+								>
+									<MenuItem value={true}>Allowed</MenuItem>
+									<MenuItem value={false}>Not Allowed</MenuItem>
+								</Select>
+							</FormControl>
+						</Box>
+						<Box sx={{ minWidth: 220 }}>
+							<FormControl fullWidth required variant='standard'>
+								<InputLabel id="demo-simple-select-label">Active Backlog</InputLabel>
+								<Select
+									labelId="demo-simple-select-label"
+									id="demo-simple-select"
+									value={formData.activeBack}
+									name='activeBack'
+									label="Active Backlog"
+									onChange={(e) => { formChangeHandler(e) }}
+								>
+									<MenuItem value={true}>Allowed</MenuItem>
+									<MenuItem value={false}>Not Allowed</MenuItem>
 								</Select>
 							</FormControl>
 						</Box>
