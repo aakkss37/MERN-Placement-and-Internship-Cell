@@ -25,8 +25,9 @@ const initialFormData = {
 	jobRole: '',
 	CTC: '',
 	jobLocation: '',
-	responsibility: '',
-	requirement: ''
+	responsibilities: '',
+	requirement: '',
+	aboutCompany: ''
 }
 
 const NewCompany = () => {
@@ -54,6 +55,56 @@ const NewCompany = () => {
 		<div className='new_company'>
 			<div className='new_company_container'>
 				<CurretPath >Add New Compnay</CurretPath>
+				<div className='Company Detail'>
+					<SectionHeading>Company Detail</SectionHeading>
+					<div className='form_container'>
+						<div className="right">
+							<Box sx={{ minWidth: 250, height: '350'}}>
+								<TextField 
+									fullWidth 
+									sx={{width: '600px'}}
+									id="outlined-multiline-static" 
+									label="Responsibilities" 
+									multiline
+									rows={13}
+									variant="outlined" 
+									required value={formData.responsibilities} 
+									name="responsibilities" 
+									onChange={(e) => { formChangeHandler(e) }}/>
+							</Box>
+						</div>
+						<div className="left">
+							<Box sx={{ minWidth: 250, height: '150' }}>
+								<TextField 
+									fullWidth id="outlined-multiline-static" 
+									sx={{width: "500px"}}
+									label="Requirement" 
+									multiline
+									rows={4}
+									variant="outlined" 
+									required value={formData.requirement} 
+									name="requirement" 
+									onChange={(e) => { formChangeHandler(e) }}/>
+							</Box>
+							<Box sx={{ minWidth: 250, height: '150' }}>
+								<TextField 
+									fullWidth 
+									sx={{width: "500px"}}
+									id="outlined-multiline-static" 
+									label="About Company" 
+									rows={4}
+									multiline
+									variant="outlined" 
+									required 
+									value={formData.aboutCompany} 
+									name="aboutCompany" 
+									onChange={(e) => { formChangeHandler(e) }}/>
+							</Box>
+						</div>
+						
+
+					</div>
+				</div>
 				<div className='eligibility_and_detail'>
 					<SectionHeading>Eligibility and Job Details</SectionHeading>
 					<div className='form_container'>
