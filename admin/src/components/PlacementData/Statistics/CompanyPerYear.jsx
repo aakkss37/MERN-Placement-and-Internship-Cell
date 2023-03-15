@@ -22,7 +22,7 @@ const CompanyPerYear = () => {
 			},
 			title: {
 				display: true,
-				text: 'Bar Chart'
+				text: 'Line Chart'
 			}
 		}
 	};
