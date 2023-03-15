@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Box, Checkbox,  FormControl, InputLabel, ListItemText, MenuItem, OutlinedInput, Select, TextField } from "@mui/material";
+import { Box, Button, Checkbox, FormControl, InputLabel, ListItemText, MenuItem, OutlinedInput, Select, TextField } from "@mui/material";
 import { CurretPath, SectionHeading } from './newCompanyStyle';
 import './newCompany.css'
 
@@ -27,13 +27,16 @@ const initialFormData = {
 	jobLocation: '',
 	responsibilities: '',
 	requirement: '',
-	aboutCompany: ''
+	aboutCompany: '',
+	companyLogo: ''
 }
 
 const NewCompany = () => {
 	const [formData, setFormData] = useState(initialFormData)
 	const [department, setDepartment] = useState([]);
-	const handleChange = (event) => {
+	const [imageName, setImageName] = useState();
+
+	const handleChangeDepartment = (event) => {
 		const {
 			target: { value },
 		} = event;
@@ -42,6 +45,24 @@ const NewCompany = () => {
 			typeof value === 'string' ? value.split(',') : value,
 		);
 	};
+
+	const handleChangeImage = async(file)=>{
+		setImageName(file.name)
+		const data = new FormData();
+		data.append("name", file.name);
+		data.append("file", file);
+		// API CALL
+		console.log(data)
+		// const responce = await API.uploadCompanyLogo(data); //return a url of the pic
+		// // console.log("responce ===> ", responce.data);
+		// // postData.companyLogo = responce.data;
+		// setFormData((prevFormData) => {
+		// 	return {
+		// 		...prevFormData,
+		// 		companyLogo: responce.data,
+		// 	}
+		// });
+	}
 
 	const formChangeHandler = (event) => {
 		const { value, name } = event.target;
@@ -55,58 +76,63 @@ const NewCompany = () => {
 		<div className='new_company'>
 			<div className='new_company_container'>
 				<CurretPath >Add New Compnay</CurretPath>
-				<div className='Company Detail'>
+				<div className='company_detail'>
 					<SectionHeading>Company Detail</SectionHeading>
-					<div className='form_container'>
+					<div className='form_container_company_detail'>
 						<div className="right">
-							<Box sx={{ minWidth: 250, height: '350'}}>
-								<TextField 
-									fullWidth 
-									sx={{width: '600px'}}
-									id="outlined-multiline-static" 
-									label="Responsibilities" 
+							<Box sx={{ minWidth: 250, height: '350' }}>
+								<TextField
+									fullWidth
+									sx={{ width: '600px' }}
+									id="outlined-multiline-static"
+									label="Responsibilities"
 									multiline
 									rows={13}
-									variant="outlined" 
-									required value={formData.responsibilities} 
-									name="responsibilities" 
-									onChange={(e) => { formChangeHandler(e) }}/>
+									variant="outlined"
+									required value={formData.responsibilities}
+									name="responsibilities"
+									onChange={(e) => { formChangeHandler(e) }} />
 							</Box>
 						</div>
 						<div className="left">
 							<Box sx={{ minWidth: 250, height: '150' }}>
-								<TextField 
-									fullWidth id="outlined-multiline-static" 
-									sx={{width: "500px"}}
-									label="Requirement" 
+								<TextField
+									fullWidth id="outlined-multiline-static"
+									sx={{ width: "500px" }}
+									label="Requirement"
 									multiline
 									rows={4}
-									variant="outlined" 
-									required value={formData.requirement} 
-									name="requirement" 
-									onChange={(e) => { formChangeHandler(e) }}/>
+									variant="outlined"
+									required value={formData.requirement}
+									name="requirement"
+									onChange={(e) => { formChangeHandler(e) }} />
 							</Box>
 							<Box sx={{ minWidth: 250, height: '150' }}>
-								<TextField 
-									fullWidth 
-									sx={{width: "500px"}}
-									id="outlined-multiline-static" 
-									label="About Company" 
+								<TextField
+									fullWidth
+									sx={{ width: "500px" }}
+									id="outlined-multiline-static"
+									label="About Company"
 									rows={4}
 									multiline
-									variant="outlined" 
-									required 
-									value={formData.aboutCompany} 
-									name="aboutCompany" 
-									onChange={(e) => { formChangeHandler(e) }}/>
+									variant="outlined"
+									required
+									value={formData.aboutCompany}
+									name="aboutCompany"
+									onChange={(e) => { formChangeHandler(e) }} />
 							</Box>
+							<Button variant="outlined" component="label">
+								Upload Company Logo
+								<input hidden accept="image/*" type="file" onChange={(e) => handleChangeImage(e.target.files[0])} />
+							</Button>
+							{imageName && <span style={{color: "gray", overflow: "hidden"}}> {imageName}</span>}
 						</div>
-						
+
 					</div>
 				</div>
 				<div className='eligibility_and_detail'>
 					<SectionHeading>Eligibility and Job Details</SectionHeading>
-					<div className='form_container'>
+					<div className='form_container_eligibility'>
 						<Box sx={{ minWidth: 250 }}>
 							<FormControl fullWidth required variant='standard'>
 								<InputLabel id="demo-simple-select-label">CGPA</InputLabel>
@@ -182,13 +208,13 @@ const NewCompany = () => {
 							</FormControl>
 						</Box>
 						<Box sx={{ minWidth: 250 }}>
-							<TextField fullWidth id="standard-basic" label="Job Role" variant="standard" required value={formData.jobRole} name="jobRole" onChange={(e) => { formChangeHandler(e) }}/>
+							<TextField fullWidth id="standard-basic" label="Job Role" variant="standard" required value={formData.jobRole} name="jobRole" onChange={(e) => { formChangeHandler(e) }} />
 						</Box>
 						<Box sx={{ minWidth: 250 }}>
-							<TextField fullWidth id="standard-basic" label="CTC (Package)" variant="standard" required value={formData.CTC} name="CTC" onChange={(e) => { formChangeHandler(e) }}/>
+							<TextField fullWidth id="standard-basic" label="CTC (Package)" variant="standard" required value={formData.CTC} name="CTC" onChange={(e) => { formChangeHandler(e) }} />
 						</Box>
 						<Box sx={{ minWidth: 250 }}>
-							<TextField fullWidth id="standard-basic" label="Job Location" variant="standard" required value={formData.jobLocation} name="jobLocation" onChange={(e) => { formChangeHandler(e) }}/>
+							<TextField fullWidth id="standard-basic" label="Job Location" variant="standard" required value={formData.jobLocation} name="jobLocation" onChange={(e) => { formChangeHandler(e) }} />
 						</Box>
 						<Box sx={{ minWidth: 250 }}>
 							<FormControl sx={{ m: 1, width: 250 }}>
@@ -198,7 +224,7 @@ const NewCompany = () => {
 									id="demo-multiple-checkbox"
 									multiple
 									value={department}
-									onChange={handleChange}
+									onChange={handleChangeDepartment}
 									input={<OutlinedInput label="Tag" />}
 									renderValue={(selected) => selected.join(', ')}
 									MenuProps={MenuProps}
@@ -215,10 +241,7 @@ const NewCompany = () => {
 
 					</div>
 				</div>
-				{/* <Button variant="contained" component="label">
-					Upload Company Logo
-					<input hidden accept="image/*" type="file" />
-				</Button> */}
+				<Button variant="contained" style={{margin: "2rem", marginLeft: "47%", paddingLeft: "3rem", paddingRight: "3rem", fontWeight: 600}}>Submit</Button>
 			</div>
 		</div>
 	)

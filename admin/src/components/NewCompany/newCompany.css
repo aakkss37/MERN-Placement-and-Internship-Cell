@@ -3,7 +3,13 @@
 	margin-right: 8%;
 }
 
-.form_container{
+.form_container_company_detail{
+	margin: 20px;
+	display: flex;
+	gap: 4rem;
+	justify-content: space-between;
+}
+.form_container_eligibility{
 	margin: 20px;
 	display: flex;
 	gap: 4rem;
