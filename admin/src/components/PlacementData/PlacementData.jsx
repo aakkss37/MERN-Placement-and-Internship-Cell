@@ -1,8 +1,13 @@
 import React from 'react'
+import './placementData.css'
 
 const PlacementData = () => {
   return (
-	<div>PlacementData</div>
+	<div className='placement_data'>
+		<div className="placement_data_container">
+			palcement data
+		</div>
+	</div>
   )
 }
 
