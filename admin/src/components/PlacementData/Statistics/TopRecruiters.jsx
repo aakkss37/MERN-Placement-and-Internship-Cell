@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Doughnut, Pie } from 'react-chartjs-2';
+import { Doughnut, } from 'react-chartjs-2';
 import { pieChartData } from '../data';
 
 
@@ -28,12 +28,13 @@ const TopRecruiters = () => {
 	// Extract data for the selected year
 	const filteredData = pieChartData.filter(item => item.year.toString() === selectedYear);
 	console.log(filteredData)
+	console.log(filteredData[0].data.map(item => item.students))
 	// Update chart data
 	const chartData = {
-		labels: ["Critical case", "Urgent case", "Errors", "Reviewed", "Success"],
+		labels: filteredData[0].data.map(item => item.company),
 		datasets: [
 			{
-				data: [30, 30, 5, 15, 20],
+				data: filteredData[0].data.map(item => item.students),
 				backgroundColor: [
 					"#FF6384",
 					"#36A2EB",
