@@ -241,7 +241,12 @@ const NewCompany = () => {
 
 					</div>
 				</div>
-				<Button variant="contained" style={{margin: "2rem", marginLeft: "47%", paddingLeft: "3rem", paddingRight: "3rem", fontWeight: 600}}>Submit</Button>
+				<Button 
+					variant="contained" 
+					style={{margin: "2rem", marginLeft: "47%", paddingLeft: "3rem", paddingRight: "3rem", fontWeight: 600}}
+				>
+					Submit
+				</Button>
 			</div>
 		</div>
 	)
