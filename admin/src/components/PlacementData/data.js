@@ -387,3 +387,17 @@ export const data = [
 ];
 
 export const departments = ["Anthropology", "Biology", "Business", "Chemical Engineering", "Chemistry", "Civil Engineering", "Communications", "Computer Science", "Economics", "Education", "Electrical Engineering", "English", "Environmental Science", "Foreign Languages", "Geography", "History", "Law", "Mathematics", "Mechanical Engineering", "Philosophy", "Physics", "Political Science", "Psychology", "Sociology", "Bachelor of Arts", "Bachelor of Science", "Master of Arts", "Master of Business Administration", "Master of Education", "Master of Engineering", "Master of Science"];
+
+export let placementEveryYear = {}
+for (let year = 2012; year <= 2022; year++) {
+	const element = data.filter(datum => datum.year === year)
+	// console.log(element)
+	let count = 0;
+	element.forEach(item => count = item.count + count)
+	// console.log("count===> ", count)
+	placementEveryYear = {
+		...placementEveryYear,
+		[year]: count
+	}
+}
+console.log(placementEveryYear)
