@@ -1,3 +1,4 @@
+import { textAlign } from '@mui/system';
 import React, { useState } from 'react'
 import { Doughnut, } from 'react-chartjs-2';
 import { pieChartData } from '../data';
@@ -75,7 +76,9 @@ const TopRecruiters = () => {
 					</option>
 				))}
 			</select>
-			<Doughnut data={chartData} />
+			<div style={{width: '75%', marginLeft:"auto", marginTop: "2rem"}}>
+				<Doughnut data={chartData} />
+			</div>
 		</div>
 	)
 }
