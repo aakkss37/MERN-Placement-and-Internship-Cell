@@ -5,5 +5,7 @@
 
 .placement_data_graphs{
 	margin: 20px;
-
+	width: 80%;
+	margin: auto;
+	padding: 2rem;
 }

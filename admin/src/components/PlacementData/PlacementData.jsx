@@ -13,7 +13,7 @@ const PlacementData = () => {
 	return (
 		<div className='placement_data'>
 			<div className="placement_data_container">
-				<CurretPath >Add New Compnay</CurretPath>
+				<CurretPath >Placement Report</CurretPath>
 				
 				<DepartmentWise/>
 				<Divider/>
