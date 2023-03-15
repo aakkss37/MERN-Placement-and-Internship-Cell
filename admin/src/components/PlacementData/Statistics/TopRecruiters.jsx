@@ -65,7 +65,7 @@ const TopRecruiters = () => {
 
 	return (
 		<div className="placement_data_graphs">
-			<h2>Top Recruiters with Most Placements ({selectedYear})</h2>
+			<h2>Top Recruiters with Most Placements ({selectedYear})</h2> <br />
 			<label htmlFor="pie-chart-filter">Filter by Year: </label>
 			<select id='pie-chart-filter' value={selectedYear} onChange={handleYearChange}>
 				{pieChartData.map((item, index) => (

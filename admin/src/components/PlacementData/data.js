@@ -412,7 +412,12 @@ export const pieChartData = [
 			{ company: "China National Petroleum", students: 700 },
 			{ company: "McDonald's", students: 600 },
 			{ company: "China Post Group", students: 500 },
-			{ company: "Amazon", students: 400 }
+			{ company: "Amazon", students: 400 },
+			{ company: "Hon Hai Precision Industry (Foxconn)", students: 1000 },
+			{ company: "Compass Group", students: 900 },
+			{ company: "Volkswagen", students: 800 },
+			{ company: "Deutsche Post DHL Group", students: 700 },
+			{ company: "Samsung Electronics", students: 600 }
 		]
 	},
 	{
@@ -422,7 +427,12 @@ export const pieChartData = [
 			{ company: "Compass Group", students: 900 },
 			{ company: "Volkswagen", students: 800 },
 			{ company: "Deutsche Post DHL Group", students: 700 },
-			{ company: "Samsung Electronics", students: 600 }
+			{ company: "Samsung Electronics", students: 600 },
+			{ company: "Walmart", students: 800 },
+			{ company: "China National Petroleum", students: 700 },
+			{ company: "McDonald's", students: 600 },
+			{ company: "China Post Group", students: 500 },
+			{ company: "Amazon", students: 400 },
 		]
 	},
 	{
@@ -432,7 +442,12 @@ export const pieChartData = [
 			{ company: "Berkshire Hathaway", students: 1100 },
 			{ company: "China Telecommunications", students: 1000 },
 			{ company: "ExxonMobil", students: 900 },
-			{ company: "China Railway Engineering", students: 800 }
+			{ company: "China Railway Engineering", students: 800 },
+			{ company: "China Railway Construction", students: 1500 },
+			{ company: "General Electric", students: 1400 },
+			{ company: "China Construction Bank", students: 1300 },
+			{ company: "Agricultural Bank of China", students: 1200 },
+			{ company: "Industrial and Commercial Bank of China", students: 1100 },
 		]
 	},
 	{
@@ -442,7 +457,12 @@ export const pieChartData = [
 			{ company: "General Electric", students: 1400 },
 			{ company: "China Construction Bank", students: 1300 },
 			{ company: "Agricultural Bank of China", students: 1200 },
-			{ company: "Industrial and Commercial Bank of China", students: 1100 }
+			{ company: "Industrial and Commercial Bank of China", students: 1100 },
+			{ company: "China State Construction Engineering", students: 1200 },
+			{ company: "Berkshire Hathaway", students: 1100 },
+			{ company: "China Telecommunications", students: 1000 },
+			{ company: "ExxonMobil", students: 900 },
+			{ company: "China Railway Engineering", students: 800 }
 		]
 	},
 	{
@@ -452,7 +472,12 @@ export const pieChartData = [
 			{ company: "Royal Dutch Shell", students: 1700 },
 			{ company: "Toyota Motor", students: 1600 },
 			{ company: "PetroChina", students: 1500 },
-			{ company: "BP", students: 1400 }
+			{ company: "BP", students: 1400 },
+			{ company: "China Mobile", students: 2000 },
+			{ company: "AT&T", students: 1900 },
+			{ company: "Ford Motor", students: 1800 },
+			{ company: "Nissan Motor", students: 1700 },
+			{ company: "General Motors", students: 1600 },
 		]
 	},
 	{
@@ -462,7 +487,12 @@ export const pieChartData = [
 			{ company: "AT&T", students: 1900 },
 			{ company: "Ford Motor", students: 1800 },
 			{ company: "Nissan Motor", students: 1700 },
-			{ company: "General Motors", students: 1600 }
+			{ company: "General Motors", students: 1600 },
+			{ company: "China Railway Group", students: 1800 },
+			{ company: "Royal Dutch Shell", students: 1700 },
+			{ company: "Toyota Motor", students: 1600 },
+			{ company: "PetroChina", students: 1500 },
+			{ company: "BP", students: 1400 },
 		]
 	},
 	{
@@ -472,7 +502,12 @@ export const pieChartData = [
 			{ company: "Hon Hai Precision Industry (Foxconn) Technology", students: 2100 },
 			{ company: "JBS", students: 2000 },
 			{ company: "Total", students: 1900 },
-			{ company: "Alliance Data Systems", students: 1800 }
+			{ company: "Alliance Data Systems", students: 1800 },
+			{ company: "Honeywell International", students: 2300 },
+			{ company: "China Energy Investment", students: 2200 },
+			{ company: "Walgreens Boots Alliance", students: 2100 },
+			{ company: "Boeing", students: 2000 },
+			{ company: "PepsiCo", students: 1900 },
 		]
 	},
 	{
@@ -482,12 +517,22 @@ export const pieChartData = [
 			{ company: "China Energy Investment", students: 2200 },
 			{ company: "Walgreens Boots Alliance", students: 2100 },
 			{ company: "Boeing", students: 2000 },
-			{ company: "PepsiCo", students: 1900 }
+			{ company: "PepsiCo", students: 1900 },
+			{ company: "Chevron", students: 2200 },
+			{ company: "Hon Hai Precision Industry (Foxconn) Technology", students: 2100 },
+			{ company: "JBS", students: 2000 },
+			{ company: "Total", students: 1900 },
+			{ company: "Alliance Data Systems", students: 1800 }
 		]
 	},
 	{
 		year: 2020,
 		data: [
+			{ company: "China Mobile", students: 2000 },
+			{ company: "AT&T", students: 1900 },
+			{ company: "Ford Motor", students: 1800 },
+			{ company: "Nissan Motor", students: 1700 },
+			{ company: "General Motors", students: 1600 },
 			{ company: "China Mobile", students: 2000 },
 			{ company: "AT&T", students: 1900 },
 			{ company: "Ford Motor", students: 1800 },
@@ -502,7 +547,12 @@ export const pieChartData = [
 			{ company: "China National Petroleum", students: 700 },
 			{ company: "McDonald's", students: 600 },
 			{ company: "China Post Group", students: 500 },
-			{ company: "Amazon", students: 400 }
+			{ company: "Amazon", students: 400 },
+			{ company: "Hon Hai Precision Industry (Foxconn)", students: 1000 },
+			{ company: "Compass Group", students: 900 },
+			{ company: "Volkswagen", students: 800 },
+			{ company: "Deutsche Post DHL Group", students: 700 },
+			{ company: "Samsung Electronics", students: 600 },
 		]
 	},
 	{
@@ -512,7 +562,12 @@ export const pieChartData = [
 			{ company: "Compass Group", students: 900 },
 			{ company: "Volkswagen", students: 800 },
 			{ company: "Deutsche Post DHL Group", students: 700 },
-			{ company: "Samsung Electronics", students: 600 }
+			{ company: "Samsung Electronics", students: 600 },
+			{ company: "China Mobile", students: 2000 },
+			{ company: "AT&T", students: 1900 },
+			{ company: "Ford Motor", students: 1800 },
+			{ company: "Nissan Motor", students: 1700 },
+			{ company: "General Motors", students: 1600 }
 		]
 	},
 ]
