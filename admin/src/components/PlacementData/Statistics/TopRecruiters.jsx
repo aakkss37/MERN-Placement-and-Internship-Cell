@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Pie } from 'react-chartjs-2';
+import { Doughnut, Pie } from 'react-chartjs-2';
 import { pieChartData } from '../data';
 
 
@@ -24,7 +24,7 @@ const TopRecruiters = () => {
 		setSelectedYear(event.target.value);
 		console.log(event.target.value)
 	};
-	
+
 	// Extract data for the selected year
 	const filteredData = pieChartData.filter(item => item.year.toString() === selectedYear);
 	console.log(filteredData)
@@ -33,7 +33,7 @@ const TopRecruiters = () => {
 		labels: ["Critical case", "Urgent case", "Errors", "Reviewed", "Success"],
 		datasets: [
 			{
-				 data: [30, 30, 5, 15, 20],
+				data: [30, 30, 5, 15, 20],
 				backgroundColor: [
 					"#FF6384",
 					"#36A2EB",
@@ -63,20 +63,20 @@ const TopRecruiters = () => {
 	};
 
 
-  return (
-	  <div className="placement_data_graphs">
-		  <h2>Top Recruiters with Most Placements ({selectedYear})</h2>
-		  <label htmlFor="pie-chart-filter">Filter by Year: </label>
-		  <select id='pie-chart-filter' value={selectedYear} onChange={handleYearChange}>
-			  {pieChartData.map((item, index) => (
-				  <option key={index} value={item.year}>
-					  {item.year}
-				  </option>
-			  ))}
-		  </select>
-		  <Pie data={chartData} />
-	  </div>
-  )
+	return (
+		<div className="placement_data_graphs">
+			<h2>Top Recruiters with Most Placements ({selectedYear})</h2>
+			<label htmlFor="pie-chart-filter">Filter by Year: </label>
+			<select id='pie-chart-filter' value={selectedYear} onChange={handleYearChange}>
+				{pieChartData.map((item, index) => (
+					<option key={index} value={item.year}>
+						{item.year}
+					</option>
+				))}
+			</select>
+			<Doughnut data={chartData} />
+		</div>
+	)
 }
 
 export default TopRecruiters
