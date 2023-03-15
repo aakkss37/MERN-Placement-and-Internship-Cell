@@ -1,11 +1,12 @@
 import React from 'react'
 import './placementData.css'
+import { CurretPath } from './placementDataStyle'
 
 const PlacementData = () => {
   return (
 	<div className='placement_data'>
 		<div className="placement_data_container">
-			palcement data
+			  <CurretPath >Add New Compnay</CurretPath>
 		</div>
 	</div>
   )
