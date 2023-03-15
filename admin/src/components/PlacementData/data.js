@@ -400,7 +400,7 @@ for (let year = 2012; year <= 2022; year++) {
 		[year]: count
 	}
 }
-console.log(placementEveryYear)
+// console.log(placementEveryYear)
 
 
 

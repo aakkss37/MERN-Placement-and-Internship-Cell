@@ -5,6 +5,7 @@ import './placementData.css'
 import { CurretPath } from './placementDataStyle'
 import { Divider } from '@mui/material';
 import CompanyPerYear from './Statistics/CompanyPerYear';
+import TopRecruiters from './Statistics/TopRecruiters';
 
 // console.log(data, departments)
 const PlacementData = () => {
@@ -20,6 +21,8 @@ const PlacementData = () => {
 				<PlacementPerYear/>
 				<Divider/>
 				<CompanyPerYear/>
+				<Divider/>
+				<TopRecruiters/>
 			</div>
 		</div>
 	)
