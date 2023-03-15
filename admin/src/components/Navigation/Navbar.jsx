@@ -15,7 +15,7 @@ const Navbar = () => {
 				<div className='navbar_links'>
 					<span onClick={()=> navigate('/home')}>Home</span>
 					<span onClick={() => navigate('/new-company')}>New Company</span>
-					<span onClick={() => navigate('/home')}>Placement Data</span>
+					<span onClick={() => navigate('/placement-data')}>Placement Data</span>
 					<span onClick={() => navigate('/home')}>Students</span>
 				</div>
 				<div className='navbar_logout'>
