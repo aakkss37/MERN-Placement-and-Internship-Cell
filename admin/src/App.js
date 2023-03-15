@@ -4,6 +4,7 @@ import Home from './components/Home/Home';
 import Login from './components/Login/Login';
 import Navbar from './components/Navigation/Navbar'
 import NewCompany from './components/NewCompany/NewCompany';
+import PlacementData from './components/PlacementData/PlacementData';
 
 
 const PrivateRoute = (props) => {
@@ -32,6 +33,9 @@ const App = () => {
 				</Route>
 				<Route path='/new-company' element={<PrivateRoute isLogin={isLogin} />}>
 					<Route path='/new-company' element={<NewCompany />} />
+				</Route>
+				<Route path='/placement-data' element={<PrivateRoute isLogin={isLogin} />}>
+					<Route path='/placement-data' element={<PlacementData />} />
 				</Route>
 			</Routes>
 		</BrowserRouter>
