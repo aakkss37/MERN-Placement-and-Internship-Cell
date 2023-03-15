@@ -1,24 +1,10 @@
-import { textAlign } from '@mui/system';
 import React, { useState } from 'react'
 import { Doughnut, } from 'react-chartjs-2';
 import { pieChartData } from '../data';
 
 
-// const initialData = {
-// 	labels: [],
-// 	datasets: [
-// 		{
-// 			data: [],
-// 			backgroundColor: [],
-// 			hoverBackgroundColor: [],
-// 		},
-// 	],
-// };
-
-
 const TopRecruiters = () => {
 
-	// const [data, setData] = useState(initialData);
 	const [selectedYear, setSelectedYear] = useState("2022");
 
 	const handleYearChange = (event) => {
