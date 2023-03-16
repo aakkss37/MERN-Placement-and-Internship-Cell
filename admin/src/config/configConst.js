@@ -36,5 +36,8 @@ apiService: {
 }
 */
 export const SERVICE_URL = {
-
+	addNewCompany : {
+		url: "/addNewCompany",
+		method: "POST",
+	}
 }
