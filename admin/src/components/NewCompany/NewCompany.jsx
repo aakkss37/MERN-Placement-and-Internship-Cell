@@ -137,7 +137,7 @@ const NewCompany = () => {
 					open={openSnackbar}
 					autoHideDuration={4000}
 					onClose={handleClose}
-					message="Error! Can not submit empty field."
+					message="Error! Required Field(*) can not be empty."
 					action={action}
 				/>
 				<div className='company_detail'>
