@@ -20,6 +20,7 @@ const MenuProps = {
 };
 
 const initialFormData = {
+	companyName: '',
 	cgpa: '',
 	activeBack: '',
 	passoutYear: '',
@@ -101,8 +102,9 @@ const NewCompany = () => {
 
 	// Submit and add new Company
 	const formSubmitHandler = async () => {
-		// console.log(formData)
+		console.log(formData)
 		if (
+			formData.companyName &&
 			formData.cgpa &&
 			formData.activeBack &&
 			formData.passoutYear &&
@@ -147,11 +149,23 @@ const NewCompany = () => {
 								<TextField
 									fullWidth
 									id="outlined-multiline-static"
+									label="Company Name"
+									variant="outlined"
+									required 
+									value={formData.companyName}
+									name="companyName"
+									onChange={(e) => { formChangeHandler(e) }} />
+							</Box> <br />
+							<Box >
+								<TextField
+									fullWidth
+									id="outlined-multiline-static"
 									label="Responsibilities"
 									multiline
-									rows={13}
+									rows={12}
 									variant="outlined"
-									required value={formData.responsibilities}
+									required 
+									value={formData.responsibilities}
 									name="responsibilities"
 									onChange={(e) => { formChangeHandler(e) }} />
 							</Box>
@@ -162,9 +176,10 @@ const NewCompany = () => {
 									fullWidth id="outlined-multiline-static"
 									label="Requirement"
 									multiline
-									rows={4}
+									rows={5}
 									variant="outlined"
-									required value={formData.requirement}
+									required 
+									value={formData.requirement}
 									name="requirement"
 									onChange={(e) => { formChangeHandler(e) }} />
 							</Box> <br />
@@ -173,7 +188,7 @@ const NewCompany = () => {
 									fullWidth
 									id="outlined-multiline-static"
 									label="About Company"
-									rows={4}
+									rows={5}
 									multiline
 									variant="outlined"
 									required
