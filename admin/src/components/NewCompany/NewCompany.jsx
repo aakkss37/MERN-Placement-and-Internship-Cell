@@ -101,8 +101,7 @@ const NewCompany = () => {
 
 	// Submit and add new Company
 	const formSubmitHandler = async()=> {
-		console.log("clicked")
-		console.log(formData)
+		// console.log(formData)
 		if(
 			formData.cgpa && 
 			formData.activeBack &&
@@ -127,7 +126,7 @@ const NewCompany = () => {
 	}
 	
 	
-	console.log(formData)
+	// console.log(formData)
 	
 	return (
 		<div className='new_company'>
