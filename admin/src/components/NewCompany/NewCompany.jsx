@@ -31,7 +31,7 @@ const initialFormData = {
 	requirement: '',
 	aboutCompany: '',
 	companyLogo: '',
-	department: '',
+	department: [],
 }
 
 
@@ -112,7 +112,7 @@ const NewCompany = () => {
 			formData.requirement &&
 			formData.aboutCompany &&
 			formData.companyLogo &&
-			formData.department
+			formData.department.length
 		){
 			try {
 				const responce = await API.addNewCompany(formData);
