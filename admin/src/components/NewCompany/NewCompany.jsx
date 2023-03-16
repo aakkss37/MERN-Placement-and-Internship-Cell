@@ -107,7 +107,6 @@ const NewCompany = () => {
 			formData.companyName &&
 			formData.cgpa &&
 			formData.activeBack &&
-			formData.passoutYear &&
 			formData.jobType &&
 			formData.jobRole &&
 			formData.responsibilities &&
@@ -229,7 +228,7 @@ const NewCompany = () => {
 							</FormControl>
 						</Box>
 						<Box sx={{ minWidth: 250 }}>
-							<FormControl fullWidth required variant='standard'>
+							<FormControl fullWidth variant='standard'>
 								<InputLabel id="demo-simple-select-label">Passout Year</InputLabel>
 								<Select
 									labelId="demo-simple-select-label"
