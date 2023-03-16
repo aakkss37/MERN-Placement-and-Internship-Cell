@@ -3,7 +3,7 @@ import ApartmentIcon from '@mui/icons-material/Apartment';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { Box, Card, CardActions, CardContent, CardHeader, CardMedia, Collapse, Divider, IconButton, styled, Typography } from '@mui/material'
 import { ApplyButton, CompanyName, DetailHead, GeneralText, OpeningDate } from './CardStyle';
-import googleImage from '../../../asset/google_image.png'
+
 
 
 const ExpandMore = styled((props) => {
@@ -44,7 +44,6 @@ const Cards = () => {
 				component="img"
 				height="194"
 				image="https://play-lh.googleusercontent.com/1-hPxafOxdYpYZEOKzNIkSP43HXCNftVJVttoo4ucl7rsMASXW3Xr6GlXURCubE1tA=w3840-h2160-rw"
-				// image={googleImage}
 				alt="Paella dish"
 			/>
 			<CardContent>
