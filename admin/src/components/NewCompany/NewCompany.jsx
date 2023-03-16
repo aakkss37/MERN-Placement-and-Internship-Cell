@@ -29,24 +29,13 @@ const initialFormData = {
 	responsibilities: '',
 	requirement: '',
 	aboutCompany: '',
-	companyLogo: ''
+	companyLogo: '',
+	department: [],
 }
 
 const NewCompany = () => {
 	const [formData, setFormData] = useState(initialFormData)
-	const [department, setDepartment] = useState([]);
 	const [imageName, setImageName] = useState();
-
-	
-	const handleChangeDepartment = (event) => {
-		const {
-			target: { value },
-		} = event;
-		setDepartment(
-			// On autofill we get a stringified value.
-			typeof value === 'string' ? value.split(',') : value,
-		);
-	};
 
 
 	const handleChangeImage = async(file)=>{
@@ -94,8 +83,9 @@ const NewCompany = () => {
 		}
 	}
 	
-
-
+	
+	console.log(formData)
+	
 	return (
 		<div className='new_company'>
 			<div className='new_company_container'>
@@ -247,15 +237,16 @@ const NewCompany = () => {
 									labelId="demo-multiple-checkbox-label"
 									id="demo-multiple-checkbox"
 									multiple
-									value={department}
-									onChange={handleChangeDepartment}
+									value={formData.department}
+									name="department"
+									onChange={(e) => { formChangeHandler(e) }}
 									input={<OutlinedInput label="Tag" />}
 									renderValue={(selected) => selected.join(', ')}
 									MenuProps={MenuProps}
 								>
-									{departmentList.map((name) => (
-										<MenuItem key={name} value={name}>
-											<Checkbox checked={department.indexOf(name) > -1} />
+									{departmentList.map((name, index) => (
+										<MenuItem key={index} value={name}>
+											<Checkbox checked={formData.department.indexOf(name) > -1} />
 											<ListItemText primary={name} />
 										</MenuItem>
 									))}
