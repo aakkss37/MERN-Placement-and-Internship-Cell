@@ -43,5 +43,6 @@ export const SERVICE_URL = {
 	addNewCompany : {
 		url: "/add-new-company",
 		method: "POST",
-	}
+	},
+	
 }

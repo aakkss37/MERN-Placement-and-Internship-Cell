@@ -38,17 +38,17 @@ const axiosInstance = axios.create({ // axios.create --> You can create a new in
 // Interceptors can be used to modify requests before they are sent. This can be useful for adding authentication headers, setting timeouts, or adding query parameters.
 axiosInstance.interceptors.request.use(
 	(config) => {
-		// code eg: start gloable loader.
-		// console.log("config url ==>> ", config.url);
-		// console.log("config.TYPE.query ==>> ", config.TYPE.query);
+		// // code eg: start gloable loader.
+		// // console.log("config url ==>> ", config.url);
+		// // console.log("config.TYPE.query ==>> ", config.TYPE.query);
 
-		if (config.TYPE.query) {
-			config.url = config.url + "?post_id=" + config.TYPE.query
-		}
-		else if (config.TYPE.params) {
-			config.params = config.TYPE.params
-		}
-		// console.log("config url ==>> ", config.url);
+		// if (config.TYPE.query) {
+		// 	config.url = config.url + "?post_id=" + config.TYPE.query
+		// }
+		// else if (config.TYPE.params) {
+		// 	config.params = config.TYPE.params
+		// }
+		// // console.log("config url ==>> ", config.url);
 		return config;
 	},
 	(error) => {

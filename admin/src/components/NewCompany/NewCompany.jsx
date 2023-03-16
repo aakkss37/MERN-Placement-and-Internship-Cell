@@ -54,15 +54,19 @@ const NewCompany = () => {
 		data.append("file", file);
 		// API CALL
 		console.log(data)
-		const responce = await API.uploadCompanyLogo(data); //return a url of the pic
-		// console.log("responce ===> ", responce.data);
-		// postData.companyLogo = responce.data;
-		setFormData((prevFormData) => {
-			return {
-				...prevFormData,
-				companyLogo: responce.data,
-			}
-		});
+		try {
+			const responce = await API.uploadCompanyLogo(data); //return a url of the pic
+			// console.log("responce ===> ", responce.data);
+			// postData.companyLogo = responce.data;
+			setFormData((prevFormData) => {
+				return {
+					...prevFormData,
+					companyLogo: responce.data,
+				}
+			});
+		} catch (error) {
+			console.log(error)
+		}
 	}
 
 	const formChangeHandler = (event) => {
@@ -76,8 +80,14 @@ const NewCompany = () => {
 
 	const formSubmitHandler = async()=> {
 		console.log("clicked")
+		try {
+			const responce = await API.addNewCompany(formData);
+			console.log(responce.data)
+		} catch (error) {
+			console.log(error)
+		}
 	}
-	console.log(formData)
+	// console.log(formData)
 	return (
 		<div className='new_company'>
 			<div className='new_company_container'>
