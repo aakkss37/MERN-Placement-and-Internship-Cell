@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { API_NOTIFICATION_MESSAGE, SERVICE_URL } from '../constants/configConstant';
+import { API_NOTIFICATION_MESSAGE, SERVICE_URL } from '../config/configConst';
 // import { getAccessToken, getType } from '../utils/commenUtils';
 
 /*

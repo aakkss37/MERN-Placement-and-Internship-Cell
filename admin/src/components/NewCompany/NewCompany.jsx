@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Box, Button, Checkbox, FormControl, InputLabel, ListItemText, MenuItem, OutlinedInput, Select, TextField } from "@mui/material";
 import { CurretPath, SectionHeading } from './newCompanyStyle';
 import './newCompany.css'
+import { API } from '../../services/api';
 
 const CGPA = [6, 6.5, 7, 7.5, 8, 8.5, 9]
 const passoutYear = [2022, 2023, 2024, 2025, 2026]
@@ -53,15 +54,15 @@ const NewCompany = () => {
 		data.append("file", file);
 		// API CALL
 		console.log(data)
-		// const responce = await API.uploadCompanyLogo(data); //return a url of the pic
-		// // console.log("responce ===> ", responce.data);
-		// // postData.companyLogo = responce.data;
-		// setFormData((prevFormData) => {
-		// 	return {
-		// 		...prevFormData,
-		// 		companyLogo: responce.data,
-		// 	}
-		// });
+		const responce = await API.uploadCompanyLogo(data); //return a url of the pic
+		// console.log("responce ===> ", responce.data);
+		// postData.companyLogo = responce.data;
+		setFormData((prevFormData) => {
+			return {
+				...prevFormData,
+				companyLogo: responce.data,
+			}
+		});
 	}
 
 	const formChangeHandler = (event) => {
@@ -70,6 +71,11 @@ const NewCompany = () => {
 			...prevFormData,
 			[name]: value
 		}))
+	}
+
+
+	const formSubmitHandler = async()=> {
+		console.log("clicked")
 	}
 	console.log(formData)
 	return (
@@ -243,7 +249,14 @@ const NewCompany = () => {
 				</div>
 				<Button 
 					variant="contained" 
-					style={{margin: "2rem", marginLeft: "47%", paddingLeft: "3rem", paddingRight: "3rem", fontWeight: 600}}
+					style={{
+						margin: "2rem", 
+						marginLeft: "47%", 
+						paddingLeft: "3rem", 
+						paddingRight: "3rem", 
+						fontWeight: 600
+					}}
+					onClick={formSubmitHandler}
 				>
 					Submit
 				</Button>
