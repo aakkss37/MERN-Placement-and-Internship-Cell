@@ -55,6 +55,10 @@ const companySchema = new mongoose.Schema({
 		type: Array,
 		required: true,
 	},
+	Date: {
+		type: Date,
+		default: new Date()
+	}
 	
 })
 
