@@ -13,6 +13,7 @@ const companySchema = new mongoose.Schema({
 	activeBack: {
 		type: Boolean,
 		required: true,
+		default: true
 	},
 	passoutYear: {
 		type: String,

@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
-import { Snackbar, IconButton, Box, Button, Checkbox, FormControl, InputLabel, ListItemText, MenuItem, OutlinedInput, Select, TextField } from "@mui/material";
+import React, { forwardRef, useState } from 'react'
+import { Snackbar, IconButton, Box, Button, Checkbox, FormControl, InputLabel, ListItemText, MenuItem, OutlinedInput, Select, TextField, Stack } from "@mui/material";
+import MuiAlert from '@mui/material/Alert';
 import { CurretPath, SectionHeading } from './newCompanyStyle';
 import CloseIcon from '@mui/icons-material/Close';
 import './newCompany.css'
@@ -37,19 +38,25 @@ const initialFormData = {
 
 
 
+const Alert = forwardRef(function Alert (props, ref) {
+	return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
+
 
 const NewCompany = () => {
 	const [formData, setFormData] = useState(initialFormData)
 	const [imageName, setImageName] = useState();
 
-	// Error message
-	const [openSnackbar, setOpenSnackbar] = useState(false);
+
+	// FeedBack message
+	const [openErrorSnackbar, setOpenErrorSnackbar] = useState(false);
+	const [openSucessSnackbar, setOpenSucessSnackbar] = useState(false);
 	const handleClose = (event, reason) => {
 		if (reason === 'clickaway') {
 			return;
 		}
 
-		setOpenSnackbar(false);
+		setOpenErrorSnackbar(false);
 	};
 	const action = (
 		<>
@@ -63,6 +70,8 @@ const NewCompany = () => {
 			</IconButton>
 		</>
 	);
+
+	
 
 
 
@@ -106,7 +115,6 @@ const NewCompany = () => {
 		if (
 			formData.companyName &&
 			formData.cgpa &&
-			formData.activeBack &&
 			formData.jobType &&
 			formData.jobRole &&
 			formData.responsibilities &&
@@ -117,12 +125,15 @@ const NewCompany = () => {
 		) {
 			try {
 				const responce = await API.addNewCompany(formData);
+				setOpenSucessSnackbar(true)
+				setFormData(initialFormData)
+				setImageName()
 				console.log(responce.data)
 			} catch (error) {
 				console.log(error)
 			}
 		} else {
-			setOpenSnackbar(true)
+			setOpenErrorSnackbar(true)
 		}
 	}
 
@@ -133,13 +144,24 @@ const NewCompany = () => {
 		<div className='new_company'>
 			<div className='new_company_container'>
 				<CurretPath >Add New Compnay</CurretPath>
+				{/* Form field empty error msg */}
 				<Snackbar
-					open={openSnackbar}
+					open={openErrorSnackbar}
 					autoHideDuration={4000}
 					onClose={handleClose}
 					message="Error! Required Field(*) can not be empty."
 					action={action}
 				/>
+
+				{/* Form sucessfull submit msg */}
+				<Stack spacing={2} sx={{ width: '100%' }}>
+					<Snackbar open={openSucessSnackbar} autoHideDuration={4000} onClose={handleClose} >
+						<Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+							Form submited sucessfully.
+						</Alert>
+					</Snackbar>
+				</Stack>
+
 				<div className='company_detail'>
 					<SectionHeading>Company Detail</SectionHeading>
 					<div className='form_container_company_detail'>
