@@ -36,8 +36,12 @@ apiService: {
 }
 */
 export const SERVICE_URL = {
+	uploadCompanyLogo: {
+		url: 'upload-company-logo',
+		method: 'POST'
+	},
 	addNewCompany : {
-		url: "/addNewCompany",
+		url: "/add-new-company",
 		method: "POST",
 	}
 }
