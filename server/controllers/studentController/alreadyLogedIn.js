@@ -1,4 +1,4 @@
-import Student from "../model/studentSchema.js"
+import Student from "../../model/studentSchema.js"
 
 
 export const alreadyLogedIn = async(req, resp)=> {

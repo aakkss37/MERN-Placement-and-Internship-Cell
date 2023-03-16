@@ -2,7 +2,7 @@ import axios from 'axios';
 import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
 dotenv.config();
-import Student from '../model/studentSchema.js';
+import Student from '../../model/studentSchema.js';
 
 
 
