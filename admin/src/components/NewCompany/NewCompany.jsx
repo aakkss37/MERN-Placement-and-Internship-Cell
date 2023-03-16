@@ -37,6 +37,7 @@ const NewCompany = () => {
 	const [department, setDepartment] = useState([]);
 	const [imageName, setImageName] = useState();
 
+	
 	const handleChangeDepartment = (event) => {
 		const {
 			target: { value },
@@ -46,6 +47,7 @@ const NewCompany = () => {
 			typeof value === 'string' ? value.split(',') : value,
 		);
 	};
+
 
 	const handleChangeImage = async(file)=>{
 		setImageName(file.name)
@@ -69,6 +71,8 @@ const NewCompany = () => {
 		}
 	}
 
+
+
 	const formChangeHandler = (event) => {
 		const { value, name } = event.target;
 		setFormData(prevFormData => ({
@@ -78,8 +82,10 @@ const NewCompany = () => {
 	}
 
 
+
 	const formSubmitHandler = async()=> {
 		console.log("clicked")
+		console.log(formData)
 		try {
 			const responce = await API.addNewCompany(formData);
 			console.log(responce.data)
@@ -87,7 +93,9 @@ const NewCompany = () => {
 			console.log(error)
 		}
 	}
-	// console.log(formData)
+	
+
+
 	return (
 		<div className='new_company'>
 			<div className='new_company_container'>
