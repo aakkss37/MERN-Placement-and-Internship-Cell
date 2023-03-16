@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import { Box, Button, Checkbox, FormControl, InputLabel, ListItemText, MenuItem, OutlinedInput, Select, TextField } from "@mui/material";
+import { Snackbar, IconButton, Box, Button, Checkbox, FormControl, InputLabel, ListItemText, MenuItem, OutlinedInput, Select, TextField } from "@mui/material";
 import { CurretPath, SectionHeading } from './newCompanyStyle';
+import CloseIcon from '@mui/icons-material/Close';
 import './newCompany.css'
 import { API } from '../../services/api';
 
@@ -30,14 +31,41 @@ const initialFormData = {
 	requirement: '',
 	aboutCompany: '',
 	companyLogo: '',
-	department: [],
+	department: '',
 }
+
+
+
 
 const NewCompany = () => {
 	const [formData, setFormData] = useState(initialFormData)
 	const [imageName, setImageName] = useState();
 
+	// Error message
+	const [openSnackbar, setOpenSnackbar] = useState(false);
+	const handleClose = (event, reason) => {
+		if (reason === 'clickaway') {
+			return;
+		}
 
+		setOpenSnackbar(false);
+	};
+	const action = (
+		<>
+			<IconButton
+				size="small"
+				aria-label="close"
+				color="inherit"
+				onClick={handleClose}
+			>
+				<CloseIcon fontSize="small" />
+			</IconButton>
+		</>
+	);
+
+
+
+	// image upload
 	const handleChangeImage = async(file)=>{
 		setImageName(file.name)
 		const data = new FormData();
@@ -61,7 +89,7 @@ const NewCompany = () => {
 	}
 
 
-
+	// form controller
 	const formChangeHandler = (event) => {
 		const { value, name } = event.target;
 		setFormData(prevFormData => ({
@@ -69,17 +97,32 @@ const NewCompany = () => {
 			[name]: value
 		}))
 	}
+	
 
-
-
+	// Submit and add new Company
 	const formSubmitHandler = async()=> {
 		console.log("clicked")
 		console.log(formData)
-		try {
-			const responce = await API.addNewCompany(formData);
-			console.log(responce.data)
-		} catch (error) {
-			console.log(error)
+		if(
+			formData.cgpa && 
+			formData.activeBack &&
+			formData.passoutYear &&
+			formData.jobType &&
+			formData.jobRole &&
+			formData.responsibilities &&
+			formData.requirement &&
+			formData.aboutCompany &&
+			formData.companyLogo &&
+			formData.department
+		){
+			try {
+				const responce = await API.addNewCompany(formData);
+				console.log(responce.data)
+			} catch (error) {
+				console.log(error)
+			}
+		}else{
+			setOpenSnackbar(true)
 		}
 	}
 	
@@ -90,6 +133,13 @@ const NewCompany = () => {
 		<div className='new_company'>
 			<div className='new_company_container'>
 				<CurretPath >Add New Compnay</CurretPath>
+				<Snackbar
+					open={openSnackbar}
+					autoHideDuration={4000}
+					onClose={handleClose}
+					message="Error! Can not submit empty field."
+					action={action}
+				/>
 				<div className='company_detail'>
 					<SectionHeading>Company Detail</SectionHeading>
 					<div className='form_container_company_detail'>
