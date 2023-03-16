@@ -66,7 +66,7 @@ const NewCompany = () => {
 
 
 	// image upload
-	const handleChangeImage = async(file)=>{
+	const handleChangeImage = async (file) => {
 		setImageName(file.name)
 		const data = new FormData();
 		data.append("name", file.name);
@@ -97,13 +97,13 @@ const NewCompany = () => {
 			[name]: value
 		}))
 	}
-	
+
 
 	// Submit and add new Company
-	const formSubmitHandler = async()=> {
+	const formSubmitHandler = async () => {
 		// console.log(formData)
-		if(
-			formData.cgpa && 
+		if (
+			formData.cgpa &&
 			formData.activeBack &&
 			formData.passoutYear &&
 			formData.jobType &&
@@ -113,21 +113,21 @@ const NewCompany = () => {
 			formData.aboutCompany &&
 			formData.companyLogo &&
 			formData.department.length
-		){
+		) {
 			try {
 				const responce = await API.addNewCompany(formData);
 				console.log(responce.data)
 			} catch (error) {
 				console.log(error)
 			}
-		}else{
+		} else {
 			setOpenSnackbar(true)
 		}
 	}
-	
-	
+
+
 	// console.log(formData)
-	
+
 	return (
 		<div className='new_company'>
 			<div className='new_company_container'>
@@ -142,11 +142,10 @@ const NewCompany = () => {
 				<div className='company_detail'>
 					<SectionHeading>Company Detail</SectionHeading>
 					<div className='form_container_company_detail'>
-						<div className="right">
-							<Box sx={{ minWidth: 250, height: '350' }}>
+						<div className="form_container_company_detail_right">
+							<Box >
 								<TextField
 									fullWidth
-									sx={{ width: '600px' }}
 									id="outlined-multiline-static"
 									label="Responsibilities"
 									multiline
@@ -157,11 +156,10 @@ const NewCompany = () => {
 									onChange={(e) => { formChangeHandler(e) }} />
 							</Box>
 						</div>
-						<div className="left">
-							<Box sx={{ minWidth: 250, height: '150' }}>
+						<div className="form_container_company_detail_left">
+							<Box >
 								<TextField
 									fullWidth id="outlined-multiline-static"
-									sx={{ width: "500px" }}
 									label="Requirement"
 									multiline
 									rows={4}
@@ -169,11 +167,10 @@ const NewCompany = () => {
 									required value={formData.requirement}
 									name="requirement"
 									onChange={(e) => { formChangeHandler(e) }} />
-							</Box>
-							<Box sx={{ minWidth: 250, height: '150' }}>
+							</Box> <br />
+							<Box >
 								<TextField
 									fullWidth
-									sx={{ width: "500px" }}
 									id="outlined-multiline-static"
 									label="About Company"
 									rows={4}
@@ -183,12 +180,12 @@ const NewCompany = () => {
 									value={formData.aboutCompany}
 									name="aboutCompany"
 									onChange={(e) => { formChangeHandler(e) }} />
-							</Box>
+							</Box> <br />
 							<Button variant="outlined" component="label">
 								Upload Company Logo
 								<input hidden accept="image/*" type="file" onChange={(e) => handleChangeImage(e.target.files[0])} />
 							</Button>
-							{imageName && <span style={{color: "gray", overflow: "hidden"}}> {imageName}</span>}
+							{imageName && <span style={{ color: "gray", overflow: "hidden" }}> {imageName}</span>}
 						</div>
 
 					</div>
@@ -305,13 +302,13 @@ const NewCompany = () => {
 
 					</div>
 				</div>
-				<Button 
-					variant="contained" 
+				<Button
+					variant="contained"
 					style={{
-						margin: "2rem", 
-						marginLeft: "47%", 
-						paddingLeft: "3rem", 
-						paddingRight: "3rem", 
+						margin: "2rem",
+						marginLeft: "45%",
+						paddingLeft: "4rem",
+						paddingRight: "4rem",
 						fontWeight: 600
 					}}
 					onClick={formSubmitHandler}
