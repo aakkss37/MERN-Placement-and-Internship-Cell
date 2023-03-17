@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { API } from '../../services/api';
 import MenuBox from '../Constants/UI/menu/MenuBox'
 import Cards from './Card/Card';
@@ -6,16 +6,18 @@ import { CurretPath, DriveContainer, Drives, LeftBoxDummy, MainConatiner } from 
 
 
 const PlacementDrive = () => {
+	const [placementDriveList, setPlacementDriveList] = useState([]);
 
 	useEffect(() => {
 		const getDriveList = async()=>{
 			const driveList = await API.getPlacementDriveList()
 			console.log(driveList.data)
+			setPlacementDriveList(driveList.data);
 		}
 		getDriveList()
 	}, []);
 
-
+	console.log(placementDriveList)
 	return (
 		<MainConatiner>
 			<DriveContainer>
@@ -26,9 +28,11 @@ const PlacementDrive = () => {
 
 				<Drives>
 					<CurretPath style={{margin: '20px', color: 'gray', fontWeight: 600,}}>PLACEMENT DRIVE</CurretPath>
-					<Cards />
-					<Cards />
-					<Cards />
+					{
+						placementDriveList.map((drive,index) => (
+							<Cards key={index} driveData = {drive}/>
+						))
+					}
 				</Drives>
 
 			</DriveContainer>
