@@ -44,5 +44,8 @@ export const SERVICE_URL = {
 		url: "/add-new-company",
 		method: "POST",
 	},
-	
+	getListedCompanyList: {
+		url: '/get-company-list',
+		method: 'GET',
+	}
 }
