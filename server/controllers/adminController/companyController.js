@@ -1,11 +1,16 @@
 import Company from "../../model/CompanySchema.js";
 import { formatDate } from "../../utils/formatDate.js";
+import { sendMail } from "../../utils/sendMail.js";
 
 export const addNewCompany = async (request, response) => {
 	// console.log(request.body)
 	try {
 		const company = await Company.create(request.body)
 		console.log(company)
+		
+		sendMail()
+			.then((result) => console.log('Email sent...', result))
+			.catch((error) => console.log(error.message));
 
 		const infoToSend = {
 			id: company._id,
