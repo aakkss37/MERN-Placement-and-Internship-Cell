@@ -3,7 +3,7 @@ import ApartmentIcon from '@mui/icons-material/Apartment';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { Box, Card, CardActions, CardContent, CardHeader, CardMedia, Collapse, Divider, IconButton, styled, Typography } from '@mui/material'
 import { ApplyButton, CompanyName, DetailHead, GeneralText, OpeningDate } from './CardStyle';
-// import { formatDate } from '../../../utils/commonUtil';
+import { formatDate } from '../../../utils/commonUtil';
 
 
 
@@ -42,7 +42,7 @@ const Cards = (props) => {
 					<ApartmentIcon style={{ color: '#367D43', fontSize: 30 }} />
 				}
 				title={<CompanyName>{props.driveData.companyName}</CompanyName>}
-				subheader={<OpeningDate>Nov/12/2023</OpeningDate>}
+				subheader={<OpeningDate>{formatDate(props.driveData.Date)}</OpeningDate>}
 				action={
 					<ApplyButton>Apply</ApplyButton>
 				}
