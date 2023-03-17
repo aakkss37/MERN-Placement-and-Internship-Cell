@@ -7,15 +7,6 @@ import { API } from '../../services/api';
 
 
 
-const companyData = [
-	{ id: "1", companyName: 'Google', date: '12 Nov 2022', status: 'Active', },
-	{ id: "2", companyName: 'Netflix', date: '12 Dec 2022', status: 'Active', },
-	{ id: "3", companyName: 'Microsoft', date: '11 Oct 2022', status: 'completed', },
-	{ id: "4", companyName: 'Adobe', date: '27 Nov 2022', status: 'completed', },
-	{ id: "5", companyName: 'Starlink', date: '17 Dec 2022', status: 'completed', },
-	{ id: "6", companyName: 'Phonepe', date: '22 Jan 2023', status: 'completed', },
-]
-
 const Home = () => {
 	const [companyList, setCompanyList] = useState([]);
 
