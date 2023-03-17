@@ -59,8 +59,11 @@ const companySchema = new mongoose.Schema({
 	Date: {
 		type: Date,
 		default: new Date()
+	},
+	status: {
+		type: String,
+		default: "Active"
 	}
-	
 })
 
 const Company = mongoose.model('Company', companySchema);
