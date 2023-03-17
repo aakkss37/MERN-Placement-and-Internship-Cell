@@ -34,10 +34,10 @@ export const sendMail = async()=> {
 		});
 
 		const mailOptions = {
-			from: 'SENDER NAME <amarfullstack.workspace.124@gmail.com>',
+			from: 'KAHE PIC <amarfullstack.workspace.124@gmail.com>',
 			to: '20csu135@kahedu.edu.in',
-			subject: 'Hello from gmail using API',
-			text: 'Hello from gmail email using API',
+			subject: 'Placement and Internship 	Cell',
+			text: 'You are shortlisted for a new company. Please visite PIC website.',
 			html: '<h1>Hello from gmail email using API</h1>',
 		};
 
