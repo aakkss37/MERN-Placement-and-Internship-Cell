@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './home.css'
 import { Paper, Table, TableBody, TableContainer, TableHead, TableRow, } from '@mui/material';
 import { ActiveStatus, CurretPath, Status, StyledTableCell, StyledTableRow } from './homeStyle.js'
+import { API } from '../../services/api';
 
 
 
@@ -16,7 +17,17 @@ const companyData = [
 ]
 
 const Home = () => {
+	const [companyList, setCompanyList] = useState([]);
 
+	useEffect(() => {
+		const getCompanyList = async()=>{
+			const list = await API.getListedCompanyList();
+			console.log(list)
+			setCompanyList(list)
+		}
+		getCompanyList()
+	}, []);
+	console.log(companyList)
 	return (
 		<div className='home'>
 			<div className='homa_container'>
