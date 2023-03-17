@@ -5,11 +5,13 @@ import { loginStudent } from "../controllers/studentController/login.js";
 import { getImage, uploadImage } from "../controllers/adminController/companyLogoController.js";
 import upload from '../utils/UploadFile.js';
 import { addNewCompany, getListedCompanyList } from "../controllers/adminController/companyController.js";
+import { getPlacementDriveList } from "../controllers/studentController/driveList.js";
 const router = express.Router();
 
 // STUDENT LOGIN
 router.post('/login', loginStudent)
 router.post('/validate-access-tokan', JWTvalidation, alreadyLogedIn)
+router.get('/get-placement-drive-list', getPlacementDriveList)
 
 
 
