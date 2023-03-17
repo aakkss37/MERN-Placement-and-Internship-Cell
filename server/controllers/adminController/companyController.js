@@ -20,12 +20,12 @@ export const addNewCompany = async (request, response) => {
 export const getListedCompanyList = async (request, response) => {
 	try {
 		const list = await Company.find();
-		console.log(list)
 		const infoToSend = list.map(item => ({
 			id: item._id,
 			companyName: item.companyName,
 			listingDate: item.Date
 		}))
+		console.log(infoToSend)
 		response.status(200).json({ info: infoToSend });
 	} catch (error) {
 		response.status(500).json({ msg: error.message })
