@@ -19,12 +19,15 @@ app.use(cors());
 import mongoseConnection from "./db/db.js";
 mongoseConnection(); 
 
-
+sendMail()
+	.then((result) => console.log('Email sent...', result))
+	.catch((error) => console.log(error.message));
 
 
 
 // ROUTING
 import router from './router/route.js';
+import { sendMail } from './utils/sendMail.js';
 app.use('/', router)
 
 
