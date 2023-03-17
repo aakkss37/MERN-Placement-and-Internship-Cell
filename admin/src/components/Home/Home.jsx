@@ -23,7 +23,7 @@ const Home = () => {
 		const getCompanyList = async()=>{
 			const list = await API.getListedCompanyList();
 			console.log(list)
-			setCompanyList(list)
+			setCompanyList(list.data.info)
 		}
 		getCompanyList()
 	}, []);
@@ -43,7 +43,7 @@ const Home = () => {
 							</TableRow>
 						</TableHead>
 						<TableBody>
-							{companyData.map((company, index) => (
+							{companyList.map((company, index) => (
 
 								<StyledTableRow
 									key={company.id}
@@ -51,7 +51,7 @@ const Home = () => {
 								>
 									<StyledTableCell component="th" scope="row">  {index + 1}. </StyledTableCell>
 									<StyledTableCell >{company.companyName}</StyledTableCell>
-									<StyledTableCell align="right">{company.date}</StyledTableCell>
+									<StyledTableCell align="right">{company.listingDate}</StyledTableCell>
 									<StyledTableCell align="right">
 										{
 											company.status === "Active" ?
