@@ -19,10 +19,6 @@ app.use(cors());
 import mongoseConnection from "./db/db.js";
 mongoseConnection(); 
 
-sendMail()
-	.then((result) => console.log('Email sent...', result))
-	.catch((error) => console.log(error.message));
-
 
 
 // ROUTING
