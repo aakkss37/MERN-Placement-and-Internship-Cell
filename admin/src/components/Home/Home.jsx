@@ -14,7 +14,7 @@ const Home = () => {
 		const getCompanyList = async()=>{
 			const list = await API.getListedCompanyList();
 			console.log(list)
-			setCompanyList(list.data.info)
+			setCompanyList(list.data.info.reverse())
 		}
 		getCompanyList()
 	}, []);
