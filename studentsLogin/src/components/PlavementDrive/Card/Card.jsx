@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import ApartmentIcon from '@mui/icons-material/Apartment';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { Box, Card, CardActions, CardContent, CardHeader, CardMedia, Collapse, Divider, IconButton, styled, Typography } from '@mui/material'
@@ -22,16 +22,19 @@ const ExpandMore = styled((props) => {
 
 const Cards = (props) => {
 	const [isExpanded, setIsExpanded] = useState(false);
+	const [eligibleDepartment, setEligibleDepartment] = useState("")
 
 	const handleExpandClick = () => {
 		setIsExpanded(!isExpanded);
 	};
 
-	let eligibleDepartment = "";
-	props.driveData.department?.forEach(element => {
-		eligibleDepartment = eligibleDepartment + "||" + element
-	});
-	// console.log(props.)
+	useEffect(() => {
+		let department = ""
+		props.driveData.department?.forEach(element => {
+			department = department + "||" + element
+		});
+		setEligibleDepartment(department)
+	}, [props.driveData.department]);
 	return (
 		<Card sx={{ maxWidth: '95%', borderRadius: 2, margin: 2}}>
 			<CardHeader
@@ -69,7 +72,7 @@ const Cards = (props) => {
 				<CardContent>
 					<Box>
 						<DetailHead>Eligiblity:</DetailHead>
-						<GeneralText>{props.driveData.cgpa}</GeneralText>
+						<GeneralText>CGPA: {props.driveData.cgpa}</GeneralText>
 						<GeneralText>Active Backlog: {props.driveData.activeBack ? "ALLOWED" : "NOT ALLOWED"}</GeneralText>
 						<GeneralText>Department: {eligibleDepartment} </GeneralText>
 						<GeneralText>Pass out: {props.driveData.passoutYear}</GeneralText>
