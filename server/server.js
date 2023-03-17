@@ -20,7 +20,6 @@ import mongoseConnection from "./db/db.js";
 mongoseConnection(); 
 
 
-
 // ROUTING
 import router from './router/route.js';
 import { sendMail } from './utils/sendMail.js';

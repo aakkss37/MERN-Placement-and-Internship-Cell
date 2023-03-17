@@ -1,6 +1,7 @@
 import nodemailer from 'nodemailer';
 import  { google } from 'googleapis';
 import dotenv from 'dotenv';
+import { createEmailHTML } from './createEmail.js';
 dotenv.config();
 
 
@@ -17,7 +18,7 @@ const oAuth2Client = new google.auth.OAuth2(
 );
 oAuth2Client.setCredentials({ refresh_token: REFRESH_TOKEN });
 
-export const sendMail = async()=> {
+export const sendMail = async(companyName)=> {
 	try {
 		const accessToken = await oAuth2Client.getAccessToken();
 
@@ -32,13 +33,13 @@ export const sendMail = async()=> {
 				accessToken: accessToken,
 			},
 		});
-
+		const emailTemplate = createEmailHTML(companyName)
 		const mailOptions = {
-			from: 'Placement Cell <amarfullstack.workspace.124@gmail.com>',
-			to: '20csu135@kahedu.edu.in, amarkumar.sharma.124@gmail.com',
+			from: 'KAHE PIC <amarfullstack.workspace.124@gmail.com>',
+			to: '20csu135@kahedu.edu.in',
 			subject: 'Placement and Internship 	Cell',
 			text: 'You are shortlisted for a new company. Please visite PIC website.',
-			html: '<h1>Hello from gmail email using API</h1>',
+			html: emailTemplate,
 		};
 
 		const result = await transport.sendMail(mailOptions);

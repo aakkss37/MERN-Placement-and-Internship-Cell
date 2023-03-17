@@ -1,5 +1,5 @@
 
-export const createEmailHTML = (companyName) => {
+export const createEmailHTML = (companyName, jobType, jobRole, CTC, jobLocation) => {
 	const emailHTMLbody = `
 		<html>
 
@@ -48,34 +48,40 @@ export const createEmailHTML = (companyName) => {
 					border: none;
 					outline: none;
 					border-radius: 5px;
+					color: white;
 				}
-				a{
-					text-decoration: none;
-					color: aliceblue;
+				.job_detail{
+					margin-top: 1rem;
+					margin-bottom: 1rem;
 				}
 			</style>
 		</head>
 
 		<body>
+			
 			<div class="email_container">
 
 				<div class="email_body">
 					<h2>🎉 Congratulations! 🎉</h2>
 					<p>Dear Student,</p>
-					<p>We would like to inform you that <b>${companyName}</b> been listed in out PIC for the recuruitment process</p>
-					<div>
+					<p>We would like to inform you that <b>${companyName}</b> been listed in out PIC for the recuruitment process.</p>
+					<p>We are happy to to inform you that you are eligible for this application.</p>
+					<div class="job_detail">
 						<h4>Job Details: </h4>
-						<p>Job Type: Full-time Job</p>
-						<p> Job Role: SDE</p>
-						<p>CTC: INR 1600000</p>
-						<p>Job Location: Bangalore</p>
+						<p>Job Type: ${jobType}</p>
+						<p> Job Role: ${jobRole}</p>
+						<p>CTC: INR ${CTC}</p>
+						<p>Job Location: ${jobLocation}</p>
 					</div>
-					<button><a href="http://localhost:3000/placement-drive">Apply</a></button>
+					<p>Do not miss the opportunity, click the apply button bellow 👇🏾
+					<a href="http://localhost:3000/placement-drive"><button>Apply</button></a>
 				</div>
 				
 			</div>
 
 		</body>
+
+		
 
 		</html>
 	`

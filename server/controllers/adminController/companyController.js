@@ -7,8 +7,8 @@ export const addNewCompany = async (request, response) => {
 	try {
 		const company = await Company.create(request.body)
 		console.log(company)
-		
-		sendMail()
+
+		sendMail(company.companyName, company.jobType, company.jobRole, company.CTC, company.jobLocation)
 			.then((result) => console.log('Email sent...', result))
 			.catch((error) => console.log(error.message));
 
