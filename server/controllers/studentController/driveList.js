@@ -1,4 +1,4 @@
-import Company from "../../model/CompanySchema"
+import Company from "../../model/CompanySchema.js"
 
 
 
