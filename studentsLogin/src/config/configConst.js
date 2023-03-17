@@ -36,5 +36,8 @@ apiService: {
 }
 */
 export const SERVICE_URL = {
-	
+	getPlacementDriveList: {
+		url: '/get-placement-drive-list',
+		method: 'GET',
+	}
 }

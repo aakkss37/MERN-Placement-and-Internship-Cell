@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { API } from '../../../../admin/src/services/api';
+import { API } from '../../services/api';
 import MenuBox from '../Constants/UI/menu/MenuBox'
 import Cards from './Card/Card';
 import { CurretPath, DriveContainer, Drives, LeftBoxDummy, MainConatiner } from './PlacementDriveStyle.js';
