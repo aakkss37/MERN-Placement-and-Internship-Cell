@@ -57,6 +57,7 @@ const NewCompany = () => {
 		}
 
 		setOpenErrorSnackbar(false);
+		setOpenSucessSnackbar(false)
 	};
 	const action = (
 		<>

@@ -18,7 +18,7 @@ const oAuth2Client = new google.auth.OAuth2(
 );
 oAuth2Client.setCredentials({ refresh_token: REFRESH_TOKEN });
 
-export const sendMail = async(companyName)=> {
+export const sendMail = async(company)=> {
 	try {
 		const accessToken = await oAuth2Client.getAccessToken();
 
@@ -33,7 +33,7 @@ export const sendMail = async(companyName)=> {
 				accessToken: accessToken,
 			},
 		});
-		const emailTemplate = createEmailHTML(companyName)
+		const emailTemplate = createEmailHTML(company.companyName, company.jobType, company.jobRole, company.CTC, company.jobLocation)
 		const mailOptions = {
 			from: 'KAHE PIC <amarfullstack.workspace.124@gmail.com>',
 			to: '20csu135@kahedu.edu.in',
