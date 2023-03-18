@@ -44,5 +44,12 @@ export const getListedCompanyList = async (request, response) => {
 }
 
 export const getCompanyDetails = async (request, responce) => {
-	console.log(request.query)
+	// console.log(request.query)
+	const companyID = request.query.company_id
+	try {
+		const companyDetail = await Company.findById(companyID)
+		responce.status(200).json(companyDetail)
+	} catch (error) {
+		responce.status(500).json(error.message)
+	}
 }
