@@ -1,5 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route, Outlet, } from 'react-router-dom';
+import DetailedView from './components/DetailedView/DetailedView';
 import Home from './components/Home/Home';
 import Login from './components/Login/Login';
 import Navbar from './components/Navigation/Navbar'
@@ -36,6 +37,9 @@ const App = () => {
 				</Route>
 				<Route path='/placement-data' element={<PrivateRoute isLogin={isLogin} />}>
 					<Route path='/placement-data' element={<PlacementData />} />
+				</Route>
+				<Route path='/home/company-detail' element={<PrivateRoute isLogin={isLogin} />}>
+					<Route path='/home/company-detail' element={<DetailedView />} />
 				</Route>
 			</Routes>
 		</BrowserRouter>

@@ -4,8 +4,8 @@ import { API } from '../../services/api';
 
 const DetailedView = () => {
 	const [searchParams] = useSearchParams();
-	const companyId = searchParams.get('company_id');
-
+	const companyId = searchParams.get('companyid');
+	// console.log(companyId)
 	useEffect(() => {
 		const getDetails = async () => {
 			try {
