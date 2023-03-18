@@ -50,8 +50,7 @@ export const createEmailHTML = (companyName, jobType, jobRole, CTC, jobLocation)
 					border-radius: 5px;
 					color: white;
 				}
-				.job_detail{
-					margin-top: 1rem;
+				.joblocation{
 					margin-bottom: 1rem;
 				}
 			</style>
@@ -71,10 +70,10 @@ export const createEmailHTML = (companyName, jobType, jobRole, CTC, jobLocation)
 						<p>Job Type: ${jobType}</p>
 						<p> Job Role: ${jobRole}</p>
 						<p>CTC: INR ${CTC}</p>
-						<p>Job Location: ${jobLocation}</p>
+						<p class="joblocation">Job Location: ${jobLocation}</p>
+						<p>Do not miss the opportunity, click the apply button bellow 👇🏾
+						<a href="http://localhost:3000/placement-drive"><button>Apply</button></a>
 					</div>
-					<p>Do not miss the opportunity, click the apply button bellow 👇🏾
-					<a href="http://localhost:3000/placement-drive"><button>Apply</button></a>
 				</div>
 				
 			</div>
