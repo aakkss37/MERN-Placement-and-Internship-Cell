@@ -12,13 +12,28 @@ const Home = () => {
 
 	useEffect(() => {
 		const getCompanyList = async()=>{
-			const list = await API.getListedCompanyList();
-			console.log(list)
-			setCompanyList(list.data.info.reverse())
+			try {
+				const list = await API.getListedCompanyList();
+				// console.log(list)
+				setCompanyList(list.data.info.reverse())
+			} catch (error) {
+				console.log(error.message)
+			}
 		}
 		getCompanyList()
 	}, []);
-	console.log(companyList)
+
+
+	const openCompanyDetail = async(id)=> {
+		try {
+			const companyDetail = await API.getCompanyDetails(id)
+			console.log(companyDetail.data)
+		} catch (error) {
+			console.log(error.message)
+		}
+	}
+
+	// console.log(companyList)
 	return (
 		<div className='home'>
 			<div className='homa_container'>
@@ -38,7 +53,7 @@ const Home = () => {
 
 								<StyledTableRow
 									key={company.id}
-									onClick={() => console.log('clicked')}
+									onClick={() => openCompanyDetail(company.id)}
 								>
 									<StyledTableCell component="th" scope="row">  {index + 1}. </StyledTableCell>
 									<StyledTableCell >{company.companyName}</StyledTableCell>
