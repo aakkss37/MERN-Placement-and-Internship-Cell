@@ -3,12 +3,14 @@ import './home.css'
 import { Paper, Table, TableBody, TableContainer, TableHead, TableRow, } from '@mui/material';
 import { ActiveStatus, CurretPath, Status, StyledTableCell, StyledTableRow } from './homeStyle.js'
 import { API } from '../../services/api';
+import { useNavigate } from 'react-router-dom';
 
 
 
 
 const Home = () => {
 	const [companyList, setCompanyList] = useState([]);
+	const navigate = useNavigate()
 
 	useEffect(() => {
 		const getCompanyList = async()=>{
@@ -24,13 +26,8 @@ const Home = () => {
 	}, []);
 
 
-	const openCompanyDetail = async(id)=> {
-		try {
-			const companyDetail = await API.getCompanyDetails(id)
-			console.log(companyDetail.data)
-		} catch (error) {
-			console.log(error.message)
-		}
+	const openCompanyDetail = (id)=> {
+		navigate(`/home/company-detail?companyid=${id}`)
 	}
 
 	// console.log(companyList)
