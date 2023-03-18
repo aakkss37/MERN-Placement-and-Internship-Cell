@@ -42,3 +42,7 @@ export const getListedCompanyList = async (request, response) => {
 		response.status(500).json({ msg: error.message })
 	}
 }
+
+export const getCompanyDetails = async (request, responce) => {
+	console.log(request.query)
+}
