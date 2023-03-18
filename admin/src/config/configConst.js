@@ -47,5 +47,10 @@ export const SERVICE_URL = {
 	getListedCompanyList: {
 		url: '/get-company-list',
 		method: 'GET',
+	},
+	getCompanyDetails: {
+		url: '/company-detail',
+		method: 'GET',
+		query: true
 	}
 }
