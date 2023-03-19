@@ -15,7 +15,7 @@ const DetailedView = () => {
 		const getDetails = async () => {
 			try {
 				const detail = await API.getCompanyDetails(companyId)
-				console.log("data from API call ===> ", detail.data)
+				// console.log("data from API call ===> ", detail.data)
 				setCompanyDetail(detail.data)
 			} catch (error) {
 				console.log(error.message)
@@ -25,7 +25,7 @@ const DetailedView = () => {
 	}, [companyId])
 
 
-	console.log("Company detail ===> ", companyDetail)
+	// console.log("Company detail ===> ", companyDetail)
 
 	return (
 		<div className='detailed_view'>
