@@ -3,16 +3,15 @@ import { DataContext } from '../../../contextAPI/DataProvider';
 import Box from '@mui/material/Box';
 import { DataGrid } from '@mui/x-data-grid';
 import { Button, } from '@mui/material';
-import { generateFakeData } from '../../../utils/commonUtil';
-import { ApplicantsAction, Search, SearchIconWrapper, StyledInputBase } from './ApplicantsStyle';
+import { ApplicantsAction, Search, SearchIconWrapper, StyledInputBase } from './TestShortlistStyle';
 import SearchIcon from '@mui/icons-material/Search';
 
 
 const columns = [
-	{ 
-		field: 'id', 
-		headerName: 'Roll no.', 
-		width: 150 
+	{
+		field: 'id',
+		headerName: 'Roll no.',
+		width: 150
 	},
 	{
 		field: 'Name',
@@ -38,7 +37,7 @@ const columns = [
 
 
 
-const Applicants = () => {
+const TestShortlist = ({ driveData }) => {
 	const [searchText, setSearchText] = useState('');
 	const [studentsChecked, setStudentsChecked] = useState([]);
 	const context = useContext(DataContext);
@@ -47,18 +46,17 @@ const Applicants = () => {
 	const handleSearch = (event) => {
 		setSearchText(event.target.value);
 	};
-	const rows = generateFakeData()
+	const rows = context.studentsForTest
 	const filteredRows = rows.filter((row) =>
 		row.id.toString().startsWith(searchText)
 	);
 
 
-	const handleCheck = (event)=> {
+	const handleCheck = (event) => {
 		setStudentsChecked([...studentsChecked, event.row])
 	}
-	const selectedForTest = ()=> {
+	const selectedForTest = () => {
 		context.setStudentsForTest(studentsChecked)
-		context.setShowTestList(true)
 	}
 	// console.log(context.studentsForTest)
 	// console.log(studentsChecked)
@@ -76,12 +74,12 @@ const Applicants = () => {
 						onChange={handleSearch}
 					/>
 				</Search>
-				<h2 style={{fontSize: '1.5rem', }}>Applicants Detail</h2>
+				<h2 style={{ fontSize: '1.5rem', }}>Short list for Test</h2>
 				{
 					studentsChecked.length ?
 						<Button variant="contained" onClick={selectedForTest}>Select For Test</Button>
-					:
-					<Button variant="contained" disabled>Select For Test</Button>
+						:
+						<Button variant="contained" disabled>Select For Test</Button>
 				}
 			</ApplicantsAction>
 
@@ -98,10 +96,10 @@ const Applicants = () => {
 				pageSizeOptions={[20]}
 				checkboxSelection
 				disableRowSelectionOnClick={true}
-				onCellClick={(event)=>{handleCheck(event)}}
+				onCellClick={(event) => { handleCheck(event) }}
 			/>
 		</Box>
 	)
 }
 
-export default Applicants
+export default TestShortlist

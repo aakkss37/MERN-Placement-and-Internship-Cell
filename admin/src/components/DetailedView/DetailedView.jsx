@@ -1,15 +1,18 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
+import { DataContext } from '../../contextAPI/DataProvider';
 import { API } from '../../services/api';
 import Applicants from './Applicants/Applicants';
 import DetailCard from './DetailCard/DetailCard';
 import './detailedView.css'
 import { CurretPath } from './detailedViewStyle';
+import TestShortlist from './TestShortlist/TestShortlist';
 
 const DetailedView = () => {
 	const [companyDetail, setCompanyDetail] = useState();
 	const [searchParams] = useSearchParams();
 	const companyId = searchParams.get('companyid');
+	const context = useContext(DataContext);
 	// console.log(companyId)
 	useEffect(() => {
 		const getDetails = async () => {
@@ -26,6 +29,7 @@ const DetailedView = () => {
 
 
 	// console.log("Company detail ===> ", companyDetail)
+	console.log("context.showTestList ===> ", context.showTestList)
 
 	return (
 		<div className='detailed_view'>
@@ -35,7 +39,11 @@ const DetailedView = () => {
 					companyDetail &&
 					<>
 						<DetailCard driveData={companyDetail} /> <br />
-						<Applicants driveData={companyDetail} />
+						<Applicants /> <br /> <br /> <br /> <br />
+						{
+							context.showTestList && <TestShortlist />
+						}
+
 					</>
 				}
 			</div>
