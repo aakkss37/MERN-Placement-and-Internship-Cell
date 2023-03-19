@@ -61,7 +61,7 @@ const TestShortlist = ({ driveData }) => {
 	// console.log(context.studentsForInterview)
 	// console.log(studentsChecked)
 	return (
-		<Box sx={{ height: 600, width: '90%', marginLeft: '5%' }}>
+		<Box sx={{ height: 400, width: '90%', marginLeft: '5%' }}>
 			<ApplicantsAction>
 				<Search>
 					<SearchIconWrapper>
@@ -89,11 +89,11 @@ const TestShortlist = ({ driveData }) => {
 				initialState={{
 					pagination: {
 						paginationModel: {
-							pageSize: 20,
+							pageSize: 10,
 						},
 					},
 				}}
-				pageSizeOptions={[20]}
+				pageSizeOptions={[10]}
 				checkboxSelection
 				disableRowSelectionOnClick={true}
 				onCellClick={(event) => { handleCheck(event) }}
