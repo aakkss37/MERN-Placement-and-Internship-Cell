@@ -1,38 +1,37 @@
 import React, { useState } from 'react';
 import Box from '@mui/material/Box';
 import { DataGrid } from '@mui/x-data-grid';
-import { TextField } from '@mui/material';
+import { Button, } from '@mui/material';
 import { generateFakeData } from '../../../utils/commonUtil';
+import { ApplicantsAction, Search, SearchIconWrapper, StyledInputBase } from './ApplicantsStyle';
+import SearchIcon from '@mui/icons-material/Search';
 
 
 const columns = [
 	{ 
 		field: 'id', 
 		headerName: 'Roll no.', 
-		width: 150 },
+		width: 150 
+	},
 	{
 		field: 'Name',
 		headerName: 'Name',
 		width: 150,
-		editable: true,
 	},
 	{
 		field: 'Department',
 		headerName: 'Department',
 		width: 200,
-		editable: true,
 	},
 	{
 		field: 'CGPA',
 		headerName: 'CGPA',
 		width: 90,
-		editable: true,
 	},
 	{
 		field: 'phone',
 		headerName: 'Phone',
 		width: 160,
-		editable: true,
 	},
 ];
 
@@ -50,12 +49,21 @@ const Applicants = () => {
 	);
 	return (
 		<Box sx={{ height: 600, width: '90%', marginLeft: '5%' }}>
-			<TextField
-				label="Search Roll no"
-				value={searchText}
-				onChange={handleSearch}
-				style={{ marginBottom: 10 }}
-			/>
+			<ApplicantsAction>
+				<Search>
+					<SearchIconWrapper>
+						<SearchIcon />
+					</SearchIconWrapper>
+					<StyledInputBase
+						placeholder="Searc Roll no."
+						inputProps={{ 'aria-label': 'search' }}
+						value={searchText}
+						onChange={handleSearch}
+					/>
+				</Search>
+				<Button variant="contained">Select For Test</Button>
+			</ApplicantsAction>
+
 			<DataGrid
 				rows={filteredRows}
 				columns={columns}

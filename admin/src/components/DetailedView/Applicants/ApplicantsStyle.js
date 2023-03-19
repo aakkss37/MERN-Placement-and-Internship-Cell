@@ -1,5 +1,14 @@
-import { InputBase } from '@mui/material';
+import { Box, InputBase } from '@mui/material';
 import { styled, alpha } from '@mui/material/styles';
+
+
+export const ApplicantsAction = styled(Box)(({ theme }) => ({
+	marginTop: '10px',
+	marginBottom:'15px',
+	display: 'flex',
+	alignItems: 'center',
+	justifyContent: 'space-between',
+}));
 
 export const Search = styled('div')(({ theme }) => ({
 	position: 'relative',
@@ -28,6 +37,8 @@ export const SearchIconWrapper = styled('div')(({ theme }) => ({
 
 export const StyledInputBase = styled(InputBase)(({ theme }) => ({
 	color: 'inherit',
+	border: '1px solid gray',
+	borderRadius: "5px",
 	'& .MuiInputBase-input': {
 		padding: theme.spacing(1, 1, 1, 0),
 		// vertical padding + font size from searchIcon
