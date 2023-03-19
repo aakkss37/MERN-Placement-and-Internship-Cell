@@ -6,6 +6,7 @@ import Applicants from './Applicants/Applicants';
 import DetailCard from './DetailCard/DetailCard';
 import './detailedView.css'
 import { CurretPath } from './detailedViewStyle';
+import InterviewShortlist from './InterviewShortlist/InterviewShortlist';
 import TestShortlist from './TestShortlist/TestShortlist';
 
 const DetailedView = () => {
@@ -39,9 +40,14 @@ const DetailedView = () => {
 					companyDetail &&
 					<>
 						<DetailCard driveData={companyDetail} /> <br />
-						<Applicants /> <br /> <br /> <br /> <br />
+						<Applicants /> 
+						<br /> <br /> <br /> <br />
 						{
 							context.showTestList && <TestShortlist />
+						}
+						<br /> <br /> <br /> <br />
+						{
+							context.showInterviewList && <InterviewShortlist />
 						}
 
 					</>

@@ -37,7 +37,7 @@ const columns = [
 
 
 
-const TestShortlist = ({ driveData }) => {
+const InterviewShortlist = ({ driveData }) => {
 	const [searchText, setSearchText] = useState('');
 	const [studentsChecked, setStudentsChecked] = useState([]);
 	const context = useContext(DataContext);
@@ -46,7 +46,7 @@ const TestShortlist = ({ driveData }) => {
 	const handleSearch = (event) => {
 		setSearchText(event.target.value);
 	};
-	const rows = context.studentsForTest
+	const rows = context.studentsForInterview
 	const filteredRows = rows.filter((row) =>
 		row.id.toString().startsWith(searchText)
 	);
@@ -55,9 +55,9 @@ const TestShortlist = ({ driveData }) => {
 	const handleCheck = (event) => {
 		setStudentsChecked([...studentsChecked, event.row])
 	}
-	const selectedForInterview = () => {
-		context.setStudentsForInterview(studentsChecked)
-		context.setShowInterviewList(true)
+	const handlePlacement = () => {
+		context.setStudentsPlaced(studentsChecked)
+		context.setShowPlacementList(true)
 	}
 	// console.log(context.studentsForInterview)
 	// console.log(studentsChecked)
@@ -78,7 +78,7 @@ const TestShortlist = ({ driveData }) => {
 				<h2 style={{ fontSize: '1.5rem', }}>Short list for Interview</h2>
 				{
 					studentsChecked.length ?
-						<Button variant="contained" onClick={selectedForInterview}>Placed</Button>
+						<Button variant="contained" onClick={handlePlacement}>Placed</Button>
 						:
 						<Button variant="contained" disabled>Places</Button>
 				}
@@ -103,4 +103,4 @@ const TestShortlist = ({ driveData }) => {
 	)
 }
 
-export default TestShortlist
+export default InterviewShortlist
