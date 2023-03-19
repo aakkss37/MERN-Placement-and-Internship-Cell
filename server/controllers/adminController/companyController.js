@@ -36,7 +36,7 @@ export const getListedCompanyList = async (request, response) => {
 				status: item.status
 			}
 		})
-		console.log(infoToSend)
+		// console.log(infoToSend)
 		response.status(200).json({ info: infoToSend });
 	} catch (error) {
 		response.status(500).json({ msg: error.message })
@@ -48,6 +48,7 @@ export const getCompanyDetails = async (request, responce) => {
 	const companyID = request.query.company_id
 	try {
 		const companyDetail = await Company.findById(companyID)
+		// console.log(companyDetail)
 		responce.status(200).json(companyDetail)
 	} catch (error) {
 		responce.status(500).json(error.message)
