@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { API } from '../../services/api';
+import Applicants from './Applicants/Applicants';
 import DetailCard from './DetailCard/DetailCard';
 import './detailedView.css'
 import { CurretPath } from './detailedViewStyle';
@@ -26,14 +27,20 @@ const DetailedView = () => {
 
 	console.log("Company detail ===> ", companyDetail)
 
-  return (
-	<div className='detailed_view'>
-		<div className='detailed_view_container'>
-			  <CurretPath >Home &gt; Company Details &gt; {companyDetail.companyName}</CurretPath>
-			  <DetailCard driveData = {companyDetail}/>
+	return (
+		<div className='detailed_view'>
+			<div className='detailed_view_container'>
+				<CurretPath >Home &gt; Company Details &gt; {companyDetail?.companyName}</CurretPath>
+				{
+					companyDetail &&
+					<>
+						<DetailCard driveData={companyDetail} /> <br />
+						<Applicants />
+					</>
+				}
+			</div>
 		</div>
-	</div>
-  )
+	)
 }
 
 export default DetailedView
