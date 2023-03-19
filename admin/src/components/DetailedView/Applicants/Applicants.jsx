@@ -38,8 +38,9 @@ const columns = [
 
 
 
-const Applicants = () => {
+const Applicants = ({ driveData }) => {
 	const [searchText, setSearchText] = useState('');
+	const [studentsChecked, setStudentsChecked] = useState([]);
 	const context = useContext(DataContext);
 
 
@@ -52,10 +53,14 @@ const Applicants = () => {
 	);
 
 
-	const selectedForTest = (event)=> {
-		context.setStudentsForTest([...context.studentsForTest, event.row])
+	const handleCheck = (event)=> {
+		setStudentsChecked([...studentsChecked, event.row])
 	}
-	console.log(context.studentsForTest)
+	const selectedForTest = ()=> {
+		context.setStudentsForTest(studentsChecked)
+	}
+	// console.log(context.studentsForTest)
+	// console.log(studentsChecked)
 	return (
 		<Box sx={{ height: 600, width: '90%', marginLeft: '5%' }}>
 			<ApplicantsAction>
@@ -70,9 +75,10 @@ const Applicants = () => {
 						onChange={handleSearch}
 					/>
 				</Search>
+				<h2 style={{fontSize: '1.5rem', }}>Applicants for {driveData.companyName}</h2>
 				{
-					context.studentsForTest.length ?
-					<Button variant="contained" >Select For Test</Button>
+					studentsChecked.length ?
+						<Button variant="contained" onClick={selectedForTest}>Select For Test</Button>
 					:
 					<Button variant="contained" disabled>Select For Test</Button>
 				}
@@ -91,7 +97,7 @@ const Applicants = () => {
 				pageSizeOptions={[20]}
 				checkboxSelection
 				disableRowSelectionOnClick={true}
-				onCellClick={(event)=>{selectedForTest(event)}}
+				onCellClick={(event)=>{handleCheck(event)}}
 			/>
 		</Box>
 	)

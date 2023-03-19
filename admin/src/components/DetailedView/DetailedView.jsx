@@ -35,7 +35,7 @@ const DetailedView = () => {
 					companyDetail &&
 					<>
 						<DetailCard driveData={companyDetail} /> <br />
-						<Applicants />
+						<Applicants driveData={companyDetail} />
 					</>
 				}
 			</div>
