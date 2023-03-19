@@ -5,7 +5,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import { CompanyName, DetailHead, GeneralText, OpeningDate } from './DetailCardStyle';
-import { formatDate } from '../../utils/commonUtil';
+import { formatDate } from '../../../utils/commonUtil';
 
 
 

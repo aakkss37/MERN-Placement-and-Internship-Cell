@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { API } from '../../services/api';
-import DetailCard from './DetailCard';
+import DetailCard from './DetailCard/DetailCard';
 import './detailedView.css'
 import { CurretPath } from './detailedViewStyle';
 
