@@ -75,7 +75,7 @@ const Applicants = ({ driveData }) => {
 						onChange={handleSearch}
 					/>
 				</Search>
-				<h2 style={{fontSize: '1.5rem', }}>Applicants for {driveData.companyName}</h2>
+				<h2 style={{fontSize: '1.5rem', }}>Applicants Detail</h2>
 				{
 					studentsChecked.length ?
 						<Button variant="contained" onClick={selectedForTest}>Select For Test</Button>
