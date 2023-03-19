@@ -70,7 +70,7 @@ const Applicants = () => {
 						<SearchIcon />
 					</SearchIconWrapper>
 					<StyledInputBase
-						placeholder="Searc Roll no."
+						placeholder="Search By Roll no."
 						inputProps={{ 'aria-label': 'search' }}
 						value={searchText}
 						onChange={handleSearch}
