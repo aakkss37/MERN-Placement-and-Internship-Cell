@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { DataContext } from '../../../contextAPI/DataProvider';
 import Box from '@mui/material/Box';
 import { DataGrid } from '@mui/x-data-grid';
 import { Button, } from '@mui/material';
@@ -39,7 +40,7 @@ const columns = [
 
 const Applicants = () => {
 	const [searchText, setSearchText] = useState('');
-	const [selectedStudent, setSelectedStudent] = useState([])
+	const context = useContext(DataContext);
 
 
 	const handleSearch = (event) => {
@@ -52,10 +53,9 @@ const Applicants = () => {
 
 
 	const selectedForTest = (event)=> {
-		const selected = event.row;
-		setSelectedStudent([...selectedStudent, selected])
+		context.setStudentsForTest([...context.studentsForTest, event.row])
 	}
-	console.log(selectedStudent)
+	console.log(context.studentsForTest)
 	return (
 		<Box sx={{ height: 600, width: '90%', marginLeft: '5%' }}>
 			<ApplicantsAction>
@@ -71,7 +71,7 @@ const Applicants = () => {
 					/>
 				</Search>
 				{
-					selectedStudent.length ?
+					context.studentsForTest.length ?
 					<Button variant="contained" >Select For Test</Button>
 					:
 					<Button variant="contained" disabled>Select For Test</Button>
