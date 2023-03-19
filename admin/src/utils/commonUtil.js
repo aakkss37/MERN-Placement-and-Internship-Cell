@@ -1,3 +1,5 @@
+import { faker } from '@faker-js/faker';
+
 export const getAccessToken = () => {
 	return sessionStorage.getItem("accessToken");
 }
@@ -31,4 +33,27 @@ export const formatDate = (date) => {
 	// format the date as a string in the desired format
 	const formattedDate = `${monthsList[month]} | ${day.toString().padStart(2, '0')} | ${year.toString()}`;
 	return formattedDate
+}
+
+export const generateFakeData = () => {
+	const rows = []
+	const departments = ['Computer Science', 'Electrical Engineering', 'Mechanical Engineering', 'Civil Engineering'];
+	const names = [];
+	for (let i = 0; i < 200; i++) {
+		names.push(faker.name.firstName())
+	}
+	
+
+	for (let i = 1; i <= 200; i++) {
+		const departmentsRandomIndex = Math.floor(Math.random() * departments.length);
+		rows.push({
+			id: `20CSU${i.toString().padStart(3, '0')}`,
+			Name: names[i-1],
+			Department: departments[departmentsRandomIndex],
+			CGPA: (Math.random() * 10).toFixed(1),
+			phone: Math.floor(Math.random() * 1000000000),
+		});
+	}
+
+	return rows
 }
