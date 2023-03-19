@@ -78,9 +78,9 @@ const TestShortlist = ({ driveData }) => {
 				<h2 style={{ fontSize: '1.5rem', }}>Short list for Interview</h2>
 				{
 					studentsChecked.length ?
-						<Button variant="contained" onClick={selectedForInterview}>Select For Interview</Button>
+						<Button variant="contained" onClick={selectedForInterview}>Placed</Button>
 						:
-						<Button variant="contained" disabled>Select For Interview</Button>
+						<Button variant="contained" disabled>Places</Button>
 				}
 			</ApplicantsAction>
 
