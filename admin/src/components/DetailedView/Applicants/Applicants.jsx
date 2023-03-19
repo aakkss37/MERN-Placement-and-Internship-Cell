@@ -39,6 +39,8 @@ const columns = [
 
 const Applicants = () => {
 	const [searchText, setSearchText] = useState('');
+	const [selectedStudent, setSelectedStudent] = useState([])
+
 
 	const handleSearch = (event) => {
 		setSearchText(event.target.value);
@@ -47,6 +49,13 @@ const Applicants = () => {
 	const filteredRows = rows.filter((row) =>
 		row.id.toString().startsWith(searchText)
 	);
+
+
+	const selectedForTest = (event)=> {
+		const selected = event.row;
+		setSelectedStudent([...selectedStudent, selected])
+	}
+	console.log(selectedStudent)
 	return (
 		<Box sx={{ height: 600, width: '90%', marginLeft: '5%' }}>
 			<ApplicantsAction>
@@ -61,7 +70,12 @@ const Applicants = () => {
 						onChange={handleSearch}
 					/>
 				</Search>
-				<Button variant="contained">Select For Test</Button>
+				{
+					selectedStudent.length ?
+					<Button variant="contained" >Select For Test</Button>
+					:
+					<Button variant="contained" disabled>Select For Test</Button>
+				}
 			</ApplicantsAction>
 
 			<DataGrid
@@ -76,7 +90,8 @@ const Applicants = () => {
 				}}
 				pageSizeOptions={[20]}
 				checkboxSelection
-				// disableRowSelectionOnClick
+				disableRowSelectionOnClick={true}
+				onCellClick={(event)=>{selectedForTest(event)}}
 			/>
 		</Box>
 	)

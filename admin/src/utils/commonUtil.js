@@ -51,7 +51,7 @@ export const generateFakeData = () => {
 			Name: names[i-1],
 			Department: departments[departmentsRandomIndex],
 			CGPA: (Math.random() * 10).toFixed(1),
-			phone: Math.floor(Math.random() * 1000000000),
+			phone: Math.floor(Math.random() * 10000000000),
 		});
 	}
 
