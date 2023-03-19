@@ -57,6 +57,7 @@ const TestShortlist = ({ driveData }) => {
 	}
 	const selectedForInterview = () => {
 		context.setStudentsForInterview(studentsChecked)
+		context.setShowInterviewList(true)
 	}
 	// console.log(context.studentsForInterview)
 	// console.log(studentsChecked)
