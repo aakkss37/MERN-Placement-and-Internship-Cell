@@ -68,7 +68,7 @@ const Applicants = () => {
 				}}
 				pageSizeOptions={[20]}
 				checkboxSelection
-				disableRowSelectionOnClick
+				// disableRowSelectionOnClick
 			/>
 		</Box>
 	)
