@@ -27,7 +27,7 @@ const ExpandMore = styled((props) => {
 const DetailCard = (props) => {
 	const [isExpanded, setIsExpanded] = useState(false);
 	const [eligibleDepartment, setEligibleDepartment] = useState("")
-	console.log(props.driveData)
+	// console.log(props.driveData)
 
 	const handleExpandClick = () => {
 		setIsExpanded(!isExpanded);
