@@ -68,7 +68,7 @@ const TestShortlist = ({ driveData }) => {
 						<SearchIcon />
 					</SearchIconWrapper>
 					<StyledInputBase
-						placeholder="Search By Roll no."
+						placeholder="Search Roll no."
 						inputProps={{ 'aria-label': 'search' }}
 						value={searchText}
 						onChange={handleSearch}
