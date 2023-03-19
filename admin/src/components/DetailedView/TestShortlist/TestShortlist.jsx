@@ -55,10 +55,10 @@ const TestShortlist = ({ driveData }) => {
 	const handleCheck = (event) => {
 		setStudentsChecked([...studentsChecked, event.row])
 	}
-	const selectedForTest = () => {
-		context.setStudentsForTest(studentsChecked)
+	const selectedForInterview = () => {
+		context.setStudentsForInterview(studentsChecked)
 	}
-	// console.log(context.studentsForTest)
+	// console.log(context.studentsForInterview)
 	// console.log(studentsChecked)
 	return (
 		<Box sx={{ height: 600, width: '90%', marginLeft: '5%' }}>
@@ -77,9 +77,9 @@ const TestShortlist = ({ driveData }) => {
 				<h2 style={{ fontSize: '1.5rem', }}>Short list for Test</h2>
 				{
 					studentsChecked.length ?
-						<Button variant="contained" onClick={selectedForTest}>Select For Test</Button>
+						<Button variant="contained" onClick={selectedForInterview}>Select For Interview</Button>
 						:
-						<Button variant="contained" disabled>Select For Test</Button>
+						<Button variant="contained" disabled>Select For Interview</Button>
 				}
 			</ApplicantsAction>
 
