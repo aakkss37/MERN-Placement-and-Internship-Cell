@@ -1,4 +1,5 @@
-import React, { forwardRef, useState } from 'react'
+import React, { forwardRef, useEffect, useState } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import { Snackbar, IconButton, Box, Button, Checkbox, FormControl, InputLabel, ListItemText, MenuItem, OutlinedInput, Select, TextField, Stack } from "@mui/material";
 import MuiAlert from '@mui/material/Alert';
 import { CurretPath, SectionHeading } from './editDetailStyle';
@@ -20,7 +21,7 @@ const MenuProps = {
 	},
 };
 
-const initialFormData = {
+let initialFormData = {
 	companyName: '',
 	cgpa: '',
 	activeBack: '',
@@ -45,7 +46,25 @@ const Alert = forwardRef(function Alert (props, ref) {
 const EditDetail = () => {
 	console.log("working")
 	const [formData, setFormData] = useState(initialFormData)
-	const [imageName, setImageName] = useState();
+	const [searchParams] = useSearchParams();
+	const companyId = searchParams.get('id');
+	
+	useEffect(() => {
+		const getCompanyDetail = async()=>{
+			try {
+				let responce = await API.getCompanyDetails(companyId)
+				// console.log(responce.data)
+				delete responce.data.companyLogo
+				// console.log("after delete", responce.data)
+				setFormData(responce.data)
+			} catch (error) {
+				console.log(error.message)
+			}
+		}
+		getCompanyDetail()
+	}, [companyId]);
+
+
 
 
 	// FeedBack message
@@ -100,7 +119,6 @@ const EditDetail = () => {
 				const responce = await API.addNewCompany(formData);
 				setOpenSucessSnackbar(true)
 				setFormData(initialFormData)
-				setImageName()
 				console.log(responce.data)
 			} catch (error) {
 				console.log(error)
