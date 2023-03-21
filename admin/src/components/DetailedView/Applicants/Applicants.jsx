@@ -79,7 +79,7 @@ const Applicants = () => {
 	}
 	// console.log(context.studentsForTest)
 	// console.log(studentsChecked)
-	console.log("openSucessSnackbar===>", openSucessSnackbar);
+	// console.log("openSucessSnackbar===>", openSucessSnackbar);
 	return (
 		<Box sx={{ height: 600, width: '90%', marginLeft: '5%' }}>
 
@@ -88,7 +88,7 @@ const Applicants = () => {
 			<Stack spacing={2} sx={{ width: '100%' }}>
 				<Snackbar open={openSucessSnackbar} autoHideDuration={4000} onClose={handleClose} >
 					<Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
-						Form submited sucessfully.
+						Shortlisted students has been notified for the test sucessfully.
 					</Alert>
 				</Snackbar>
 			</Stack>
@@ -127,7 +127,7 @@ const Applicants = () => {
 				}}
 				pageSizeOptions={[20]}
 				checkboxSelection
-				disableRowSelectionOnClick={true}
+				// disableRowSelectionOnClick={true}
 				onCellClick={(event)=>{handleCheck(event)}}
 			/>
 		</Box>
