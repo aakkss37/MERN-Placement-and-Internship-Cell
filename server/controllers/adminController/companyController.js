@@ -43,14 +43,18 @@ export const getListedCompanyList = async (request, response) => {
 	}
 }
 
-export const getCompanyDetails = async (request, responce) => {
+export const getCompanyDetails = async (request, response) => {
 	// console.log(request.query)
 	const companyID = request.query.company_id
 	try {
 		const companyDetail = await Company.findById(companyID)
 		console.log(companyDetail)
-		responce.status(200).json(companyDetail)
+		response.status(200).json(companyDetail)
 	} catch (error) {
-		responce.status(500).json(error.message)
+		response.status(500).json(error.message)
 	}
+}
+
+export const updateCompanyDetails = async(request, response) => {
+	console.log(request.body)
 }
