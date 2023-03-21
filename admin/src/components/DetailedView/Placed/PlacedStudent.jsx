@@ -21,12 +21,12 @@ const PlacedStudent = () => {
 			<TableContainer component={Paper} sx={{ height: 300, width: '90%', marginLeft: '5%', marginBottom: '2rem'}}>
 				<Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
 					<TableHead>
-						<TableRow>
-							<TableCell >Roll No.</TableCell>
-							<TableCell >Name</TableCell>
-							<TableCell align="right">Department</TableCell>
-							<TableCell align="right">CGPA</TableCell>
-							<TableCell align="right">Phone</TableCell>
+						<TableRow >
+							<TableCell sx={{fontWeight: 600}} >Roll No.</TableCell>
+							<TableCell sx={{fontWeight: 600}} >Name</TableCell>
+							<TableCell sx={{fontWeight: 600}} align="right">Department</TableCell>
+							<TableCell sx={{fontWeight: 600}} align="right">CGPA</TableCell>
+							<TableCell sx={{fontWeight: 600}} align="right">Phone</TableCell>
 						</TableRow>
 					</TableHead>
 					<TableBody>
