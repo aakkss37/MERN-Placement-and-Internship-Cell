@@ -70,13 +70,15 @@ const EditDetail = () => {
 	// FeedBack message
 	const [openErrorSnackbar, setOpenErrorSnackbar] = useState(false);
 	const [openSucessSnackbar, setOpenSucessSnackbar] = useState(false);
+	const [openConformation, setOpenConformation] = useState(false)
 	const handleClose = (event, reason) => {
 		if (reason === 'clickaway') {
 			return;
 		}
 
 		setOpenErrorSnackbar(false);
-		setOpenSucessSnackbar(false)
+		setOpenSucessSnackbar(false);
+		setOpenConformation(false);
 	};
 	const action = (
 		<>
