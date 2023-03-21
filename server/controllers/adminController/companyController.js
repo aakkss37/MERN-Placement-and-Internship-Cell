@@ -55,6 +55,27 @@ export const getCompanyDetails = async (request, response) => {
 	}
 }
 
-export const updateCompanyDetails = async(request, response) => {
-	console.log(request.body)
+export const updateCompanyDetails = async (request, response) => {
+	// console.log(request.body)
+	try {
+		const update = await Company.findByIdAndUpdate(request.body._id,
+			{
+				companyName: request.body.companyName,
+				cgpa: request.body.cgpa,
+				activeBack: request.body.activeBack,
+				passoutYear: request.body.passoutYear,
+				jobType: request.body.jobType,
+				jobRole: request.body.jobRole,
+				CTC: request.body.CTC,
+				jobLocation: request.body.jobLocation,
+				responsibilities: request.body.responsibilities,
+				requirement: request.body.requirement,
+				aboutCompany: request.body.aboutCompany,
+				department: request.body.department,
+			}
+		)
+		response.status(200).json({msg: "Update sucessfull", _id: update._id})
+	} catch (error) {
+		response.status(400).json(error.message)
+	}
 }
