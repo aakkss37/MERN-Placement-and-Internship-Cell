@@ -1,7 +1,6 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button, ButtonGroup } from '@mui/material';
 import { useSearchParams } from 'react-router-dom'
-import { DataContext } from '../../contextAPI/DataProvider';
 import { API } from '../../services/api';
 import Applicants from './Applicants/Applicants';
 import DetailCard from './DetailCard/DetailCard';
@@ -16,7 +15,6 @@ const DetailedView = () => {
 	const [searchParams] = useSearchParams();
 	const [activeTab, setActiveTab] = useState('allApplicant')
 	const companyId = searchParams.get('companyid');
-	const context = useContext(DataContext);
 	// console.log(companyId)
 	useEffect(() => {
 		const getDetails = async () => {
@@ -34,7 +32,6 @@ const DetailedView = () => {
 
 
 	// console.log("Company detail ===> ", companyDetail)
-	console.log("context.showTestList ===> ", context.showTestList)
 
 	return (
 		<div className='detailed_view'>
