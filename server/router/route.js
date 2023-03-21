@@ -4,7 +4,7 @@ import { JWTvalidation } from "../controllers/studentController/JWT-validation.j
 import { loginStudent } from "../controllers/studentController/login.js";
 import { getImage, uploadImage } from "../controllers/adminController/companyLogoController.js";
 import upload from '../utils/UploadFile.js';
-import { addNewCompany, getCompanyDetails, getListedCompanyList } from "../controllers/adminController/companyController.js";
+import { addNewCompany, getCompanyDetails, getListedCompanyList, updateCompanyDetails } from "../controllers/adminController/companyController.js";
 import { getPlacementDriveList } from "../controllers/studentController/driveList.js";
 const router = express.Router();
 
@@ -21,4 +21,5 @@ router.get('/file/:filename', getImage);
 router.post('/add-new-company', addNewCompany)
 router.get('/get-company-list', getListedCompanyList)
 router.get('/company-detail', getCompanyDetails)
+router.put('/update-company-detail', updateCompanyDetails)
 export default router
