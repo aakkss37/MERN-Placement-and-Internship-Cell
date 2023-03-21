@@ -37,7 +37,7 @@ const columns = [
 
 
 
-const TestShortlist = ({ driveData }) => {
+const TestShortlist = (props) => {
 	const [searchText, setSearchText] = useState('');
 	const [studentsChecked, setStudentsChecked] = useState([]);
 	const context = useContext(DataContext);
@@ -57,7 +57,8 @@ const TestShortlist = ({ driveData }) => {
 	}
 	const selectedForInterview = () => {
 		context.setStudentsForInterview(studentsChecked)
-		context.setShowInterviewList(true)
+		context.setOpenSucessSnackbar(true)
+		props.setActiveTab("interwiewShortlist")
 	}
 	// console.log(context.studentsForInterview)
 	// console.log(studentsChecked)

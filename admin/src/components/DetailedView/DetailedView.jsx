@@ -69,9 +69,9 @@ const DetailedView = () => {
 						<br /> <br /> <br />
 
 						{activeTab === "allApplicant" && <Applicants setActiveTab={setActiveTab}/>}
-						{activeTab === "testShortlist" && <TestShortlist />}
-						{activeTab === "interwiewShortlist" && <InterviewShortlist />}
-						{activeTab === "placeStudent" && <PlacedStudent />}
+						{activeTab === "testShortlist" && <TestShortlist setActiveTab={setActiveTab} />}
+						{activeTab === "interwiewShortlist" && <InterviewShortlist setActiveTab={setActiveTab}/>}
+						{activeTab === "placeStudent" && <PlacedStudent setActiveTab={setActiveTab}/>}
 
 					</>
 				}
