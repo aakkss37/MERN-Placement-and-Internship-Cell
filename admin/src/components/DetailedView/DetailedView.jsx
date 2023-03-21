@@ -50,7 +50,7 @@ const DetailedView = () => {
 						</ButtonGroup>
 						<br /> <br /> <br />
 
-						{activeTab === "allApplicant" && <Applicants />}
+						{activeTab === "allApplicant" && <Applicants setActiveTab={setActiveTab}/>}
 						{activeTab === "testShortlist" && <TestShortlist />}
 						{activeTab === "interwiewShortlist" && <InterviewShortlist />}
 						{activeTab === "placeStudent" && <PlacedStudent />}

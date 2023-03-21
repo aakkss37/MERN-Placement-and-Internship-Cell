@@ -38,7 +38,7 @@ const columns = [
 
 
 
-const Applicants = () => {
+const Applicants = (props) => {
 	const [searchText, setSearchText] = useState('');
 	const [studentsChecked, setStudentsChecked] = useState([]);
 	const [filteredRows, setFilterRows] = useState([]);
@@ -76,6 +76,8 @@ const Applicants = () => {
 	const selectedForTest = ()=> {
 		context.setStudentsForTest(studentsChecked)
 		setOpenSucessSnackbar(true)
+		props.setActiveTab("testShortlist")
+
 	}
 	// console.log(context.studentsForTest)
 	// console.log(studentsChecked)
