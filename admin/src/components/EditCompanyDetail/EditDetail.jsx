@@ -44,7 +44,6 @@ const Alert = forwardRef(function Alert (props, ref) {
 
 
 const EditDetail = () => {
-	console.log("working")
 	const [formData, setFormData] = useState(initialFormData)
 	const [searchParams] = useSearchParams();
 	const companyId = searchParams.get('id');
@@ -116,7 +115,7 @@ const EditDetail = () => {
 			formData.department.length
 		) {
 			try {
-				const responce = await API.addNewCompany(formData);
+				const responce = await API.updateCompanyDetails(formData);
 				setOpenSucessSnackbar(true)
 				setFormData(initialFormData)
 				console.log(responce.data)
@@ -129,7 +128,7 @@ const EditDetail = () => {
 	}
 
 
-	// console.log(formData)
+	console.log(formData)
 
 	return (
 		<div className='new_company'>
