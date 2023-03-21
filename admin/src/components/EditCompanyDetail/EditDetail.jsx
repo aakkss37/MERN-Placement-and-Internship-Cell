@@ -134,7 +134,7 @@ const EditDetail = () => {
 	return (
 		<div className='new_company'>
 			<div className='new_company_container'>
-				<CurretPath >Add New Compnay</CurretPath>
+				<CurretPath >Home &gt; {formData?.companyName} &gt; Update </CurretPath>
 				{/* Form field empty error msg */}
 				<Snackbar
 					open={openErrorSnackbar}
@@ -148,7 +148,7 @@ const EditDetail = () => {
 				<Stack spacing={2} sx={{ width: '100%' }}>
 					<Snackbar open={openSucessSnackbar} autoHideDuration={4000} onClose={handleClose} >
 						<Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
-							Form submited sucessfully.
+							Details updated sucessfully.
 						</Alert>
 					</Snackbar>
 				</Stack>
@@ -336,7 +336,7 @@ const EditDetail = () => {
 					}}
 					onClick={formSubmitHandler}
 				>
-					Submit
+					Update
 				</Button>
 			</div>
 		</div>
