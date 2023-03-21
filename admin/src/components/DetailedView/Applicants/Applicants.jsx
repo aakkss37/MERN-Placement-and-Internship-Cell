@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { DataContext } from '../../../contextAPI/DataProvider';
 import Box from '@mui/material/Box';
 import { DataGrid } from '@mui/x-data-grid';
@@ -41,16 +41,25 @@ const columns = [
 const Applicants = () => {
 	const [searchText, setSearchText] = useState('');
 	const [studentsChecked, setStudentsChecked] = useState([]);
+	const [filteredRows, setFilterRows] = useState([]);
+	const [rows, setRows] = useState([])
 	const context = useContext(DataContext);
 
 
 	const handleSearch = (event) => {
 		setSearchText(event.target.value);
 	};
-	const rows = generateFakeData()
-	const filteredRows = rows.filter((row) =>
-		row.id.toString().startsWith(searchText)
-	);
+	
+	useEffect(()=>{
+		setRows(generateFakeData())
+	},[])
+
+	useEffect(() => {
+		const filter = rows.filter((row) =>
+			row.id.toString().startsWith(searchText)
+		);
+		setFilterRows(filter)
+	}, [rows, searchText]);
 
 
 	const handleCheck = (event)=> {
