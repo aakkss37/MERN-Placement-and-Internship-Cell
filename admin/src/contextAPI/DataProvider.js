@@ -10,6 +10,7 @@ const DataProvider = (props) => {
 	const [studentsForTest, setStudentsForTest] = useState([])
 	const [studentsForInterview, setStudentsForInterview] = useState([])
 	const [studentsPlaced, setStudentsPlaced] = useState([])
+	const [openSucessSnackbar, setOpenSucessSnackbar] = useState(false);
 
 
 	return (
@@ -17,6 +18,7 @@ const DataProvider = (props) => {
 			studentsForTest, setStudentsForTest,
 			studentsForInterview, setStudentsForInterview,
 			studentsPlaced, setStudentsPlaced,
+			openSucessSnackbar, setOpenSucessSnackbar
 		}}>
 			{props.children}
 		</DataContext.Provider>

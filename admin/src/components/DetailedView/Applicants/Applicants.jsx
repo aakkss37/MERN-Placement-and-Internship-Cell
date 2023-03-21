@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { DataContext } from '../../../contextAPI/DataProvider';
 import Box from '@mui/material/Box';
 import { DataGrid } from '@mui/x-data-grid';
-import { Alert, Button, Snackbar, Stack, } from '@mui/material';
+import { Button, } from '@mui/material';
 import { generateFakeData } from '../../../utils/commonUtil';
 import { ApplicantsAction, Search, SearchIconWrapper, StyledInputBase } from './ApplicantsStyle';
 import SearchIcon from '@mui/icons-material/Search';
@@ -46,13 +46,7 @@ const Applicants = (props) => {
 	const context = useContext(DataContext);
 
 
-	const [openSucessSnackbar, setOpenSucessSnackbar] = useState(false);
-	const handleClose = (event, reason) => {
-		if (reason === 'clickaway') {
-			return;
-		}
-		setOpenSucessSnackbar(false)
-	};
+	
 
 	const handleSearch = (event) => {
 		setSearchText(event.target.value);
@@ -75,7 +69,7 @@ const Applicants = (props) => {
 	}
 	const selectedForTest = ()=> {
 		context.setStudentsForTest(studentsChecked)
-		setOpenSucessSnackbar(true)
+		context.setOpenSucessSnackbar(true)
 		props.setActiveTab("testShortlist")
 
 	}
@@ -86,14 +80,7 @@ const Applicants = (props) => {
 		<Box sx={{ height: 600, width: '90%', marginLeft: '5%' }}>
 
 
-			{/* Form sucessfull submit msg */}
-			<Stack spacing={2} sx={{ width: '100%' }}>
-				<Snackbar open={openSucessSnackbar} autoHideDuration={4000} onClose={handleClose} >
-					<Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
-						Shortlisted students has been notified for the test sucessfully.
-					</Alert>
-				</Snackbar>
-			</Stack>
+			
 
 
 			<ApplicantsAction>

@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react'
-import { Button, ButtonGroup } from '@mui/material';
+import React, { useEffect, useState, useContext } from 'react'
+import { Alert, Button, ButtonGroup, Snackbar, Stack,  } from '@mui/material';
 import { useSearchParams } from 'react-router-dom'
+import { DataContext } from '../../contextAPI/DataProvider';
 import { API } from '../../services/api';
 import Applicants from './Applicants/Applicants';
 import DetailCard from './DetailCard/DetailCard';
@@ -30,11 +31,28 @@ const DetailedView = () => {
 	}, [companyId])
 
 
+	const context = useContext(DataContext);
+	const handleClose = (event, reason) => {
+		if (reason === 'clickaway') {
+			return;
+		}
+		context.setOpenSucessSnackbar(false)
+	};
+
+
 
 	// console.log("Company detail ===> ", companyDetail)
 
 	return (
 		<div className='detailed_view'>
+			{/* Form sucessfull submit msg */}
+			<Stack spacing={2} sx={{ width: '100%' }}>
+				<Snackbar open={context.openSucessSnackbar} autoHideDuration={4000} onClose={handleClose} >
+					<Alert onClose={handleClose} severity="success" sx={{ width: '100%', background: '#54a958', color: 'white' }}>
+						Applicant Sucessfully Added for Next Round.
+					</Alert>
+				</Snackbar>
+			</Stack>
 			<div className='detailed_view_container'>
 				<CurretPath >Home &gt; Company Details &gt; {companyDetail?.companyName}</CurretPath>
 				{
