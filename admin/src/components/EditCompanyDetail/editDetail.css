@@ -1,0 +1,37 @@
+.new_company_container {
+	margin-left: 8%;
+	margin-right: 8%;
+}
+
+.form_container_company_detail{
+	margin: 20px;
+	display: flex;
+	gap: 2rem;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+/* .form_container_company_detail *{
+	border: 1px solid red;
+	margin: 5px;
+	padding: 5px;
+} */
+
+.form_container_company_detail_right{
+	width: 45%;
+}
+.form_container_company_detail_left{
+	width: 45%;
+}
+
+
+
+
+
+.form_container_eligibility{
+	margin: 20px;
+	display: flex;
+	gap: 4rem;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}

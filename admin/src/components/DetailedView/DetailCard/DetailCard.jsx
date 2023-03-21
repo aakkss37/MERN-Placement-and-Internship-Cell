@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, } from 'react'
 import { Box, Card, CardActions, CardContent, CardHeader, Collapse, Divider, IconButton, styled, Typography } from '@mui/material';
 import ApartmentIcon from '@mui/icons-material/Apartment';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
@@ -6,6 +6,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import { CompanyName, DetailHead, GeneralText, OpeningDate } from './DetailCardStyle';
 import { formatDate } from '../../../utils/commonUtil';
+import { useNavigate } from 'react-router-dom'
 
 
 
@@ -27,6 +28,7 @@ const ExpandMore = styled((props) => {
 const DetailCard = (props) => {
 	const [isExpanded, setIsExpanded] = useState(false);
 	const [eligibleDepartment, setEligibleDepartment] = useState("")
+	const navigate = useNavigate()
 	// console.log(props.driveData)
 
 	const handleExpandClick = () => {
@@ -42,6 +44,15 @@ const DetailCard = (props) => {
 		});
 		setEligibleDepartment(department)
 	}, [props.driveData.department]);
+
+	const deleteCompanyHandler = () => {
+		console.log("clicked delete ==>  ", props.driveData.companyName)
+	}
+	const editCompanyHandler = () => {
+		// console.log("clicked edit ==>  ", props.driveData.companyName)
+		console.log("clicked edit ==>  ", props.driveData._id)
+		navigate(`/home/company-detail/${props.driveData.companyName}/edit/?id=${props.driveData._id}`)
+	}
 
 	return (
 		<Card sx={{ maxWidth: '90%', marginLeft: '5%' }}>
@@ -60,10 +71,10 @@ const DetailCard = (props) => {
 				</Typography>
 			</CardContent>
 			<CardActions disableSpacing>
-				<IconButton aria-label="delete">
+				<IconButton aria-label="delete" onClick={deleteCompanyHandler}>
 					<DeleteIcon />
 				</IconButton>
-				<IconButton aria-label="edit">
+				<IconButton aria-label="edit" onClick={editCompanyHandler}>
 					<EditIcon />
 				</IconButton>
 
