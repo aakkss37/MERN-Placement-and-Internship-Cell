@@ -52,5 +52,9 @@ export const SERVICE_URL = {
 		url: '/company-detail',
 		method: 'GET',
 		query: true
+	},
+	updateCompanyDetails: {
+		url: 'update-company-detail',
+		method: 'PUT',
 	}
 }
