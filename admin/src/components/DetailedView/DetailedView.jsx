@@ -1,5 +1,5 @@
-import { Box, Button, ButtonGroup } from '@mui/material';
 import React, { useContext, useEffect, useState } from 'react'
+import { Button, ButtonGroup } from '@mui/material';
 import { useSearchParams } from 'react-router-dom'
 import { DataContext } from '../../contextAPI/DataProvider';
 import { API } from '../../services/api';
@@ -31,9 +31,7 @@ const DetailedView = () => {
 		getDetails();
 	}, [companyId])
 
-	const changeTabHndler = (clickedOn)=> {
 
-	}
 
 	// console.log("Company detail ===> ", companyDetail)
 	console.log("context.showTestList ===> ", context.showTestList)
@@ -47,27 +45,18 @@ const DetailedView = () => {
 					<>
 						<DetailCard driveData={companyDetail} /> <br /><br /> <br />
 
-						<ButtonGroup  aria-label="text button group">
-							<Button variant='contained' onClick={()=> changeTabHndler("allApplicant")}>All Applicant</Button>
-							<Button variant='outlined' onClick={()=> changeTabHndler("testShortlist")}>Test Shortlist</Button>
-							<Button variant='outlined' onClick={()=> changeTabHndler("interwiewShortlist")}>Interview Shortlist</Button>
-							<Button variant='outlined' onClick={()=> changeTabHndler("placeStudent")}>Placed Student</Button>
+						<ButtonGroup aria-label="text button group" sx={{ marginLeft: '5%' }}>
+							<Button variant={activeTab === "allApplicant" ? "contained" : "outlined"} onClick={() => setActiveTab("allApplicant")}>All Applicant</Button>
+							<Button variant={activeTab === "testShortlist" ? "contained" : "outlined"} onClick={() => setActiveTab("testShortlist")}>Test Shortlist</Button>
+							<Button variant={activeTab === "interwiewShortlist" ? "contained" : "outlined"} onClick={() => setActiveTab("interwiewShortlist")}>Interview Shortlist</Button>
+							<Button variant={activeTab === "placeStudent" ? "contained" : "outlined"} onClick={() => setActiveTab("placeStudent")}>Placed Student</Button>
 						</ButtonGroup>
-						<br /> <br /> 
+						<br /> <br /> <br />
 
-						<Applicants /> 
-						<br /> <br /> <br /> <br />
-						{
-							context.showTestList && <TestShortlist />
-						}
-						<br /> <br /> <br /> <br />
-						{
-							context.showInterviewList && <InterviewShortlist />
-						}
-						<br /> <br /> <br /> <br />
-						{
-							context.showPlacementList && <PlacedStudent />
-						}
+						{activeTab === "allApplicant" && <Applicants />}
+						{activeTab === "testShortlist" && <TestShortlist />}
+						{activeTab === "interwiewShortlist" && <InterviewShortlist />}
+						{activeTab === "placeStudent" && <PlacedStudent />}
 
 					</>
 				}
