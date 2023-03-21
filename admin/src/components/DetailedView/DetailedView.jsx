@@ -1,3 +1,4 @@
+import { Box, Button, ButtonGroup } from '@mui/material';
 import React, { useContext, useEffect, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { DataContext } from '../../contextAPI/DataProvider';
@@ -13,6 +14,7 @@ import TestShortlist from './TestShortlist/TestShortlist';
 const DetailedView = () => {
 	const [companyDetail, setCompanyDetail] = useState();
 	const [searchParams] = useSearchParams();
+	const [activeTab, setActiveTab] = useState('allApplicant')
 	const companyId = searchParams.get('companyid');
 	const context = useContext(DataContext);
 	// console.log(companyId)
@@ -29,6 +31,9 @@ const DetailedView = () => {
 		getDetails();
 	}, [companyId])
 
+	const changeTabHndler = (clickedOn)=> {
+
+	}
 
 	// console.log("Company detail ===> ", companyDetail)
 	console.log("context.showTestList ===> ", context.showTestList)
@@ -40,7 +45,16 @@ const DetailedView = () => {
 				{
 					companyDetail &&
 					<>
-						<DetailCard driveData={companyDetail} /> <br />
+						<DetailCard driveData={companyDetail} /> <br /><br /> <br />
+
+						<ButtonGroup  aria-label="text button group">
+							<Button variant='contained' onClick={()=> changeTabHndler("allApplicant")}>All Applicant</Button>
+							<Button variant='outlined' onClick={()=> changeTabHndler("testShortlist")}>Test Shortlist</Button>
+							<Button variant='outlined' onClick={()=> changeTabHndler("interwiewShortlist")}>Interview Shortlist</Button>
+							<Button variant='outlined' onClick={()=> changeTabHndler("placeStudent")}>Placed Student</Button>
+						</ButtonGroup>
+						<br /> <br /> 
+
 						<Applicants /> 
 						<br /> <br /> <br /> <br />
 						{
