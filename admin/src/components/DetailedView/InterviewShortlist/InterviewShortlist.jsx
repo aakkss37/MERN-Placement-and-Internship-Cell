@@ -37,7 +37,7 @@ const columns = [
 
 
 
-const InterviewShortlist = ({ driveData }) => {
+const InterviewShortlist = (props) => {
 	const [searchText, setSearchText] = useState('');
 	const [studentsChecked, setStudentsChecked] = useState([]);
 	const context = useContext(DataContext);
@@ -57,7 +57,8 @@ const InterviewShortlist = ({ driveData }) => {
 	}
 	const handlePlacement = () => {
 		context.setStudentsPlaced(studentsChecked)
-		context.setShowPlacementList(true)
+		context.setOpenSucessSnackbar(true)
+		props.setActiveTab("placeStudent")
 	}
 	// console.log(context.studentsForInterview)
 	// console.log(studentsChecked)
