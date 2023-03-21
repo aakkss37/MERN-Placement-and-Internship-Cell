@@ -1,5 +1,5 @@
 import React, { forwardRef, useEffect, useState } from 'react'
-import { useSearchParams } from 'react-router-dom'
+import { useSearchParams, useNavigate } from 'react-router-dom'
 import { Snackbar, IconButton, Box, Button, Checkbox, FormControl, InputLabel, ListItemText, MenuItem, OutlinedInput, Select, TextField, Stack } from "@mui/material";
 import MuiAlert from '@mui/material/Alert';
 import { CurretPath, SectionHeading } from './editDetailStyle';
@@ -45,6 +45,7 @@ const Alert = forwardRef(function Alert (props, ref) {
 
 const EditDetail = () => {
 	const [formData, setFormData] = useState(initialFormData)
+	const navigate = useNavigate()
 	const [searchParams] = useSearchParams();
 	const companyId = searchParams.get('id');
 	
@@ -119,6 +120,7 @@ const EditDetail = () => {
 				setOpenSucessSnackbar(true)
 				setFormData(initialFormData)
 				console.log(responce.data)
+				navigate(`/home/company-detail/?companyid=${responce.data._id}`)
 			} catch (error) {
 				console.log(error)
 			}
