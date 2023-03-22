@@ -20,13 +20,13 @@ export default function FormDialog (props) {
 		<div>
 			<Dialog 
 				open={props.openFormDialog} 
-				onClose={props.handleClose}
+				onClose={props.onClose}
 				sx={{ width: '50%', marginLeft: "25%" }}
 			>
-				<DialogTitle>Delete Permanently!</DialogTitle>
+				<DialogTitle sx={{fontWeight: 600, fontSize: '1.3rem', color: 'red'}}>Delete Permanently!</DialogTitle>
 				<DialogContent>
 					<DialogContentText>
-						This action can will lead to permanent loss of {props.companyName} - {formatDate(props.date)} 
+						This action can will lead to permanent loss of <b>{props.companyName} - {formatDate(props.date)}</b> 
 						Drive including applicants detail, test result and all other important data related to this 
 						document. To comform this action please Type the Company ID: <b>{props.companyID}</b>.
 					</DialogContentText>
@@ -42,13 +42,13 @@ export default function FormDialog (props) {
 					/>
 				</DialogContent>
 				<DialogActions>
-					<Button onClick={props.handleClose}>Cancel</Button>
+					<Button onClick={props.onClose} variant="outlined" color="success">Cancel</Button>
 					{
 						isInputCorrect 
 						?
-						<Button onClick={props.handleClose} >Delete</Button>
+							<Button variant="contained" onClick={props.onContinue} color="error">Delete</Button>
 						:
-						<Button onClick={props.handleClose} disabled>Delete</Button>
+						<Button  variant="contained" disabled>Delete</Button>
 					}
 				</DialogActions>
 			</Dialog>

@@ -10,8 +10,10 @@ import { CurretPath } from './detailedViewStyle';
 import InterviewShortlist from './InterviewShortlist/InterviewShortlist';
 import PlacedStudent from './Placed/PlacedStudent';
 import TestShortlist from './TestShortlist/TestShortlist';
+import FormDialog from '../ui/FormDialog';
 
 const DetailedView = () => {
+	const [openFormDialog, setOpenFormDialog] = useState(false)
 	const [companyDetail, setCompanyDetail] = useState();
 	const [searchParams] = useSearchParams();
 	const [activeTab, setActiveTab] = useState('allApplicant')
@@ -21,7 +23,7 @@ const DetailedView = () => {
 		const getDetails = async () => {
 			try {
 				const detail = await API.getCompanyDetails(companyId)
-				// console.log("data from API call ===> ", detail.data)
+				console.log("data from API call ===> ", detail.data)
 				setCompanyDetail(detail.data)
 			} catch (error) {
 				console.log(error.message)
@@ -37,6 +39,7 @@ const DetailedView = () => {
 			return;
 		}
 		context.setOpenSucessSnackbar(false)
+		setOpenFormDialog(false)
 	};
 
 
@@ -53,12 +56,29 @@ const DetailedView = () => {
 					</Alert>
 				</Snackbar>
 			</Stack>
+
+
+			{/* Form Dialog */}
+			<FormDialog
+				openFormDialog={openFormDialog}
+				onClose={handleClose}
+				onContinue={() => console.log("deleted")}
+				companyName={companyDetail?.companyName}
+				companyID={companyDetail?._id}
+				date={companyDetail?.Date}
+			/>
+
+
 			<div className='detailed_view_container'>
 				<CurretPath >Home &gt; Company Details &gt; {companyDetail?.companyName}</CurretPath>
 				{
 					companyDetail &&
 					<>
-						<DetailCard driveData={companyDetail} /> <br /><br /> <br />
+						<DetailCard 
+							driveData={companyDetail} 
+							onDeleteIconClicked={()=> setOpenFormDialog(true)} 
+						/> 
+						<br /><br /> <br />
 
 						<ButtonGroup aria-label="text button group" sx={{ marginLeft: '5%' }}>
 							<Button variant={activeTab === "allApplicant" ? "contained" : "outlined"} onClick={() => setActiveTab("allApplicant")}>All Applicant</Button>

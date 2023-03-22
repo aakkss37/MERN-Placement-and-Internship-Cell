@@ -45,9 +45,7 @@ const DetailCard = (props) => {
 		setEligibleDepartment(department)
 	}, [props.driveData.department]);
 
-	const deleteCompanyHandler = () => {
-		console.log("clicked delete ==>  ", props.driveData.companyName)
-	}
+	
 	const editCompanyHandler = () => {
 		// console.log("clicked edit ==>  ", props.driveData.companyName)
 		console.log("clicked edit ==>  ", props.driveData._id)
@@ -71,7 +69,7 @@ const DetailCard = (props) => {
 				</Typography>
 			</CardContent>
 			<CardActions disableSpacing>
-				<IconButton aria-label="delete" onClick={deleteCompanyHandler}>
+				<IconButton aria-label="delete" onClick={props.onDeleteIconClicked}>
 					<DeleteIcon />
 				</IconButton>
 				<IconButton aria-label="edit" onClick={editCompanyHandler}>
