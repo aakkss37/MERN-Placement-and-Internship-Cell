@@ -82,5 +82,11 @@ export const updateCompanyDetails = async (request, response) => {
 
 
 export const deleteCompanyDetails = async(request, response) => {
-	console.log("request comming for ====>>>>", request.query.company_id)
+	// console.log("request comming for ====>>>>", request.query.company_id)
+	try {
+		await Company.findByIdAndDelete(request.query.company_id)
+		response.status(200).json({message: "Deleted Sucessfully"})
+	} catch (error) {
+		response.status(500).json(error.message)
+	}
 }
