@@ -56,5 +56,9 @@ export const SERVICE_URL = {
 	updateCompanyDetails: {
 		url: 'update-company-detail',
 		method: 'PUT',
+	},
+	deleteCompanyDetails: {
+		url: 'delete-company',
+		method: 'DELETE'
 	}
 }
