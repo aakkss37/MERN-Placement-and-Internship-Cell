@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react'
 import { Alert, Button, ButtonGroup, Snackbar, Stack,  } from '@mui/material';
-import { useSearchParams } from 'react-router-dom'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 import { DataContext } from '../../contextAPI/DataProvider';
 import { API } from '../../services/api';
 import Applicants from './Applicants/Applicants';
@@ -17,6 +17,7 @@ const DetailedView = () => {
 	const [companyDetail, setCompanyDetail] = useState();
 	const [searchParams] = useSearchParams();
 	const [activeTab, setActiveTab] = useState('allApplicant')
+	const navigate = useNavigate()
 	const companyId = searchParams.get('companyid');
 	// console.log(companyId)
 	useEffect(() => {
@@ -42,8 +43,14 @@ const DetailedView = () => {
 		setOpenFormDialog(false)
 	};
 
-	const documentDelateHandler = ()=> {
-		
+	const documentDelateHandler = async()=> {
+		try {
+			const responce = await API.deleteCompanyDetails(companyDetail?._id)
+			console.log(responce.date);
+			navigate('/home')
+		} catch (error) {
+			console.log(error.message)
+		}
 	}
 
 
