@@ -1,7 +1,6 @@
-import React, { forwardRef, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSearchParams, useNavigate } from 'react-router-dom'
-import { Snackbar, IconButton, Box, Button, Checkbox, FormControl, InputLabel, ListItemText, MenuItem, OutlinedInput, Select, TextField, Stack } from "@mui/material";
-import MuiAlert from '@mui/material/Alert';
+import { Snackbar, IconButton, Box, Button, Checkbox, FormControl, InputLabel, ListItemText, MenuItem, OutlinedInput, Select, TextField,} from "@mui/material";
 import { CurretPath, SectionHeading } from './editDetailStyle';
 import CloseIcon from '@mui/icons-material/Close';
 import './editDetail.css'
@@ -39,9 +38,7 @@ let initialFormData = {
 
 
 
-const Alert = forwardRef(function Alert (props, ref) {
-	return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
-});
+
 
 
 const EditDetail = () => {
@@ -70,7 +67,6 @@ const EditDetail = () => {
 
 	// FeedBack message
 	const [openErrorSnackbar, setOpenErrorSnackbar] = useState(false);
-	const [openSucessSnackbar, setOpenSucessSnackbar] = useState(false);
 	const [openConformation, setOpenConformation] = useState(false)
 	const handleClose = (event, reason) => {
 		if (reason === 'clickaway') {
@@ -78,7 +74,6 @@ const EditDetail = () => {
 		}
 
 		setOpenErrorSnackbar(false);
-		setOpenSucessSnackbar(false);
 		setOpenConformation(false);
 	};
 	const action = (
@@ -124,7 +119,6 @@ const EditDetail = () => {
 				console.log(responce.data)
 				setFormData(initialFormData)
 				navigate(`/home/company-detail/?companyid=${responce.data._id}`)
-				setOpenSucessSnackbar(true)
 			} catch (error) {
 				console.log(error)
 			}
@@ -156,14 +150,6 @@ const EditDetail = () => {
 					action={action}
 				/>
 
-				{/* Form sucessfull submit msg */}
-				<Stack spacing={2} sx={{ width: '100%' }}>
-					<Snackbar open={openSucessSnackbar} autoHideDuration={4000} onClose={handleClose} >
-						<Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
-							Details updated sucessfully.
-						</Alert>
-					</Snackbar>
-				</Stack>
 
 				<div className='company_detail'>
 					<SectionHeading>Company Detail</SectionHeading>
