@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Box, Button, Checkbox, FormControl, InputLabel, ListItemText, MenuItem, OutlinedInput, Select, TextField, } from "@mui/material";
 import { CurretPath, SectionHeading } from './newCompanyStyle';
 import './newCompany.css'
 import { API } from '../../services/api';
 import SuccessMsg from '../ui/SuccessMsg';
 import ErrorMsg from '../ui/ErrorMsg';
+
+import { DataContext } from '../../contextAPI/DataProvider';
 
 const CGPA = [6, 6.5, 7, 7.5, 8, 8.5, 9]
 const passoutYear = [2022, 2023, 2024, 2025, 2026]
@@ -42,18 +44,17 @@ const initialFormData = {
 const NewCompany = () => {
 	const [formData, setFormData] = useState(initialFormData)
 	const [imageName, setImageName] = useState();
+	const context = useContext(DataContext);
 
 
 	// FeedBack message
-	const [openErrorSnackbar, setOpenErrorSnackbar] = useState(false);
-	const [openSucessSnackbar, setOpenSucessSnackbar] = useState(false);
 	const handleClose = (event, reason) => {
 		if (reason === 'clickaway') {
 			return;
 		}
 
-		setOpenErrorSnackbar(false);
-		setOpenSucessSnackbar(false)
+		context.setOpenErrorSnackbar(false);
+		context.setOpenSucessSnackbar(false)
 	};
 
 
@@ -111,7 +112,7 @@ const NewCompany = () => {
 		) {
 			try {
 				const responce = await API.addNewCompany(formData);
-				setOpenSucessSnackbar(true)
+				context.setOpenSucessSnackbar(true)
 				setFormData(initialFormData)
 				setImageName()
 				console.log(responce.data)
@@ -119,7 +120,7 @@ const NewCompany = () => {
 				console.log(error)
 			}
 		} else {
-			setOpenErrorSnackbar(true)
+			context.setOpenErrorSnackbar(true)
 		}
 	}
 
@@ -133,13 +134,13 @@ const NewCompany = () => {
 				{/* Form field empty error msg */}
 				<ErrorMsg
 					message="Error! Required Field(*) can not be empty."
-					open={openErrorSnackbar}
+					open={context.openErrorSnackbar}
 					onClose={handleClose}
 				/>
 				{/* Form sucessfull submit msg */}
 				<SuccessMsg
 					message="Form submited sucessfully."
-					open={openSucessSnackbar}
+					open={context.openSucessSnackbar}
 					onClose={handleClose}
 				/>
 

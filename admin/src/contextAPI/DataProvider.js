@@ -10,6 +10,7 @@ const DataProvider = (props) => {
 	const [studentsForTest, setStudentsForTest] = useState([])
 	const [studentsForInterview, setStudentsForInterview] = useState([])
 	const [studentsPlaced, setStudentsPlaced] = useState([])
+	const [openErrorSnackbar, setOpenErrorSnackbar] = useState(false);
 	const [openSucessSnackbar, setOpenSucessSnackbar] = useState(false);
 
 
@@ -18,6 +19,8 @@ const DataProvider = (props) => {
 			studentsForTest, setStudentsForTest,
 			studentsForInterview, setStudentsForInterview,
 			studentsPlaced, setStudentsPlaced,
+
+			openErrorSnackbar, setOpenErrorSnackbar,
 			openSucessSnackbar, setOpenSucessSnackbar
 		}}>
 			{props.children}
