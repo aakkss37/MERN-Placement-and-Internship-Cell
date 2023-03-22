@@ -53,8 +53,8 @@ const NewCompany = () => {
 			return;
 		}
 
-		context.setOpenErrorSnackbar(false);
-		context.setOpenSucessSnackbar(false)
+		context.setOpenFormErrorSnackbar(false);
+		context.setOpenFormSucessSnackbar(false)
 	};
 
 
@@ -112,7 +112,7 @@ const NewCompany = () => {
 		) {
 			try {
 				const responce = await API.addNewCompany(formData);
-				context.setOpenSucessSnackbar(true)
+				context.setOpenFormSucessSnackbar(true)
 				setFormData(initialFormData)
 				setImageName()
 				console.log(responce.data)
@@ -120,7 +120,7 @@ const NewCompany = () => {
 				console.log(error)
 			}
 		} else {
-			context.setOpenErrorSnackbar(true)
+			context.setOpenFormErrorSnackbar(true)
 		}
 	}
 
@@ -134,13 +134,13 @@ const NewCompany = () => {
 				{/* Form field empty error msg */}
 				<ErrorMsg
 					message="Error! Required Field(*) can not be empty."
-					open={context.openErrorSnackbar}
+					open={context.openFormErrorSnackbar}
 					onClose={handleClose}
 				/>
 				{/* Form sucessfull submit msg */}
 				<SuccessMsg
 					message="Form submited sucessfully."
-					open={context.openSucessSnackbar}
+					open={context.openFormSucessSnackbar}
 					onClose={handleClose}
 				/>
 

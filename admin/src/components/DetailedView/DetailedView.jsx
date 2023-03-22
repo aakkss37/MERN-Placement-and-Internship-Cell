@@ -48,6 +48,7 @@ const DetailedView = () => {
 		try {
 			const responce = await API.deleteCompanyDetails(companyDetail._id)
 			console.log(responce.date);
+			context.setOpenDeleteSucessSnakebar(true)
 			navigate('/home')
 		} catch (error) {
 			console.log(error.message)

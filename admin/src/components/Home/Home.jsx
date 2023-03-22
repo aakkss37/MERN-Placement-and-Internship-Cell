@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './home.css'
 import { Paper, Table, TableBody, TableContainer, TableHead, TableRow, } from '@mui/material';
 import { ActiveStatus, CurretPath, Status, StyledTableCell, StyledTableRow } from './homeStyle.js'
 import { API } from '../../services/api';
 import { useNavigate } from 'react-router-dom';
+import SuccessMsg from '../ui/SuccessMsg';
+import { DataContext } from '../../contextAPI/DataProvider';
 
 
 
@@ -11,6 +13,7 @@ import { useNavigate } from 'react-router-dom';
 const Home = () => {
 	const [companyList, setCompanyList] = useState([]);
 	const navigate = useNavigate()
+	const context = useContext(DataContext);
 
 	useEffect(() => {
 		const getCompanyList = async()=>{
@@ -30,9 +33,22 @@ const Home = () => {
 		navigate(`/home/company-detail?companyid=${id}`)
 	}
 
+	const handleClose = (event, reason) => {
+		if (reason === 'clickaway') {
+			return;
+		}
+
+		context.setOpenDeleteSucessSnakebar(false)
+	};
 	// console.log(companyList)
 	return (
 		<div className='home'>
+			{/* Form sucessfull submit msg */}
+			<SuccessMsg
+				message="Document Deleted Sucessfully"
+				open={context.openDeleteSucessSnakebar}
+				onClose={handleClose}
+			/>
 			<div className='homa_container'>
 				<CurretPath >Company List</CurretPath>
 				<TableContainer component={Paper}>

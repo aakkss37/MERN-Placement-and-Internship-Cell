@@ -10,8 +10,11 @@ const DataProvider = (props) => {
 	const [studentsForTest, setStudentsForTest] = useState([])
 	const [studentsForInterview, setStudentsForInterview] = useState([])
 	const [studentsPlaced, setStudentsPlaced] = useState([])
-	const [openErrorSnackbar, setOpenErrorSnackbar] = useState(false);
-	const [openSucessSnackbar, setOpenSucessSnackbar] = useState(false);
+
+	const [openFormErrorSnackbar, setOpenFormErrorSnackbar] = useState(false);
+	const [openFormSucessSnackbar, setOpenFormSucessSnackbar] = useState(false);
+
+	const [openDeleteSucessSnakebar, setOpenDeleteSucessSnakebar] = useState(false);
 
 
 	return (
@@ -20,8 +23,12 @@ const DataProvider = (props) => {
 			studentsForInterview, setStudentsForInterview,
 			studentsPlaced, setStudentsPlaced,
 
-			openErrorSnackbar, setOpenErrorSnackbar,
-			openSucessSnackbar, setOpenSucessSnackbar
+			openFormErrorSnackbar, setOpenFormErrorSnackbar,
+			openFormSucessSnackbar, setOpenFormSucessSnackbar,
+
+			openDeleteSucessSnakebar, setOpenDeleteSucessSnakebar
+
+
 		}}>
 			{props.children}
 		</DataContext.Provider>
