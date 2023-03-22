@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react'
-import { Alert, Button, ButtonGroup, Snackbar, Stack,  } from '@mui/material';
+import { Button, ButtonGroup, } from '@mui/material';
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { DataContext } from '../../contextAPI/DataProvider';
 import { API } from '../../services/api';
@@ -11,6 +11,7 @@ import InterviewShortlist from './InterviewShortlist/InterviewShortlist';
 import PlacedStudent from './Placed/PlacedStudent';
 import TestShortlist from './TestShortlist/TestShortlist';
 import FormDialog from '../ui/FormDialog';
+import SuccessMsg from '../ui/SuccessMsg';
 
 const DetailedView = () => {
 	const [openFormDialog, setOpenFormDialog] = useState(false)
@@ -59,13 +60,11 @@ const DetailedView = () => {
 	return (
 		<div className='detailed_view'>
 			{/* Form sucessfull submit msg */}
-			<Stack spacing={2} sx={{ width: '100%' }}>
-				<Snackbar open={context.openSucessSnackbar} autoHideDuration={4000} onClose={handleClose} >
-					<Alert onClose={handleClose} severity="success" sx={{ width: '100%', background: '#54a958', color: 'white' }}>
-						Applicant Sucessfully Added for Next Round.
-					</Alert>
-				</Snackbar>
-			</Stack>
+			<SuccessMsg
+				message="Applicant Sucessfully Added for Next Round."
+				open={context.openSucessSnackbar}
+				onClose={handleClose}
+			/>
 
 
 			{/* Form Dialog */}
