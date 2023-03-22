@@ -79,3 +79,8 @@ export const updateCompanyDetails = async (request, response) => {
 		response.status(400).json(error.message)
 	}
 }
+
+
+export const deleteCompanyDetails = async(request, response) => {
+	console.log("request comming for ====>>>>",request.body)
+}
