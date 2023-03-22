@@ -15,6 +15,7 @@ const DataProvider = (props) => {
 	const [openFormSucessSnackbar, setOpenFormSucessSnackbar] = useState(false);
 
 	const [openDeleteSucessSnakebar, setOpenDeleteSucessSnakebar] = useState(false);
+	const [openUpdateSucessSnakebar, setOpenUpdateSucessSnakebar] = useState(false);
 
 
 	return (
@@ -26,7 +27,8 @@ const DataProvider = (props) => {
 			openFormErrorSnackbar, setOpenFormErrorSnackbar,
 			openFormSucessSnackbar, setOpenFormSucessSnackbar,
 
-			openDeleteSucessSnakebar, setOpenDeleteSucessSnakebar
+			openDeleteSucessSnakebar, setOpenDeleteSucessSnakebar,
+			openUpdateSucessSnakebar, setOpenUpdateSucessSnakebar
 
 
 		}}>
