@@ -42,6 +42,9 @@ const DetailedView = () => {
 		setOpenFormDialog(false)
 	};
 
+	const documentDelateHandler = ()=> {
+		
+	}
 
 
 	// console.log("Company detail ===> ", companyDetail)
@@ -62,7 +65,7 @@ const DetailedView = () => {
 			<FormDialog
 				openFormDialog={openFormDialog}
 				onClose={handleClose}
-				onContinue={() => console.log("deleted")}
+				onContinue={documentDelateHandler}
 				companyName={companyDetail?.companyName}
 				companyID={companyDetail?._id}
 				date={companyDetail?.Date}
