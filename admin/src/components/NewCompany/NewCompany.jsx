@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import { Snackbar, IconButton, Box, Button, Checkbox, FormControl, InputLabel, ListItemText, MenuItem, OutlinedInput, Select, TextField, } from "@mui/material";
+import { Box, Button, Checkbox, FormControl, InputLabel, ListItemText, MenuItem, OutlinedInput, Select, TextField, } from "@mui/material";
 import { CurretPath, SectionHeading } from './newCompanyStyle';
-import CloseIcon from '@mui/icons-material/Close';
 import './newCompany.css'
 import { API } from '../../services/api';
 import SuccessMsg from '../ui/SuccessMsg';
+import ErrorMsg from '../ui/ErrorMsg';
 
 const CGPA = [6, 6.5, 7, 7.5, 8, 8.5, 9]
 const passoutYear = [2022, 2023, 2024, 2025, 2026]
@@ -55,18 +55,7 @@ const NewCompany = () => {
 		setOpenErrorSnackbar(false);
 		setOpenSucessSnackbar(false)
 	};
-	const action = (
-		<>
-			<IconButton
-				size="small"
-				aria-label="close"
-				color="inherit"
-				onClick={handleClose}
-			>
-				<CloseIcon fontSize="small" />
-			</IconButton>
-		</>
-	);
+
 
 	
 
@@ -142,14 +131,11 @@ const NewCompany = () => {
 			<div className='new_company_container'>
 				<CurretPath >Add New Compnay</CurretPath>
 				{/* Form field empty error msg */}
-				<Snackbar
-					open={openErrorSnackbar}
-					autoHideDuration={4000}
-					onClose={handleClose}
+				<ErrorMsg
 					message="Error! Required Field(*) can not be empty."
-					action={action}
+					open={openErrorSnackbar}
+					onClose={handleClose}
 				/>
-
 				{/* Form sucessfull submit msg */}
 				<SuccessMsg
 					message="Form submited sucessfully."
