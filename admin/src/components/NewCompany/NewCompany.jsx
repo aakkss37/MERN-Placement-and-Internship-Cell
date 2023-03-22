@@ -1,10 +1,10 @@
-import React, { forwardRef, useState } from 'react'
-import { Snackbar, IconButton, Box, Button, Checkbox, FormControl, InputLabel, ListItemText, MenuItem, OutlinedInput, Select, TextField, Stack } from "@mui/material";
-import MuiAlert from '@mui/material/Alert';
+import React, { useState } from 'react'
+import { Snackbar, IconButton, Box, Button, Checkbox, FormControl, InputLabel, ListItemText, MenuItem, OutlinedInput, Select, TextField, } from "@mui/material";
 import { CurretPath, SectionHeading } from './newCompanyStyle';
 import CloseIcon from '@mui/icons-material/Close';
 import './newCompany.css'
 import { API } from '../../services/api';
+import SuccessMsg from '../ui/SuccessMsg';
 
 const CGPA = [6, 6.5, 7, 7.5, 8, 8.5, 9]
 const passoutYear = [2022, 2023, 2024, 2025, 2026]
@@ -37,10 +37,6 @@ const initialFormData = {
 }
 
 
-
-const Alert = forwardRef(function Alert (props, ref) {
-	return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
-});
 
 
 const NewCompany = () => {
@@ -155,13 +151,11 @@ const NewCompany = () => {
 				/>
 
 				{/* Form sucessfull submit msg */}
-				<Stack spacing={2} sx={{ width: '100%' }}>
-					<Snackbar open={openSucessSnackbar} autoHideDuration={4000} onClose={handleClose} >
-						<Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
-							Form submited sucessfully.
-						</Alert>
-					</Snackbar>
-				</Stack>
+				<SuccessMsg
+					message="Form submited sucessfully."
+					open={openSucessSnackbar}
+					onClose={handleClose}
+				/>
 
 				<div className='company_detail'>
 					<SectionHeading>Company Detail</SectionHeading>
