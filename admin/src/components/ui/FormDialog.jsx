@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, {useState, useEffect} from 'react';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Dialog from '@mui/material/Dialog';
@@ -9,6 +9,12 @@ import DialogTitle from '@mui/material/DialogTitle';
 import { formatDate } from '../../utils/commonUtil';
 
 export default function FormDialog (props) {
+	const [userInput, setUserInput] = useState("");
+	const [isInputCorrect, setIsInputCorrest] = useState(false)
+
+	useEffect(() => {
+		setIsInputCorrest(userInput === props.companyID)
+	}, [props.companyID, userInput]);
 
 	return (
 		<div>
@@ -27,16 +33,23 @@ export default function FormDialog (props) {
 					<TextField
 						autoFocus
 						margin="dense"
-						id="name"
-						label="Email Address"
-						type="email"
+						label="Company ID"
+						type="text"
+						value={userInput}
+						onChange={(event) => setUserInput(event.target.value)}
 						fullWidth
 						variant="standard"
 					/>
 				</DialogContent>
 				<DialogActions>
 					<Button onClick={props.handleClose}>Cancel</Button>
-					<Button onClick={props.handleClose}>Subscribe</Button>
+					{
+						isInputCorrect 
+						?
+						<Button onClick={props.handleClose} >Delete</Button>
+						:
+						<Button onClick={props.handleClose} disabled>Delete</Button>
+					}
 				</DialogActions>
 			</Dialog>
 		</div>
