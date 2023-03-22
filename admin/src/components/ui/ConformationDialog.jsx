@@ -13,6 +13,7 @@ const ConformationDialog = (props) => {
 	return (
 		<div>
 			<Dialog
+				sx={{width: '40%', marginLeft: "30%"}}
 				open={props.openConformation}
 				onClose={props.onClose}
 				aria-labelledby="alert-dialog-title"
