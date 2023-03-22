@@ -45,7 +45,7 @@ const DetailedView = () => {
 
 	const documentDelateHandler = async()=> {
 		try {
-			const responce = await API.deleteCompanyDetails(companyDetail?._id)
+			const responce = await API.deleteCompanyDetails(companyDetail._id)
 			console.log(responce.date);
 			navigate('/home')
 		} catch (error) {

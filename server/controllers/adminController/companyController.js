@@ -82,5 +82,5 @@ export const updateCompanyDetails = async (request, response) => {
 
 
 export const deleteCompanyDetails = async(request, response) => {
-	console.log("request comming for ====>>>>",request.body)
+	console.log("request comming for ====>>>>", request.query.company_id)
 }

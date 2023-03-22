@@ -59,6 +59,7 @@ export const SERVICE_URL = {
 	},
 	deleteCompanyDetails: {
 		url: 'delete-company',
-		method: 'DELETE'
+		method: 'DELETE',
+		query: true,
 	}
 }
