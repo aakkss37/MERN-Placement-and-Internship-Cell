@@ -6,6 +6,7 @@ import { CurretPath, SectionHeading } from './editDetailStyle';
 import CloseIcon from '@mui/icons-material/Close';
 import './editDetail.css'
 import { API } from '../../services/api';
+import ConformationDialog from '../ui/ConformationDialog';
 
 const CGPA = [6, 6.5, 7, 7.5, 8, 8.5, 9]
 const passoutYear = [2022, 2023, 2024, 2025, 2026]
@@ -48,9 +49,9 @@ const EditDetail = () => {
 	const navigate = useNavigate()
 	const [searchParams] = useSearchParams();
 	const companyId = searchParams.get('id');
-	
+
 	useEffect(() => {
-		const getCompanyDetail = async()=>{
+		const getCompanyDetail = async () => {
 			try {
 				let responce = await API.getCompanyDetails(companyId)
 				// console.log(responce.data)
@@ -106,6 +107,7 @@ const EditDetail = () => {
 
 	// Submit and add new Company
 	const formSubmitHandler = async () => {
+		setOpenConformation(false);
 		console.log(formData)
 		if (
 			formData.companyName &&
@@ -119,10 +121,10 @@ const EditDetail = () => {
 		) {
 			try {
 				const responce = await API.updateCompanyDetails(formData);
-				setOpenSucessSnackbar(true)
-				setFormData(initialFormData)
 				console.log(responce.data)
+				setFormData(initialFormData)
 				navigate(`/home/company-detail/?companyid=${responce.data._id}`)
+				setOpenSucessSnackbar(true)
 			} catch (error) {
 				console.log(error)
 			}
@@ -138,6 +140,13 @@ const EditDetail = () => {
 		<div className='new_company'>
 			<div className='new_company_container'>
 				<CurretPath >Home &gt; {formData?.companyName} &gt; Update </CurretPath>
+				{/* Comformation Dialog */}
+				<ConformationDialog
+					openConformation={ openConformation }
+					onClose={handleClose}
+					onContinue={formSubmitHandler}
+					companyName={formData?.companyName}
+				/>
 				{/* Form field empty error msg */}
 				<Snackbar
 					open={openErrorSnackbar}
@@ -166,7 +175,7 @@ const EditDetail = () => {
 									id="outlined-multiline-static"
 									label="Company Name"
 									variant="outlined"
-									required 
+									required
 									value={formData.companyName}
 									name="companyName"
 									onChange={(e) => { formChangeHandler(e) }} />
@@ -179,7 +188,7 @@ const EditDetail = () => {
 									multiline
 									rows={12}
 									variant="outlined"
-									required 
+									required
 									value={formData.responsibilities}
 									name="responsibilities"
 									onChange={(e) => { formChangeHandler(e) }} />
@@ -193,7 +202,7 @@ const EditDetail = () => {
 									multiline
 									rows={5}
 									variant="outlined"
-									required 
+									required
 									value={formData.requirement}
 									name="requirement"
 									onChange={(e) => { formChangeHandler(e) }} />
@@ -210,8 +219,8 @@ const EditDetail = () => {
 									value={formData.aboutCompany}
 									name="aboutCompany"
 									onChange={(e) => { formChangeHandler(e) }} />
-							</Box> 
-							
+							</Box>
+
 						</div>
 
 					</div>
@@ -337,7 +346,7 @@ const EditDetail = () => {
 						paddingRight: "4rem",
 						fontWeight: 600
 					}}
-					onClick={formSubmitHandler}
+					onClick={() => setOpenConformation(true)}
 				>
 					Update
 				</Button>
