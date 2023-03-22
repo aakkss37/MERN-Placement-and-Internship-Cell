@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useSearchParams, useNavigate } from 'react-router-dom'
 import { Snackbar, IconButton, Box, Button, Checkbox, FormControl, InputLabel, ListItemText, MenuItem, OutlinedInput, Select, TextField,} from "@mui/material";
 import { CurretPath, SectionHeading } from './editDetailStyle';
@@ -6,6 +6,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import './editDetail.css'
 import { API } from '../../services/api';
 import ConformationDialog from '../ui/ConformationDialog';
+import { DataContext } from '../../contextAPI/DataProvider';
 
 const CGPA = [6, 6.5, 7, 7.5, 8, 8.5, 9]
 const passoutYear = [2022, 2023, 2024, 2025, 2026]
@@ -46,6 +47,7 @@ const EditDetail = () => {
 	const navigate = useNavigate()
 	const [searchParams] = useSearchParams();
 	const companyId = searchParams.get('id');
+	const context = useContext(DataContext);
 
 	useEffect(() => {
 		const getCompanyDetail = async () => {
@@ -118,6 +120,7 @@ const EditDetail = () => {
 				const responce = await API.updateCompanyDetails(formData);
 				console.log(responce.data)
 				setFormData(initialFormData)
+				context.setOpenUpdateSucessSnakebar(true)
 				navigate(`/home/company-detail/?companyid=${responce.data._id}`)
 			} catch (error) {
 				console.log(error)

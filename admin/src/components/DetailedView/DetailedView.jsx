@@ -40,7 +40,8 @@ const DetailedView = () => {
 		if (reason === 'clickaway') {
 			return;
 		}
-		context.setOpenSucessSnackbar(false)
+		context.setOpenFormSucessSnackbar(false)
+		context.setOpenUpdateSucessSnakebar(false)
 		setOpenFormDialog(false)
 	};
 
@@ -64,6 +65,11 @@ const DetailedView = () => {
 			<SuccessMsg
 				message="Applicant Sucessfully Added for Next Round."
 				open={context.openSucessSnackbar}
+				onClose={handleClose}
+			/>
+			<SuccessMsg
+				message="Applicant Update Sucessfull."
+				open={context.openUpdateSucessSnakebar}
 				onClose={handleClose}
 			/>
 
