@@ -26,7 +26,7 @@ export default function FormDialog (props) {
 				<DialogTitle sx={{fontWeight: 600, fontSize: '1.3rem', color: 'red'}}>Delete Permanently!</DialogTitle>
 				<DialogContent>
 					<DialogContentText>
-						This action can will lead to permanent loss of <b>{props.companyName} - {formatDate(props.date)}</b> 
+						This action can will lead to permanent loss of <b>{props.companyName} - {formatDate(props.date)} </b> 
 						Drive including applicants detail, test result and all other important data related to this 
 						document. To comform this action please Type the Company ID: <b>{props.companyID}</b>.
 					</DialogContentText>
