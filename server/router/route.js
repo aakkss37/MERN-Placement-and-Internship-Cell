@@ -6,6 +6,7 @@ import { getImage, uploadImage } from "../controllers/adminController/companyLog
 import upload from '../utils/UploadFile.js';
 import { addNewCompany, deleteCompanyDetails, getCompanyDetails, getListedCompanyList, updateCompanyDetails } from "../controllers/adminController/companyController.js";
 import { getPlacementDriveList } from "../controllers/studentController/driveList.js";
+import { createAdmin } from "../controllers/adminController/adminController.js";
 const router = express.Router();
 
 // STUDENT LOGIN
@@ -16,6 +17,7 @@ router.get('/get-placement-drive-list', getPlacementDriveList)
 
 
 // ADMIN ROUTES
+router.post('/create-admin', createAdmin)
 router.post('/upload-company-logo', upload.single('file'), uploadImage);
 router.get('/file/:filename', getImage);
 router.post('/add-new-company', addNewCompany);

@@ -1,5 +1,5 @@
 import bcrypt from 'bcrypt';
-import Admin from '../../model/adminSchema';
+import Admin from '../../model/adminSchema.js';
 
 
 export const createAdmin = async (request, responce) => {
