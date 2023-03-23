@@ -3,16 +3,14 @@ import { useNavigate } from "react-router-dom";
 import {  Button, Container,  TextField, Typography } from "@mui/material";
 import './login.css'
 import { API } from "../../services/api";
-import DataProvider from "../../contextAPI/DataProvider";
-
+import { DataContext } from "../../contextAPI/DataProvider";
 
 
 const Login = ()=> {
-	const context = useContext(DataProvider);
+	const context = useContext(DataContext);
 	const [username, setUsername] = useState("")
 	const [password, setPassword] = useState("")
-	const [wrongUser, setWrongUser] = useState(false)
-	const [wrongPassword, setWrongPassword] = useState(false)
+	const [wrong, setWrong] = useState(false)
 	const navigate = useNavigate()
 
 	const loginHandler = async()=>{
@@ -20,15 +18,11 @@ const Login = ()=> {
 			const response = await API.login({username: username, password: password});
 			console.log(response.data)
 			if (response.data.authorized){
-				// context.setIsLogin(true)
+				context.setIsLogin(true)
 				navigate("/home")
-			} else if (!response.data.user){
-				setWrongUser(true)
-			}
-			else if (!response.data.authorized) {
-				setWrongPassword(true)
 			}
 		} catch (error) {
+			setWrong(true)
 			console.log(error)
 		}
 	}
@@ -42,33 +36,32 @@ const Login = ()=> {
 				<Typography component="h1" variant="h5">
 					Karpagam Academy of Higher Education Placement and Internship Cell
 				</Typography>
+				{wrong ? <Typography style={{textAlign: "start", color: "red"}} >Incorrect username or password.</Typography> : <br/>} 
 				<form  >
 					<TextField
 						variant="outlined"
 						margin="normal"
-						error={wrongUser}
 						required
 						fullWidth
 						id="username"
-						label={wrongUser ? "Wrong Username" : "Username"}
+						label={"Username"}
 						name="username"
 						autoComplete="username"
 						value={username}
-						onChange={(event) => {setUsername(event.target.value); setWrongUser(false)}}
+						onChange={(event) => {setUsername(event.target.value); setWrong(false)}}
 						autoFocus
 					/>
 					<TextField
 						variant="outlined"
 						margin="normal"
-						error={wrongPassword}
 						required
 						fullWidth
 						name="password"
-						label={wrongUser ? "Wrong Password" : "Password"}
+						label={"Password"}
 						type="password"
 						id="password"
 						value={password}
-						onChange={(event) => {setPassword(event.target.value); setWrongPassword(false)}}
+						onChange={(event) => {setPassword(event.target.value); setWrong(false)}}
 					/>
 					
 					<Button
