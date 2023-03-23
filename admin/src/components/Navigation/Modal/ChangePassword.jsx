@@ -1,6 +1,8 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Box, Button, Modal, TextField, Typography } from '@mui/material';
 import { API } from '../../../services/api';
+import { DataContext } from '../../../contextAPI/DataProvider';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -21,22 +23,27 @@ const ChangePassword = (props) => {
 	const [username, setUsername] = useState("")
 	const [currentPassword, setCurrentPassword] = useState("")
 	const [newPassword, setNewPassword] = useState("")
+	const [wrong, setWrong] = useState(false)
+	const context = useContext(DataContext);
+	const navigate = useNavigate()
 
-	
 
 	const changePasswortHandler = async () => {
 		try {
-			const responce = await API.changePassword({
+			await API.changePassword({
 				username: username,
 				currentPassword: currentPassword,
 				newPassword: newPassword,
 			})
-			console.log(responce.data)
+			context.setIsLogin(false)
+			
+			navigate('/')
 		} catch (error) {
-
-			console.log(error.message)			
+			setWrong(true)
+			console.log(error.msg)			
 		}
 	}
+
 	return (
 		<div>
 			<Modal
@@ -49,6 +56,7 @@ const ChangePassword = (props) => {
 					<Typography component="h5" variant="h5" color="primary" style={{ fontWeight: 600, color: "gray", textAlign: "center" }}>
 						Change Password
 					</Typography>
+					{wrong ? <Typography style={{ textAlign: "start", color: "red" }} >Incorrect username or current password.</Typography> : <br />} 
 					<form  >
 						<TextField
 							variant="outlined"
@@ -61,7 +69,7 @@ const ChangePassword = (props) => {
 							name="username"
 							autoComplete="username"
 							value={username}
-							onChange={(event) => setUsername(event.target.value)}
+							onChange={(event) => {setUsername(event.target.value); setWrong(false)}}
 							autoFocus
 						/>
 						<TextField
@@ -75,7 +83,7 @@ const ChangePassword = (props) => {
 							name="currentPassword"
 							autoComplete="currentPassword"
 							value={currentPassword}
-							onChange={(event) => setCurrentPassword(event.target.value)}
+							onChange={(event) => {setCurrentPassword(event.target.value); setWrong(false)}}
 						/>
 						<TextField
 							variant="outlined"
@@ -87,7 +95,7 @@ const ChangePassword = (props) => {
 							label="New Password"
 							id="newPassword"
 							value={newPassword}
-							onChange={(event) => setNewPassword(event.target.value)}
+							onChange={(event) => {setNewPassword(event.target.value); setWrong(false)}}
 						/>
 
 						<Button
