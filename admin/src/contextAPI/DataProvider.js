@@ -7,6 +7,9 @@ export const DataContext = createContext(null);
 
 
 const DataProvider = (props) => {
+
+	const [isLogin, setisLogin] = useState(false);
+
 	const [studentsForTest, setStudentsForTest] = useState([])
 	const [studentsForInterview, setStudentsForInterview] = useState([])
 	const [studentsPlaced, setStudentsPlaced] = useState([])
@@ -20,6 +23,8 @@ const DataProvider = (props) => {
 
 	return (
 		<DataContext.Provider value={{
+			isLogin, setisLogin,
+
 			studentsForTest, setStudentsForTest,
 			studentsForInterview, setStudentsForInterview,
 			studentsPlaced, setStudentsPlaced,

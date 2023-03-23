@@ -23,7 +23,7 @@ const PrivateRoute = (props) => {
 }
 
 const App = () => {
-	// const [isLogin, setisLogin] = useState(true);
+	
 	const isLogin = true
 	return (
 		<BrowserRouter>
