@@ -43,6 +43,7 @@ const DetailedView = () => {
 		context.setOpenFormSucessSnackbar(false)
 		context.setOpenUpdateSucessSnakebar(false)
 		context.setOpenSucessSnackbar(false)
+		context.setOpenPlacedSucessSnackbar(false)
 		setOpenFormDialog(false)
 	};
 
@@ -71,6 +72,11 @@ const DetailedView = () => {
 			<SuccessMsg
 				message="Application Update Sucessfull."
 				open={context.openUpdateSucessSnakebar}
+				onClose={handleClose}
+			/>
+			<SuccessMsg
+				message="Application added to placement list successfully."
+				open={context.openPlacedSucessSnackbar}
 				onClose={handleClose}
 			/>
 

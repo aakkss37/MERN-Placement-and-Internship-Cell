@@ -57,7 +57,7 @@ const InterviewShortlist = (props) => {
 	}
 	const handlePlacement = () => {
 		context.setStudentsPlaced(studentsChecked)
-		context.setOpenSucessSnackbar(true)
+		context.setOpenPlacedSucessSnackbar(true)
 		props.setActiveTab("placeStudent")
 	}
 	// console.log(context.studentsForInterview)
