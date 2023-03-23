@@ -65,5 +65,9 @@ export const SERVICE_URL = {
 		url: 'delete-company',
 		method: 'DELETE',
 		query: true,
-	}
+	},
+	changePassword: {
+		url: 'chnage-password',
+		method: 'POST',
+	},
 }
