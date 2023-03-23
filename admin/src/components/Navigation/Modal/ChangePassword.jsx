@@ -36,7 +36,7 @@ const ChangePassword = (props) => {
 				newPassword: newPassword,
 			})
 			context.setIsLogin(false)
-			
+			context.setOpenPasswordChangeSucessSnakebar(true)
 			navigate('/')
 		} catch (error) {
 			setWrong(true)
