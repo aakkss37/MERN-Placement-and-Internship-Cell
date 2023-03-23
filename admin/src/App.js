@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { BrowserRouter, Routes, Route, Outlet, } from 'react-router-dom';
 import DetailedView from './components/DetailedView/DetailedView';
 import EditDetail from './components/EditCompanyDetail/EditDetail';
@@ -7,6 +7,7 @@ import Login from './components/Login/Login';
 import Navbar from './components/Navigation/Navbar'
 import NewCompany from './components/NewCompany/NewCompany';
 import PlacementData from './components/PlacementData/PlacementData';
+import { DataContext } from './contextAPI/DataProvider';
 
 
 const PrivateRoute = (props) => {
@@ -23,8 +24,8 @@ const PrivateRoute = (props) => {
 }
 
 const App = () => {
-	
-	const isLogin = true
+	const context = useContext(DataContext);
+	const isLogin = context.isLogin
 	return (
 		<BrowserRouter>
 			<Routes>
