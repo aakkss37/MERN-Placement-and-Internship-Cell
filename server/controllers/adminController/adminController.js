@@ -10,9 +10,10 @@ export const createAdmin = async (request, responce) => {
 			username: request.body.username,
 			password: encryptedPassword
 		}
-		// console.log("serverGenerated: ---> ", adminCredentials);
+		console.log("serverGenerated: ---> ", adminCredentials);
 		const admin = await Admin.create(adminCredentials);
 		await admin.save();
+		console.log("saved admin ========================>>>>>>>>>",await Admin.findOne({username: request.body.username}))
 		return responce.status(200).json({ msg: 'signup sucessfull' });
 	} catch (error) {
 		return responce.status(500).json({ msg: 'Error while signing up...' });
