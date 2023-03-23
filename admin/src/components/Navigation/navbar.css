@@ -47,3 +47,16 @@
 	cursor: pointer;
 	background-color: #cecffd6b;
 }
+
+.setting_icon_button{
+	background: transparent;
+	outline: none;
+	border: none;
+	margin-left: 10px;
+	cursor: pointer;
+	padding: 5px;
+	border-radius: 50%;
+}
+.setting_icon_button:hover{
+	background: #cecffd6b;
+}
