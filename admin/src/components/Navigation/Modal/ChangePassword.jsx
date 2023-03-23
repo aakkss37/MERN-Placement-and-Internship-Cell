@@ -17,6 +17,7 @@ const style = {
 
 
 const ChangePassword = (props) => {
+	const [username, setUsername] = useState("")
 	const [currentPassword, setCurrentPassword] = useState("")
 	const [newPassword, setNewPassword] = useState("")
 
@@ -36,6 +37,20 @@ const ChangePassword = (props) => {
 					<form  >
 						<TextField
 							variant="outlined"
+							type="text"
+							margin="normal"
+							required
+							fullWidth
+							id="username"
+							label="Username"
+							name="username"
+							autoComplete="username"
+							value={username}
+							onChange={(event) => setUsername(event.target.value)}
+							autoFocus
+						/>
+						<TextField
+							variant="outlined"
 							type="password"
 							margin="normal"
 							required
@@ -46,7 +61,6 @@ const ChangePassword = (props) => {
 							autoComplete="currentPassword"
 							value={currentPassword}
 							onChange={(event)=> setCurrentPassword(event.target.value)}
-							autoFocus
 						/>
 						<TextField
 							variant="outlined"
