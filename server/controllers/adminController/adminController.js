@@ -22,12 +22,15 @@ export const createAdmin = async (request, responce) => {
 
 
 export const login = async(request, response) => {
+	// console.log("request ==> ",request.body)
 	try {
 		const admin = await Admin.findOne({username: request.body.username});
 		if(!admin) response.status(404).json({message: "User does not exist"})
-		const isPasswordMatch = await bcrypt.compare(request.body.password, admin.password);
-		if(isPasswordMatch) response.status(200).json({authorized: true})
-		response.status(401).json({authorized: false})
+		else{
+			const isPasswordMatch = await bcrypt.compare(request.body.password, admin.password);
+			if(isPasswordMatch) response.status(200).json({authorized: true})
+			else{response.status(401).json({authorized: false})}
+		}
 	} catch (error) {
 		response.status(401).json({message: error.message})
 	}
