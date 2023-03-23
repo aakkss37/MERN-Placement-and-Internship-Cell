@@ -20,6 +20,10 @@ const DataProvider = (props) => {
 	const [openDeleteSucessSnakebar, setOpenDeleteSucessSnakebar] = useState(false);
 	const [openUpdateSucessSnakebar, setOpenUpdateSucessSnakebar] = useState(false);
 
+	const [openPasswordChangeSucessSnakebar, setOpenPasswordChangeSucessSnakebar] = useState(false);
+	const [openLogoutSucessSnakebar, setOpenLogoutSucessSnakebar] = useState(false);
+
+
 
 	return (
 		<DataContext.Provider value={{
@@ -33,7 +37,10 @@ const DataProvider = (props) => {
 			openFormSucessSnackbar, setOpenFormSucessSnackbar,
 
 			openDeleteSucessSnakebar, setOpenDeleteSucessSnakebar,
-			openUpdateSucessSnakebar, setOpenUpdateSucessSnakebar
+			openUpdateSucessSnakebar, setOpenUpdateSucessSnakebar,
+
+			openPasswordChangeSucessSnakebar, setOpenPasswordChangeSucessSnakebar,
+			openLogoutSucessSnakebar, setOpenLogoutSucessSnakebar,
 
 
 		}}>
