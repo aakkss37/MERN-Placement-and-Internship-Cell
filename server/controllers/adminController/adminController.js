@@ -43,7 +43,8 @@ export const chnagePassword = async (request, response) => {
 		const isMatch = await bcrypt.compare(request.body.currentPassword, user.password)
 		if(isMatch){
 			const hashedPassword = await bcrypt.hash(request.body.newPassword, 10)
-			await Admin.findByIdAndUpdate(user._id, {password: hashedPassword})
+			const update = await Admin.findByIdAndUpdate(user._id, {password: hashedPassword})
+			console.log(update)
 			response.status(200).json({message: "password update sucessfull"})
 		}
 	} catch (error) {
