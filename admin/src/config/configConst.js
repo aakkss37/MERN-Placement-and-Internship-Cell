@@ -37,7 +37,7 @@ apiService: {
 */
 export const SERVICE_URL = {
 	login: {
-		url: "login-admin",
+		url: "/login-admin",
 		method: "POST",
 	},
 	uploadCompanyLogo: {

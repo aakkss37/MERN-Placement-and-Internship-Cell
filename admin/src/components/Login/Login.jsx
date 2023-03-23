@@ -1,14 +1,31 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {  Button, Container,  TextField, Typography } from "@mui/material";
 import './login.css'
+import { API } from "../../services/api";
+import DataProvider from "../../contextAPI/DataProvider";
 
 
 
 const Login = ()=> {
+	const context = useContext(DataProvider);
+	const [username, setUsername] = useState("")
+	const [password, setPassword] = useState("")
+	const [wrongUser, setWrongUser] = useState(false)
+	const [wrongPassword, setWrongPassword] = useState(false)
 	const navigate = useNavigate()
-	const loginHandler = ()=>{
-		navigate('/home')
+
+	const loginHandler = async()=>{
+		try {
+			const response = await API.login({username: username, password: password});
+			console.log(response.data)
+			if (response.data.authorized){
+				context.setIsLogin(true)
+				navigate("/home")
+			} 
+		} catch (error) {
+			console.log(error.message)
+		}
 	}
 
 	return (
@@ -24,28 +41,32 @@ const Login = ()=> {
 					<TextField
 						variant="outlined"
 						margin="normal"
+						error={wrongUser}
 						required
 						fullWidth
 						id="username"
-						label="Username"
+						label={wrongUser ? "Wrong Username" : "Username"}
 						name="username"
 						autoComplete="username"
+						value={username}
+						onChange={(event) => {setUsername(event.target.value); setWrongUser(false)}}
 						autoFocus
 					/>
 					<TextField
 						variant="outlined"
 						margin="normal"
+						error={wrongPassword}
 						required
 						fullWidth
 						name="password"
-						label="Password"
+						label={wrongUser ? "Wrong Password" : "Password"}
 						type="password"
 						id="password"
-						autoComplete="current-password"
+						value={password}
+						onChange={(event) => {setPassword(event.target.value); setWrongPassword(false)}}
 					/>
 					
 					<Button
-						type="submit"
 						fullWidth
 						variant="contained"
 						color="primary"
