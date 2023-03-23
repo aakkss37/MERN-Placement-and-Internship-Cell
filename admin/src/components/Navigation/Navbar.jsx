@@ -4,10 +4,12 @@ import logo from '../../assets/logo.png'
 import './navbar.css'
 import SettingsIcon from '@mui/icons-material/Settings';
 import { Menu, MenuItem } from '@mui/material';
+import ChangePassword from './Modal/ChangePassword';
 
 
 const Navbar = () => {
 	const navigate = useNavigate()
+	const [openModal, setOpenModal] = useState(false);
 	const [anchorEl, setAnchorEl] = useState(null);
 	const open = Boolean(anchorEl);
 	const handleClick = (event) => {
@@ -18,6 +20,10 @@ const Navbar = () => {
 	};
 	return (
 		<div className='navbar'>
+			<ChangePassword
+				open={openModal}
+				onClose={() => setOpenModal(false)}
+			/>
 			<div className='navbar_container' >
 				<div className='navbar_logo'>
 					<img src={logo} alt='logo' />
@@ -54,7 +60,7 @@ const Navbar = () => {
 						<MenuItem onClick={handleClose} >Profile</MenuItem>
 						<MenuItem onClick={handleClose} >My account</MenuItem>
 						<MenuItem onClick={handleClose} >Logout</MenuItem>
-						<MenuItem onClick={handleClose} >Change Password</MenuItem>
+						<MenuItem onClick={() => {setOpenModal(true); handleClose()}} >Change Password</MenuItem>
 					</Menu>
 				</div>
 			</div>
