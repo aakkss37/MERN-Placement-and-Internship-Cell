@@ -36,6 +36,10 @@ apiService: {
 }
 */
 export const SERVICE_URL = {
+	login: {
+		url: "login-admin",
+		method: "POST",
+	},
 	uploadCompanyLogo: {
 		url: 'upload-company-logo',
 		method: 'POST'
