@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Box, Button, Modal, TextField, Typography } from '@mui/material';
+import { API } from '../../../services/api';
 
 
 
@@ -21,7 +22,21 @@ const ChangePassword = (props) => {
 	const [currentPassword, setCurrentPassword] = useState("")
 	const [newPassword, setNewPassword] = useState("")
 
-	const changePasswortHandler = () => { }
+	
+
+	const changePasswortHandler = async () => {
+		try {
+			const responce = await API.changePassword({
+				username: username,
+				currentPassword: currentPassword,
+				newPassword: newPassword,
+			})
+			console.log(responce.data)
+		} catch (error) {
+
+			console.log(error.message)			
+		}
+	}
 	return (
 		<div>
 			<Modal
@@ -60,7 +75,7 @@ const ChangePassword = (props) => {
 							name="currentPassword"
 							autoComplete="currentPassword"
 							value={currentPassword}
-							onChange={(event)=> setCurrentPassword(event.target.value)}
+							onChange={(event) => setCurrentPassword(event.target.value)}
 						/>
 						<TextField
 							variant="outlined"
