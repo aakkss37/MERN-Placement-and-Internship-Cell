@@ -36,3 +36,17 @@ export const login = async (request, response) => {
 		}
 	}
 }
+
+export const chnagePassword = async (request, response) => {
+	try {
+		const user = await Admin.findOne({username: request.body.username})
+		const isMatch = await bcrypt.compare(request.body.currentPassword, user.password)
+		if(isMatch){
+			const hashedPassword = await bcrypt.hash(request.body.newPassword, 10)
+			await Admin.findByIdAndUpdate(user._id, {password: hashedPassword})
+			response.status(200).json({message: "password update sucessfull"})
+		}
+	} catch (error) {
+		response.status(401).json({ message: error.message })
+	}
+}
