@@ -99,7 +99,6 @@ const ChangePassword = (props) => {
 						/>
 
 						<Button
-							type="submit"
 							fullWidth
 							variant="contained"
 							color="primary"

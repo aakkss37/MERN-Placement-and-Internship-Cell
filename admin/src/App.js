@@ -7,6 +7,7 @@ import Login from './components/Login/Login';
 import Navbar from './components/Navigation/Navbar'
 import NewCompany from './components/NewCompany/NewCompany';
 import PlacementData from './components/PlacementData/PlacementData';
+import SuccessMsg from './components/ui/SuccessMsg';
 import { DataContext } from './contextAPI/DataProvider';
 
 
@@ -47,6 +48,11 @@ const App = () => {
 					<Route path='/home/company-detail/:name/edit' element={<EditDetail />} />
 				</Route>
 			</Routes>
+			<SuccessMsg 
+				open={context.openPasswordChangeSucessSnakebar}
+				onClose={()=> context.setOpenPasswordChangeSucessSnakebar(false)}
+				message="Password changed successfully"
+			/>
 		</BrowserRouter>
 	)
 }
