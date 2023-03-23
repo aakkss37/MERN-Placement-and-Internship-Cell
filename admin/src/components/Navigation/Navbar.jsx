@@ -65,7 +65,7 @@ const Navbar = () => {
 					>
 						<MenuItem onClick={handleClose} >Profile</MenuItem>
 						<MenuItem onClick={handleClose} >My account</MenuItem>
-						<MenuItem onClick={handleClose} >Logout</MenuItem>
+						<MenuItem onClick={handleLogout} >Logout</MenuItem>
 						<MenuItem onClick={() => {setOpenModal(true); handleClose()}} >Change Password</MenuItem>
 					</Menu>
 				</div>
