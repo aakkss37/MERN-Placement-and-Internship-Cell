@@ -42,6 +42,7 @@ const DetailedView = () => {
 		}
 		context.setOpenFormSucessSnackbar(false)
 		context.setOpenUpdateSucessSnakebar(false)
+		context.setOpenSucessSnackbar(false)
 		setOpenFormDialog(false)
 	};
 
@@ -68,7 +69,7 @@ const DetailedView = () => {
 				onClose={handleClose}
 			/>
 			<SuccessMsg
-				message="Applicant Update Sucessfull."
+				message="Application Update Sucessfull."
 				open={context.openUpdateSucessSnakebar}
 				onClose={handleClose}
 			/>

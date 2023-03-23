@@ -10,6 +10,8 @@ const DataProvider = (props) => {
 
 	const [isLogin, setIsLogin] = useState(false);
 
+	const [openSucessSnackbar, setOpenSucessSnackbar,] = useState(false);
+	
 	const [studentsForTest, setStudentsForTest] = useState([])
 	const [studentsForInterview, setStudentsForInterview] = useState([])
 	const [studentsPlaced, setStudentsPlaced] = useState([])
@@ -32,6 +34,8 @@ const DataProvider = (props) => {
 			studentsForTest, setStudentsForTest,
 			studentsForInterview, setStudentsForInterview,
 			studentsPlaced, setStudentsPlaced,
+
+			openSucessSnackbar, setOpenSucessSnackbar,
 
 			openFormErrorSnackbar, setOpenFormErrorSnackbar,
 			openFormSucessSnackbar, setOpenFormSucessSnackbar,
