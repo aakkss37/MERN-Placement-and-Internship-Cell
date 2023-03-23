@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Box, Button, Modal, TextField, Typography } from '@mui/material';
 
 
@@ -17,6 +17,8 @@ const style = {
 
 
 const ChangePassword = (props) => {
+	const [currentPassword, setCurrentPassword] = useState("")
+	const [newPassword, setNewPassword] = useState("")
 
 	const changePasswortHandler = () => { }
 	return (
@@ -34,6 +36,7 @@ const ChangePassword = (props) => {
 					<form  >
 						<TextField
 							variant="outlined"
+							type="password"
 							margin="normal"
 							required
 							fullWidth
@@ -41,18 +44,21 @@ const ChangePassword = (props) => {
 							label="Current Password"
 							name="currentPassword"
 							autoComplete="currentPassword"
+							value={currentPassword}
+							onChange={(event)=> setCurrentPassword(event.target.value)}
 							autoFocus
 						/>
 						<TextField
 							variant="outlined"
+							type="password"
 							margin="normal"
 							required
 							fullWidth
 							name="newPassword"
 							label="New Password"
-							type="newPassword"
 							id="newPassword"
-							autoComplete="newPassword"
+							value={newPassword}
+							onChange={(event) => setNewPassword(event.target.value)}
 						/>
 
 						<Button
