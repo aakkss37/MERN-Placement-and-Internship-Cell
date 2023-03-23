@@ -1,14 +1,16 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import logo from '../../assets/logo.png'
 import './navbar.css'
 import SettingsIcon from '@mui/icons-material/Settings';
 import { Menu, MenuItem } from '@mui/material';
 import ChangePassword from './Modal/ChangePassword';
+import { DataContext } from '../../contextAPI/DataProvider';
 
 
 const Navbar = () => {
 	const navigate = useNavigate()
+	const context = useContext(DataContext);
 	const [openModal, setOpenModal] = useState(false);
 	const [anchorEl, setAnchorEl] = useState(null);
 	const open = Boolean(anchorEl);
@@ -18,6 +20,10 @@ const Navbar = () => {
 	const handleClose = () => {
 		setAnchorEl(null);
 	};
+	const handleLogout = ()=>{
+		context.setIsLogin(false)
+		navigate('/')
+	}
 	return (
 		<div className='navbar'>
 			<ChangePassword
@@ -34,7 +40,7 @@ const Navbar = () => {
 					<span onClick={() => navigate('/placement-data')}>Placement Data</span>
 					<span onClick={() => navigate('/home')}>Students</span>
 				</div>
-				<div className='navbar_logout'>
+				<div className='navbar_logout' onClick={handleLogout}>
 					<span>Logout</span>
 				</div>
 				<div>
