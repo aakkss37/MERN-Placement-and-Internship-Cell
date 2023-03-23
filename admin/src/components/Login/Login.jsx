@@ -20,11 +20,16 @@ const Login = ()=> {
 			const response = await API.login({username: username, password: password});
 			console.log(response.data)
 			if (response.data.authorized){
-				context.setIsLogin(true)
+				// context.setIsLogin(true)
 				navigate("/home")
-			} 
+			} else if (!response.data.user){
+				setWrongUser(true)
+			}
+			else if (!response.data.authorized) {
+				setWrongPassword(true)
+			}
 		} catch (error) {
-			console.log(error.message)
+			console.log(error)
 		}
 	}
 
