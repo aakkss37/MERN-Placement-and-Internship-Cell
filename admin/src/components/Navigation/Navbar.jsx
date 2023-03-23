@@ -22,6 +22,7 @@ const Navbar = () => {
 	};
 	const handleLogout = ()=>{
 		context.setIsLogin(false)
+		context.setOpenLogoutSucessSnakebar(true)
 		navigate('/')
 	}
 	return (

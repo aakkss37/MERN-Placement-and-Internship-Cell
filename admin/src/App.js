@@ -53,6 +53,11 @@ const App = () => {
 				onClose={()=> context.setOpenPasswordChangeSucessSnakebar(false)}
 				message="Password changed successfully"
 			/>
+			<SuccessMsg 
+				open={context.openLogoutSucessSnakebar}
+				onClose={() => context.setOpenLogoutSucessSnakebar(false)}
+				message="Logout successfully"
+			/>
 		</BrowserRouter>
 	)
 }
