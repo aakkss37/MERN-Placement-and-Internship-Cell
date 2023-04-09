@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-04-09T10:35:08.749Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36" etag="ZUot6d-BoVE-OmRpLTuC" version="21.1.1" type="github">
+<mxfile host="app.diagrams.net" modified="2023-04-09T10:39:16.263Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36" etag="cGZTszWX7CXQpDY841jp" version="21.1.1" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="989" dy="575" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -112,6 +112,23 @@
         </mxCell>
         <mxCell id="lCkCIYVKuZqg2m3qeE0b-43" value="Response" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="480" y="380" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lCkCIYVKuZqg2m3qeE0b-47" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="lCkCIYVKuZqg2m3qeE0b-45" target="lCkCIYVKuZqg2m3qeE0b-41">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="825.2149999999997" y="400" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="825" y="400" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lCkCIYVKuZqg2m3qeE0b-45" value="" style="sketch=0;html=1;aspect=fixed;strokeColor=#d79b00;shadow=0;fillColor=#ffe6cc;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.cloud" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="760" y="160" width="130.43" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="lCkCIYVKuZqg2m3qeE0b-46" value="" style="sketch=0;html=1;aspect=fixed;shadow=0;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.cloud_monitoring" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="810" y="190" width="45" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="lCkCIYVKuZqg2m3qeE0b-48" value="&lt;b&gt;Cloud Database&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="770.21" y="130" width="110" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
