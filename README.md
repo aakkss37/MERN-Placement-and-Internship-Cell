@@ -15,7 +15,7 @@ This Project will automate the shortlisting process of companies and provide stu
 
 ### Architecture
 
-** The website architecture consists of a RESTful API backend, a MongoDB database, and three applications, including: **
+**The website architecture consists of a RESTful API backend, a MongoDB database, and three applications, including:**
 
 1. Global Interface: This interface provides an overview of the website and its features, including registration and login options for students and administrators.
 
@@ -25,7 +25,7 @@ This Project will automate the shortlisting process of companies and provide stu
 
 ### Getting Started
 
-** To use the Placement and Internship Cell Website, follow these steps: **
+**To use the Placement and Internship Cell Website, follow these steps:**
 
 1. Clone the repository and navigate to the project directory.
 2. Install the required dependencies using npm install in all 4 directry.
@@ -33,7 +33,7 @@ This Project will automate the shortlisting process of companies and provide stu
 5. Open the website in your browser.
 
 ### Tech Stack
-** The Placement and Internship Cell Website is built using the following Tech Stack: **
+**The Placement and Internship Cell Website is built using the following Tech Stack:**
 
  - React JS
  - Node.js
