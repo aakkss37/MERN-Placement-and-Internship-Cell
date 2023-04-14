@@ -47,5 +47,6 @@ This Project will automate the shortlisting process of companies and provide stu
  - Nodemailer
  - JWT
 
-###Conclusion
+### Conclusion
+
 The Placement and Internship Cell is a comprehensive application that helps colleges manage the placement process more efficiently while providing students with essential information about job and internship opportunities. By automating the shortlisting process, providing placement history and mentorship opportunities, and providing analytical tools for cell administrators, the application creates a more efficient and effective placement ecosystem.
