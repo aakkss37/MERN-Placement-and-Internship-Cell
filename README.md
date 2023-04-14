@@ -1,6 +1,6 @@
 # Placement and Internship Cell Website
 
-This Project will automate the shortlisting process of companies and provide students with critical information about placement history and alumni experiences. It will also provide cell administrators with analytical tools to help them improve the placement process and make informed decisions. By streamlining the placement process and providing students with a platform to share their experiences, the website will facilitate better communication between industry and academia and create a more efficient and effective placement ecosystem.
+This Project will provide students a interface for placement drives and  critical information about placement history, results and alumni experiences. It will also provide cell administrators  an analytical tools to help them improve the placement process and make informed decisions and  automated process of shortlisting of students according to company criteria and auto notify eligible students. By streamlining the placement process and providing students with a platform to share their experiences, the website will facilitate better communication between industry and academia and create a more efficient and effective placement ecosystem.
 
 ### Features
 
